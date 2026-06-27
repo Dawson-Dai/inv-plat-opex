@@ -93,10 +93,15 @@ function renderSnapshot(date) {
     row.insertCell().textContent = sc.affected_entities;
   });
   const h2sq = document.createElement('h2'); h2sq.textContent = 'Squad Detail'; h2sq.style.marginTop = '28px'; container.appendChild(h2sq);
-  d.squads.forEach(squad => {
+  d.squads.slice().sort((a, b) => b.total_failing_rule_instances - a.total_failing_rule_instances).forEach(squad => {
     const sec = document.createElement('div'); sec.className = 'squad-section'; container.appendChild(sec);
     const h3 = document.createElement('h3');
-    h3.innerHTML = `<a href="${squad.cortex_url}" target="_blank">${squad.name}</a> — ${squad.total_failing_rule_instances} rule-instances, ${squad.total_affected_entities} entities`;
+    const a = document.createElement('a');
+    a.href = squad.cortex_url;
+    a.target = '_blank';
+    a.textContent = squad.name;
+    h3.appendChild(a);
+    h3.appendChild(document.createTextNode(` — ${squad.total_failing_rule_instances} rule-instances, ${squad.total_affected_entities} entities`));
     sec.appendChild(h3);
     const t2 = document.createElement('table'); sec.appendChild(t2);
     const hdr2 = t2.insertRow();
