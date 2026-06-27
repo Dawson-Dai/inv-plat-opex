@@ -1,6 +1,9 @@
 """
 Build an Excel maturity report from a sorted Cortex maturity CSV.
 Produces: Tribe Overview sheet + one sheet per squad.
+
+NOTE: Input must be the sorted/filtered CSV (output of sort_csv.py).
+Passing the raw Cortex export directly may include excluded squads.
 """
 import csv
 import sys

@@ -6,7 +6,7 @@ Excludes astral-squad and bamboo-squad rows.
 import csv
 import sys
 
-EXCLUDED_SQUADS = {"astral-squad", "bamboo-squad"}
+EXCLUDED_SQUADS = {"astral-squad", "bamboo-squad", "Astral", "Bamboo", "Astral Squad", "Bamboo Squad"}
 FRONT_COLS = ["Squad", "Entity", "Scorecard", "Rule"]
 
 

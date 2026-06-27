@@ -10,7 +10,7 @@ from collections import defaultdict
 from pathlib import Path
 import yaml
 
-EXCLUDED_SQUADS = {"astral-squad", "bamboo-squad"}
+EXCLUDED_SQUADS = {"astral-squad", "bamboo-squad", "Astral", "Bamboo", "Astral Squad", "Bamboo Squad"}
 CORTEX_BASE = (
     "https://app.getcortexapp.com/admin/plugins/4033"
     "?engineeringExcellenceOverviewPluginRoute="
