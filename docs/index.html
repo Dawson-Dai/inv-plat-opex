@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory Platform — Maturity Gaps</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<header>
+  <h1>Inventory Platform — Baseline Maturity Gaps</h1>
+  <p>Track the tribe's progress toward Skyscanner Baseline maturity by end of 2026</p>
+</header>
+<nav>
+  <button class="active" data-tab="tab-trend">Trend</button>
+  <button data-tab="tab-compliance">Priority Standards</button>
+  <button data-tab="tab-explorer">Snapshot Explorer</button>
+</nav>
+<main>
+  <div id="loading">Loading snapshots…</div>
+  <div id="app" style="display:none">
+    <div id="tab-trend" class="tab active">
+      <div class="chart-wrap"><canvas id="trendChart" height="100"></canvas></div>
+      <h2>Tribe Totals Over Time</h2>
+      <table id="totalsTrendTable"></table>
+    </div>
+    <div id="tab-compliance" class="tab">
+      <p class="meta" id="complianceDate"></p>
+      <h2>Priority Standards Compliance</h2>
+      <table id="complianceTable"></table>
+    </div>
+    <div id="tab-explorer" class="tab">
+      <p class="meta">Snapshot: <select id="snapshotSelect"></select></p>
+      <div id="snapshotContent"></div>
+    </div>
+  </div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
