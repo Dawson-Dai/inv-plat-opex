@@ -6,7 +6,6 @@ import csv
 import json
 import re
 import sys
-import os
 from collections import defaultdict
 from pathlib import Path
 import yaml
@@ -58,7 +57,6 @@ def build_json(sorted_csv: str, date: str, config_dir: str = "config", data_dir:
         tree[r["Squad"]][r["Scorecard"]][r["Rule"]].add(r["Entity"])
 
     all_squads = sorted(tree.keys())
-    total_squads = len(all_squads)
 
     # Tribe totals
     all_entities = {e for sq in tree.values() for sc in sq.values() for ents in sc.values() for e in ents}
@@ -129,7 +127,6 @@ def build_json(sorted_csv: str, date: str, config_dir: str = "config", data_dir:
             print(f"  ⚠️  Priority rule not found in snapshot: '{rule_name}'", file=sys.stderr)
         squad_compliance = {}
         for squad in all_squads:
-            ents = sorted(tree[squad].get("__any__", {}).get(rule_name, set()))
             # search all scorecards
             failing = set()
             for sc_data in tree[squad].values():
