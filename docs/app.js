@@ -1,23 +1,38 @@
-const DATA_BASE = '../data';
+const DATA_BASE = 'data';
 const COLORS = ['#1F4E79','#2E75B6','#70AD47','#ED7D31','#FFC000','#FF0000','#7030A0','#00B0F0','#92D050','#FF7575'];
 let snapshots = [];
+let rendered = { trend: false, compliance: false, explorer: false };
 
 async function init() {
-  const index = await fetch(`${DATA_BASE}/index.json`).then(r => r.json());
-  snapshots = await Promise.all(
-    index.snapshots.map(async d => ({ date: d, data: await fetch(`${DATA_BASE}/${d}/maturity.json`).then(r => r.json()) }))
-  );
-  if (!snapshots.length) { document.getElementById('loading').textContent = 'No snapshots found.'; return; }
-  document.getElementById('loading').style.display = 'none';
-  document.getElementById('app').style.display = 'block';
-  renderTrend(); renderCompliance(); renderExplorer();
-  document.querySelectorAll('nav button').forEach(btn =>
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('nav button, .tab').forEach(el => el.classList.remove('active'));
-      btn.classList.add('active');
-      document.getElementById(btn.dataset.tab).classList.add('active');
-    })
-  );
+  try {
+    const resp = await fetch(`${DATA_BASE}/index.json`);
+    if (!resp.ok) throw new Error(`index.json ${resp.status}`);
+    const index = await resp.json();
+    snapshots = await Promise.all(
+      index.snapshots.map(async d => {
+        const r = await fetch(`${DATA_BASE}/${d}/maturity.json`);
+        if (!r.ok) throw new Error(`${d}/maturity.json ${r.status}`);
+        return { date: d, data: await r.json() };
+      })
+    );
+    if (!snapshots.length) { document.getElementById('loading').textContent = 'No snapshots found.'; return; }
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    showTab('tab-trend');
+    document.querySelectorAll('nav button').forEach(btn =>
+      btn.addEventListener('click', () => showTab(btn.dataset.tab))
+    );
+  } catch (e) {
+    document.getElementById('loading').textContent = 'Failed to load data: ' + e.message;
+  }
+}
+
+function showTab(tabId) {
+  document.querySelectorAll('nav button').forEach(b => b.classList.toggle('active', b.dataset.tab === tabId));
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.id === tabId));
+  if (tabId === 'tab-trend' && !rendered.trend) { renderTrend(); rendered.trend = true; }
+  if (tabId === 'tab-compliance' && !rendered.compliance) { renderCompliance(); rendered.compliance = true; }
+  if (tabId === 'tab-explorer' && !rendered.explorer) { renderExplorer(); rendered.explorer = true; }
 }
 
 function renderTrend() {

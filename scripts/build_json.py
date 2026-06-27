@@ -150,27 +150,39 @@ def build_json(sorted_csv: str, date: str, config_dir: str = "config", data_dir:
         "priority_rules": priority_rules_out,
     }
 
-    # Write data/YYYY-MM-DD/maturity.json
+    json_str = json.dumps(result, indent=2, ensure_ascii=False)
+
+    # Write to data/YYYY-MM-DD/maturity.json (canonical store)
     out_dir = Path(data_dir) / date
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "maturity.json"
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(result, f, indent=2, ensure_ascii=False)
+    out_path.write_text(json_str, encoding="utf-8")
     print(f"  Written: {out_path}")
 
-    # Update data/index.json
-    index_path = Path(data_dir) / "index.json"
-    if index_path.exists():
-        with open(index_path) as f:
-            index = json.load(f)
-    else:
-        index = {"snapshots": []}
-    if date not in index["snapshots"]:
-        index["snapshots"].append(date)
-        index["snapshots"].sort()
-    with open(index_path, "w", encoding="utf-8") as f:
-        json.dump(index, f, indent=2)
-    print(f"  Updated: {index_path} → {index['snapshots']}")
+    # Mirror to docs/data/YYYY-MM-DD/maturity.json (served by GitHub Pages)
+    docs_data_dir = Path(data_dir).parent / "docs" / "data"
+    docs_out_dir = docs_data_dir / date
+    docs_out_dir.mkdir(parents=True, exist_ok=True)
+    (docs_out_dir / "maturity.json").write_text(json_str, encoding="utf-8")
+    print(f"  Mirrored: {docs_out_dir}/maturity.json")
+
+    # Update both data/index.json and docs/data/index.json
+    def _update_index(index_path):
+        if index_path.exists():
+            with open(index_path) as f:
+                index = json.load(f)
+        else:
+            index = {"snapshots": []}
+        if date not in index["snapshots"]:
+            index["snapshots"].append(date)
+            index["snapshots"].sort()
+        with open(index_path, "w", encoding="utf-8") as f:
+            json.dump(index, f, indent=2)
+        return index["snapshots"]
+
+    snapshots_list = _update_index(Path(data_dir) / "index.json")
+    _update_index(docs_data_dir / "index.json")
+    print(f"  Updated indexes → {snapshots_list}")
 
     return result
 

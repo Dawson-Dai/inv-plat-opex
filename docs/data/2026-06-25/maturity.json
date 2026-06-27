@@ -1,0 +1,4355 @@
+{
+  "date": "2026-06-25",
+  "tribe_totals": {
+    "failing_rule_instances": 1224,
+    "unique_rules": 56,
+    "affected_entities": 443
+  },
+  "tribe_by_scorecard": [
+    {
+      "scorecard": "Data, AI, and ML Governed",
+      "all_squads": false,
+      "squads_affected": [
+        {
+          "name": "Orange",
+          "failing_rule_instances": 140
+        },
+        {
+          "name": "Dancing Penguins",
+          "failing_rule_instances": 123
+        },
+        {
+          "name": "Libra",
+          "failing_rule_instances": 113
+        },
+        {
+          "name": "Pigeon",
+          "failing_rule_instances": 85
+        },
+        {
+          "name": "Falcon",
+          "failing_rule_instances": 56
+        },
+        {
+          "name": "Big Yus",
+          "failing_rule_instances": 52
+        },
+        {
+          "name": "Halo",
+          "failing_rule_instances": 49
+        },
+        {
+          "name": "Kylin",
+          "failing_rule_instances": 49
+        },
+        {
+          "name": "Silver",
+          "failing_rule_instances": 33
+        },
+        {
+          "name": "Tiger",
+          "failing_rule_instances": 33
+        },
+        {
+          "name": "Ganymede",
+          "failing_rule_instances": 30
+        },
+        {
+          "name": "Orca",
+          "failing_rule_instances": 24
+        },
+        {
+          "name": "Yellow",
+          "failing_rule_instances": 23
+        },
+        {
+          "name": "Aqua",
+          "failing_rule_instances": 5
+        }
+      ],
+      "failing_rule_instances": 815,
+      "unique_rules": 12,
+      "affected_entities": 232
+    },
+    {
+      "scorecard": "Technology Stays Current",
+      "all_squads": false,
+      "squads_affected": [
+        {
+          "name": "Dancing Penguins",
+          "failing_rule_instances": 32
+        },
+        {
+          "name": "Fuel RaTS",
+          "failing_rule_instances": 19
+        },
+        {
+          "name": "Big Yus",
+          "failing_rule_instances": 16
+        },
+        {
+          "name": "Orange",
+          "failing_rule_instances": 16
+        },
+        {
+          "name": "Kylin",
+          "failing_rule_instances": 14
+        },
+        {
+          "name": "Yellow",
+          "failing_rule_instances": 12
+        },
+        {
+          "name": "Ganymede",
+          "failing_rule_instances": 11
+        },
+        {
+          "name": "Halo",
+          "failing_rule_instances": 11
+        },
+        {
+          "name": "Falcon",
+          "failing_rule_instances": 10
+        },
+        {
+          "name": "Aqua",
+          "failing_rule_instances": 5
+        },
+        {
+          "name": "Orca",
+          "failing_rule_instances": 5
+        },
+        {
+          "name": "Pigeon",
+          "failing_rule_instances": 3
+        },
+        {
+          "name": "Spyro",
+          "failing_rule_instances": 2
+        },
+        {
+          "name": "Tiger",
+          "failing_rule_instances": 2
+        },
+        {
+          "name": "Libra",
+          "failing_rule_instances": 1
+        },
+        {
+          "name": "Silver",
+          "failing_rule_instances": 1
+        }
+      ],
+      "failing_rule_instances": 160,
+      "unique_rules": 16,
+      "affected_entities": 107
+    },
+    {
+      "scorecard": "Production Observable and Resilient",
+      "all_squads": false,
+      "squads_affected": [
+        {
+          "name": "Dancing Penguins",
+          "failing_rule_instances": 33
+        },
+        {
+          "name": "Big Yus",
+          "failing_rule_instances": 16
+        },
+        {
+          "name": "Halo",
+          "failing_rule_instances": 15
+        },
+        {
+          "name": "Orange",
+          "failing_rule_instances": 12
+        },
+        {
+          "name": "Yellow",
+          "failing_rule_instances": 11
+        },
+        {
+          "name": "Falcon",
+          "failing_rule_instances": 8
+        },
+        {
+          "name": "Fuel RaTS",
+          "failing_rule_instances": 5
+        },
+        {
+          "name": "Orca",
+          "failing_rule_instances": 5
+        },
+        {
+          "name": "Silver",
+          "failing_rule_instances": 5
+        },
+        {
+          "name": "Aqua",
+          "failing_rule_instances": 4
+        },
+        {
+          "name": "Ollivander",
+          "failing_rule_instances": 3
+        },
+        {
+          "name": "Spyro",
+          "failing_rule_instances": 3
+        },
+        {
+          "name": "Ganymede",
+          "failing_rule_instances": 2
+        },
+        {
+          "name": "Libra",
+          "failing_rule_instances": 2
+        },
+        {
+          "name": "Pigeon",
+          "failing_rule_instances": 2
+        }
+      ],
+      "failing_rule_instances": 126,
+      "unique_rules": 9,
+      "affected_entities": 85
+    },
+    {
+      "scorecard": "Changes Ship Reliably",
+      "all_squads": false,
+      "squads_affected": [
+        {
+          "name": "Dancing Penguins",
+          "failing_rule_instances": 16
+        },
+        {
+          "name": "Yellow",
+          "failing_rule_instances": 11
+        },
+        {
+          "name": "Halo",
+          "failing_rule_instances": 9
+        },
+        {
+          "name": "Orange",
+          "failing_rule_instances": 7
+        },
+        {
+          "name": "Big Yus",
+          "failing_rule_instances": 5
+        },
+        {
+          "name": "Fuel RaTS",
+          "failing_rule_instances": 5
+        },
+        {
+          "name": "Kylin",
+          "failing_rule_instances": 3
+        },
+        {
+          "name": "Orca",
+          "failing_rule_instances": 3
+        },
+        {
+          "name": "Falcon",
+          "failing_rule_instances": 2
+        },
+        {
+          "name": "Ganymede",
+          "failing_rule_instances": 2
+        },
+        {
+          "name": "Libra",
+          "failing_rule_instances": 2
+        },
+        {
+          "name": "Tiger",
+          "failing_rule_instances": 2
+        },
+        {
+          "name": "Aqua",
+          "failing_rule_instances": 1
+        }
+      ],
+      "failing_rule_instances": 68,
+      "unique_rules": 7,
+      "affected_entities": 67
+    },
+    {
+      "scorecard": "Customer Data Stays Protected",
+      "all_squads": false,
+      "squads_affected": [
+        {
+          "name": "Big Yus",
+          "failing_rule_instances": 6
+        },
+        {
+          "name": "Yellow",
+          "failing_rule_instances": 5
+        },
+        {
+          "name": "Fuel RaTS",
+          "failing_rule_instances": 4
+        },
+        {
+          "name": "Kylin",
+          "failing_rule_instances": 4
+        },
+        {
+          "name": "Dancing Penguins",
+          "failing_rule_instances": 2
+        },
+        {
+          "name": "Falcon",
+          "failing_rule_instances": 2
+        },
+        {
+          "name": "Aqua",
+          "failing_rule_instances": 1
+        },
+        {
+          "name": "Ganymede",
+          "failing_rule_instances": 1
+        },
+        {
+          "name": "Halo",
+          "failing_rule_instances": 1
+        },
+        {
+          "name": "Ollivander",
+          "failing_rule_instances": 1
+        },
+        {
+          "name": "Pigeon",
+          "failing_rule_instances": 1
+        },
+        {
+          "name": "Silver",
+          "failing_rule_instances": 1
+        }
+      ],
+      "failing_rule_instances": 29,
+      "unique_rules": 10,
+      "affected_entities": 25
+    },
+    {
+      "scorecard": "Anyone Can Contribute Safely",
+      "all_squads": false,
+      "squads_affected": [
+        {
+          "name": "Big Yus",
+          "failing_rule_instances": 7
+        },
+        {
+          "name": "Yellow",
+          "failing_rule_instances": 6
+        },
+        {
+          "name": "Pigeon",
+          "failing_rule_instances": 4
+        },
+        {
+          "name": "Dancing Penguins",
+          "failing_rule_instances": 2
+        },
+        {
+          "name": "Libra",
+          "failing_rule_instances": 2
+        },
+        {
+          "name": "Fuel RaTS",
+          "failing_rule_instances": 1
+        },
+        {
+          "name": "Halo",
+          "failing_rule_instances": 1
+        },
+        {
+          "name": "Orange",
+          "failing_rule_instances": 1
+        },
+        {
+          "name": "Spyro",
+          "failing_rule_instances": 1
+        },
+        {
+          "name": "Tiger",
+          "failing_rule_instances": 1
+        }
+      ],
+      "failing_rule_instances": 26,
+      "unique_rules": 2,
+      "affected_entities": 24
+    }
+  ],
+  "squads": [
+    {
+      "name": "Aqua",
+      "cortex_tag": "aqua-squad",
+      "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Daqua-squad",
+      "total_failing_rule_instances": 16,
+      "total_affected_entities": 11,
+      "scorecards": [
+        {
+          "name": "Changes Ship Reliably",
+          "rules": [
+            {
+              "rule": "Services must be deployed via Slingshot to shared cluster",
+              "failing_entity_count": 1,
+              "entities": [
+                "indicative-prices-svc"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Customer Data Stays Protected",
+          "rules": [
+            {
+              "rule": "Projects must have no CFRipper selected issues across all stacks",
+              "failing_entity_count": 1,
+              "entities": [
+                "carhire-indic-pricing-project"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Data, AI, and ML Governed",
+          "rules": [
+            {
+              "rule": "Datasets with business critical data must have all alerts actioned excluding any alerts that have fired in the last 3 days",
+              "failing_entity_count": 4,
+              "entities": [
+                "prod_trusted_silver.indicative_price.hotel_compacted_quote",
+                "prod_trusted_silver.indicative_price.hotel_geo_indicative_prices",
+                "prod_trusted_silver.indicative_price.hotel_list_geo_price_details",
+                "prod_trusted_silver.indicative_price.package_indicative_prices"
+              ]
+            },
+            {
+              "rule": "Datasets with business critical data must have basic monitors enabled in Monte Carlo",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_silver.indicative_price.hotel_compacted_quote"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Production Observable and Resilient",
+          "rules": [
+            {
+              "rule": "Components must follow custom metric naming conventions",
+              "failing_entity_count": 3,
+              "entities": [
+                "ankipan-scheduler",
+                "indicative-carhire",
+                "indicative-package"
+              ]
+            },
+            {
+              "rule": "Components must limit short-duration internal spans",
+              "failing_entity_count": 1,
+              "entities": [
+                "indicative-carhire"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Technology Stays Current",
+          "rules": [
+            {
+              "rule": "Services must set maxRequestHeaderSize to 32KiB in production Dropwizard config",
+              "failing_entity_count": 5,
+              "entities": [
+                "indicative-carhire",
+                "indicative-package",
+                "indicative-prices-svc",
+                "pam-hotel-list",
+                "pam-hotels"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Big Yus",
+      "cortex_tag": "big-yus-squad",
+      "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dbig-yus-squad",
+      "total_failing_rule_instances": 102,
+      "total_affected_entities": 34,
+      "scorecards": [
+        {
+          "name": "Anyone Can Contribute Safely",
+          "rules": [
+            {
+              "rule": "Repositories must have recent commits scanned by SonarQube",
+              "failing_entity_count": 7,
+              "entities": [
+                "flights-indicative-pipeline",
+                "indicative-query-planner",
+                "market_partners",
+                "market_partners_fixtures",
+                "taps_keys",
+                "taps_keys_fixtures",
+                "taps_keys_schemas"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Changes Ship Reliably",
+          "rules": [
+            {
+              "rule": "Components must be deployed regularly",
+              "failing_entity_count": 3,
+              "entities": [
+                "file-cache-proxy-test",
+                "file-cache-read-test",
+                "file-cache-repl-lam-test"
+              ]
+            },
+            {
+              "rule": "Components must use the latest major Slingshot CI version",
+              "failing_entity_count": 1,
+              "entities": [
+                "file-cache-clean-lam"
+              ]
+            },
+            {
+              "rule": "Services must be deployed via Slingshot to shared cluster",
+              "failing_entity_count": 1,
+              "entities": [
+                "file-cache-clean-lam-test"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Customer Data Stays Protected",
+          "rules": [
+            {
+              "rule": "Repositories must not have critical-severity code scanning issues",
+              "failing_entity_count": 4,
+              "entities": [
+                "fcp-flights-aggregations",
+                "fcp-flights-predictions",
+                "file-cache-proxy",
+                "file-cache-proxy-test"
+              ]
+            },
+            {
+              "rule": "Repositories must have GHAS enabled",
+              "failing_entity_count": 1,
+              "entities": [
+                "iptext"
+              ]
+            },
+            {
+              "rule": "Repositories must not have failed code scanning runs",
+              "failing_entity_count": 1,
+              "entities": [
+                "iptext"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Data, AI, and ML Governed",
+          "rules": [
+            {
+              "rule": "Datasets must have OOH support flag",
+              "failing_entity_count": 9,
+              "entities": [
+                "prod_trusted_bronze.internal.pam_carhire",
+                "prod_trusted_bronze.internal.pam_hotels",
+                "prod_trusted_bronze.internal.price_advice_model_query",
+                "prod_trusted_bronze.internal.taps_partner_response",
+                "prod_trusted_bronze.internal.taps_price_accuracy",
+                "prod_trusted_bronze.internal.taps_result",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_airport",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_city",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_country"
+              ]
+            },
+            {
+              "rule": "Datasets must have SOX scope flag",
+              "failing_entity_count": 9,
+              "entities": [
+                "prod_trusted_bronze.internal.pam_carhire",
+                "prod_trusted_bronze.internal.pam_hotels",
+                "prod_trusted_bronze.internal.price_advice_model_query",
+                "prod_trusted_bronze.internal.taps_partner_response",
+                "prod_trusted_bronze.internal.taps_price_accuracy",
+                "prod_trusted_bronze.internal.taps_result",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_airport",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_city",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_country"
+              ]
+            },
+            {
+              "rule": "Datasets must have column descriptions",
+              "failing_entity_count": 9,
+              "entities": [
+                "prod_trusted_bronze.internal.pam_carhire",
+                "prod_trusted_bronze.internal.pam_hotels",
+                "prod_trusted_bronze.internal.price_advice_model_query",
+                "prod_trusted_bronze.internal.taps_partner_response",
+                "prod_trusted_bronze.internal.taps_price_accuracy",
+                "prod_trusted_bronze.internal.taps_result",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_airport",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_city",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_country"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid business criticality",
+              "failing_entity_count": 7,
+              "entities": [
+                "prod_trusted_bronze.internal.pam_carhire",
+                "prod_trusted_bronze.internal.pam_hotels",
+                "prod_trusted_bronze.internal.price_advice_model_query",
+                "prod_trusted_bronze.internal.taps_partner_response",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_airport",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_city",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_country"
+              ]
+            },
+            {
+              "rule": "Datasets must have data retention defined",
+              "failing_entity_count": 5,
+              "entities": [
+                "prod_trusted_bronze.internal.price_advice_model_query",
+                "prod_trusted_bronze.internal.taps_partner_response",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_airport",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_city",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_country"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data category",
+              "failing_entity_count": 5,
+              "entities": [
+                "prod_trusted_bronze.internal.price_advice_model_query",
+                "prod_trusted_bronze.internal.taps_partner_response",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_airport",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_city",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_country"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data classification",
+              "failing_entity_count": 5,
+              "entities": [
+                "prod_trusted_bronze.internal.price_advice_model_query",
+                "prod_trusted_bronze.internal.taps_partner_response",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_airport",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_city",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_country"
+              ]
+            },
+            {
+              "rule": "Datasets must have a description",
+              "failing_entity_count": 3,
+              "entities": [
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_airport",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_city",
+                "prod_trusted_silver.indicative_price_flight.indicative_prices_origin_country"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Production Observable and Resilient",
+          "rules": [
+            {
+              "rule": "Components must not write metrics to Slipstream",
+              "failing_entity_count": 6,
+              "entities": [
+                "fcp-flights-aggregations",
+                "fcp-flights-predictions",
+                "file-cache-proxy",
+                "fresh-quote-store-service",
+                "pics-flights",
+                "taps-api"
+              ]
+            },
+            {
+              "rule": "Repositories must use only OpenTelemetry API",
+              "failing_entity_count": 5,
+              "entities": [
+                "fcp-flights-aggregations",
+                "fcp-flights-predictions",
+                "file-cache-proxy",
+                "file-cache-proxy-test",
+                "fresh-quote-store-service"
+              ]
+            },
+            {
+              "rule": "Components must not rely on OpenTSDB for alerting",
+              "failing_entity_count": 3,
+              "entities": [
+                "fcp-flights-aggregations",
+                "fcp-flights-predictions",
+                "file-cache-proxy"
+              ]
+            },
+            {
+              "rule": "Components must not use Bosun for alerting",
+              "failing_entity_count": 2,
+              "entities": [
+                "bosun-file-cache-alerts",
+                "bosun-taps-alerts"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Technology Stays Current",
+          "rules": [
+            {
+              "rule": "Repositories must use Docker base images from ECR",
+              "failing_entity_count": 5,
+              "entities": [
+                "market_partners",
+                "market_partners_fixtures",
+                "taps_keys",
+                "taps_keys_fixtures",
+                "taps_keys_schemas"
+              ]
+            },
+            {
+              "rule": "Repositories must use supported Docker images",
+              "failing_entity_count": 5,
+              "entities": [
+                "market_partners",
+                "market_partners_fixtures",
+                "taps_keys",
+                "taps_keys_fixtures",
+                "taps_keys_schemas"
+              ]
+            },
+            {
+              "rule": "AI agents, batch jobs and ETL must be written in Python",
+              "failing_entity_count": 3,
+              "entities": [
+                "constructed-returns",
+                "flights-indicative-pipeline",
+                "quote-aggregator"
+              ]
+            },
+            {
+              "rule": "Services must set maxRequestHeaderSize to 32KiB in production Dropwizard config",
+              "failing_entity_count": 3,
+              "entities": [
+                "fresh-quote-store-service",
+                "pam-carhire",
+                "price-accuracy-monitor"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dancing Penguins",
+      "cortex_tag": "dancing-penguins-squad",
+      "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Ddancing-penguins-squad",
+      "total_failing_rule_instances": 208,
+      "total_affected_entities": 52,
+      "scorecards": [
+        {
+          "name": "Anyone Can Contribute Safely",
+          "rules": [
+            {
+              "rule": "Repositories must have a README.md file",
+              "failing_entity_count": 1,
+              "entities": [
+                "ai-hackathon-bold-tigers"
+              ]
+            },
+            {
+              "rule": "Repositories must have recent commits scanned by SonarQube",
+              "failing_entity_count": 1,
+              "entities": [
+                "ai-hackathon-bold-tigers"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Changes Ship Reliably",
+          "rules": [
+            {
+              "rule": "Components must be deployed regularly",
+              "failing_entity_count": 11,
+              "entities": [
+                "flights-search-speed-astro-dag",
+                "load-injector",
+                "mock-backend-1",
+                "mock-backend-2",
+                "mock-backend-3",
+                "mock-backend-4",
+                "mock-backend-5",
+                "mock-backend-6",
+                "mock-service",
+                "pricing-test-harness-cells",
+                "stop-early-worker"
+              ]
+            },
+            {
+              "rule": "Components must have consistent catalog naming",
+              "failing_entity_count": 4,
+              "entities": [
+                "conductor-cells",
+                "flights-pricing-svc-cells",
+                "itineraryconstruction-cells",
+                "quoteretrievalservice-cells"
+              ]
+            },
+            {
+              "rule": "Services must be deployed via Slingshot to shared cluster",
+              "failing_entity_count": 1,
+              "entities": [
+                "ai-hackathon-bold-tigers"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Customer Data Stays Protected",
+          "rules": [
+            {
+              "rule": "Projects with CloudFormation stacks must have CFRipper data available",
+              "failing_entity_count": 1,
+              "entities": [
+                "machinerelevance-project"
+              ]
+            },
+            {
+              "rule": "Repositories must not have critical-severity code scanning issues",
+              "failing_entity_count": 1,
+              "entities": [
+                "pricing-test-harness-cells"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Data, AI, and ML Governed",
+          "rules": [
+            {
+              "rule": "Datasets must have column descriptions",
+              "failing_entity_count": 25,
+              "entities": [
+                "prod_trusted_bronze.internal.conductor_log",
+                "prod_trusted_bronze.internal.flights_booking_fare_attributes_coverage",
+                "prod_trusted_bronze.internal.flights_fare_attributes_coverage",
+                "prod_trusted_bronze.internal.flights_finalised_session_event",
+                "prod_trusted_bronze.internal.flights_pricing_bookingresultsreturnedcreate",
+                "prod_trusted_bronze.internal.flights_pricing_bookingresultsreturnedpoll",
+                "prod_trusted_bronze.internal.flights_pricing_firstresult",
+                "prod_trusted_bronze.internal.flights_pricing_flightsearchwithfarefamilies",
+                "prod_trusted_bronze.internal.flights_pricing_intermediatepricingevent",
+                "prod_trusted_bronze.internal.flights_pricing_liveupdatescompleted",
+                "prod_trusted_bronze.internal.flights_pricing_quotesupsellcoverage",
+                "prod_trusted_bronze.internal.flights_pricing_search_served_by_fast_path",
+                "prod_trusted_bronze.internal.flights_pricing_servedfromcache",
+                "prod_trusted_bronze.internal.flights_pricing_sessionstarted",
+                "prod_trusted_bronze.internal.fps_stop_early_classifier_debug_message",
+                "prod_trusted_bronze.internal.fqs_score_changes",
+                "prod_trusted_bronze.internal.itinerary_construction_constructed_pricing_option_count",
+                "prod_trusted_bronze.internal.itinerary_construction_filtered_pricing_option_count",
+                "prod_trusted_bronze.internal.response_logger_fps_search_response",
+                "prod_trusted_bronze.internal.response_logger_fps_search_response_itineraries",
+                "prod_trusted_silver.flights_search_speed.speed_ttfr_fps_per_session_100ms_channel",
+                "prod_trusted_silver.flights_search_speed.speed_ttfr_fps_per_session_channel",
+                "prod_trusted_silver.flights_search_speed.speed_ttlr_fps_itinerary_cache",
+                "prod_trusted_silver.flights_search_speed.speed_ttlr_fps_per_session_100ms_channel",
+                "prod_trusted_silver.flights_search_speed.speed_ttlr_fps_per_session_channel"
+              ]
+            },
+            {
+              "rule": "Datasets must have OOH support flag",
+              "failing_entity_count": 20,
+              "entities": [
+                "prod_trusted_bronze.internal.conductor_log",
+                "prod_trusted_bronze.internal.flights_booking_fare_attributes_coverage",
+                "prod_trusted_bronze.internal.flights_fare_attributes_coverage",
+                "prod_trusted_bronze.internal.flights_finalised_session_event",
+                "prod_trusted_bronze.internal.flights_pricing_bookingresultsreturnedcreate",
+                "prod_trusted_bronze.internal.flights_pricing_bookingresultsreturnedpoll",
+                "prod_trusted_bronze.internal.flights_pricing_firstresult",
+                "prod_trusted_bronze.internal.flights_pricing_flightsearchwithfarefamilies",
+                "prod_trusted_bronze.internal.flights_pricing_intermediatepricingevent",
+                "prod_trusted_bronze.internal.flights_pricing_liveupdatescompleted",
+                "prod_trusted_bronze.internal.flights_pricing_quotesupsellcoverage",
+                "prod_trusted_bronze.internal.flights_pricing_search_served_by_fast_path",
+                "prod_trusted_bronze.internal.flights_pricing_servedfromcache",
+                "prod_trusted_bronze.internal.flights_pricing_sessionstarted",
+                "prod_trusted_bronze.internal.fps_stop_early_classifier_debug_message",
+                "prod_trusted_bronze.internal.fqs_score_changes",
+                "prod_trusted_bronze.internal.itinerary_construction_constructed_pricing_option_count",
+                "prod_trusted_bronze.internal.itinerary_construction_filtered_pricing_option_count",
+                "prod_trusted_bronze.internal.response_logger_fps_search_response",
+                "prod_trusted_bronze.internal.response_logger_fps_search_response_itineraries"
+              ]
+            },
+            {
+              "rule": "Datasets must have SOX scope flag",
+              "failing_entity_count": 20,
+              "entities": [
+                "prod_trusted_bronze.internal.conductor_log",
+                "prod_trusted_bronze.internal.flights_booking_fare_attributes_coverage",
+                "prod_trusted_bronze.internal.flights_fare_attributes_coverage",
+                "prod_trusted_bronze.internal.flights_finalised_session_event",
+                "prod_trusted_bronze.internal.flights_pricing_bookingresultsreturnedcreate",
+                "prod_trusted_bronze.internal.flights_pricing_bookingresultsreturnedpoll",
+                "prod_trusted_bronze.internal.flights_pricing_firstresult",
+                "prod_trusted_bronze.internal.flights_pricing_flightsearchwithfarefamilies",
+                "prod_trusted_bronze.internal.flights_pricing_intermediatepricingevent",
+                "prod_trusted_bronze.internal.flights_pricing_liveupdatescompleted",
+                "prod_trusted_bronze.internal.flights_pricing_quotesupsellcoverage",
+                "prod_trusted_bronze.internal.flights_pricing_search_served_by_fast_path",
+                "prod_trusted_bronze.internal.flights_pricing_servedfromcache",
+                "prod_trusted_bronze.internal.flights_pricing_sessionstarted",
+                "prod_trusted_bronze.internal.fps_stop_early_classifier_debug_message",
+                "prod_trusted_bronze.internal.fqs_score_changes",
+                "prod_trusted_bronze.internal.itinerary_construction_constructed_pricing_option_count",
+                "prod_trusted_bronze.internal.itinerary_construction_filtered_pricing_option_count",
+                "prod_trusted_bronze.internal.response_logger_fps_search_response",
+                "prod_trusted_bronze.internal.response_logger_fps_search_response_itineraries"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid business criticality",
+              "failing_entity_count": 13,
+              "entities": [
+                "prod_trusted_bronze.internal.conductor_log",
+                "prod_trusted_bronze.internal.flights_booking_fare_attributes_coverage",
+                "prod_trusted_bronze.internal.flights_fare_attributes_coverage",
+                "prod_trusted_bronze.internal.flights_finalised_session_event",
+                "prod_trusted_bronze.internal.flights_pricing_bookingresultsreturnedcreate",
+                "prod_trusted_bronze.internal.flights_pricing_bookingresultsreturnedpoll",
+                "prod_trusted_bronze.internal.flights_pricing_flightsearchwithfarefamilies",
+                "prod_trusted_bronze.internal.flights_pricing_intermediatepricingevent",
+                "prod_trusted_bronze.internal.flights_pricing_quotesupsellcoverage",
+                "prod_trusted_bronze.internal.flights_pricing_search_served_by_fast_path",
+                "prod_trusted_bronze.internal.flights_pricing_servedfromcache",
+                "prod_trusted_bronze.internal.fps_stop_early_classifier_debug_message",
+                "prod_trusted_bronze.internal.fqs_score_changes"
+              ]
+            },
+            {
+              "rule": "Datasets must have data retention defined",
+              "failing_entity_count": 12,
+              "entities": [
+                "prod_trusted_bronze.internal.conductor_log",
+                "prod_trusted_bronze.internal.flights_fare_attributes_coverage",
+                "prod_trusted_bronze.internal.flights_finalised_session_event",
+                "prod_trusted_bronze.internal.flights_pricing_bookingresultsreturnedcreate",
+                "prod_trusted_bronze.internal.flights_pricing_bookingresultsreturnedpoll",
+                "prod_trusted_bronze.internal.flights_pricing_flightsearchwithfarefamilies",
+                "prod_trusted_bronze.internal.flights_pricing_intermediatepricingevent",
+                "prod_trusted_bronze.internal.flights_pricing_quotesupsellcoverage",
+                "prod_trusted_bronze.internal.flights_pricing_search_served_by_fast_path",
+                "prod_trusted_bronze.internal.flights_pricing_servedfromcache",
+                "prod_trusted_bronze.internal.fps_stop_early_classifier_debug_message",
+                "prod_trusted_bronze.internal.fqs_score_changes"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data category",
+              "failing_entity_count": 12,
+              "entities": [
+                "prod_trusted_bronze.internal.conductor_log",
+                "prod_trusted_bronze.internal.flights_fare_attributes_coverage",
+                "prod_trusted_bronze.internal.flights_finalised_session_event",
+                "prod_trusted_bronze.internal.flights_pricing_bookingresultsreturnedcreate",
+                "prod_trusted_bronze.internal.flights_pricing_bookingresultsreturnedpoll",
+                "prod_trusted_bronze.internal.flights_pricing_flightsearchwithfarefamilies",
+                "prod_trusted_bronze.internal.flights_pricing_intermediatepricingevent",
+                "prod_trusted_bronze.internal.flights_pricing_quotesupsellcoverage",
+                "prod_trusted_bronze.internal.flights_pricing_search_served_by_fast_path",
+                "prod_trusted_bronze.internal.flights_pricing_servedfromcache",
+                "prod_trusted_bronze.internal.fps_stop_early_classifier_debug_message",
+                "prod_trusted_bronze.internal.fqs_score_changes"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data classification",
+              "failing_entity_count": 12,
+              "entities": [
+                "prod_trusted_bronze.internal.conductor_log",
+                "prod_trusted_bronze.internal.flights_fare_attributes_coverage",
+                "prod_trusted_bronze.internal.flights_finalised_session_event",
+                "prod_trusted_bronze.internal.flights_pricing_bookingresultsreturnedcreate",
+                "prod_trusted_bronze.internal.flights_pricing_bookingresultsreturnedpoll",
+                "prod_trusted_bronze.internal.flights_pricing_flightsearchwithfarefamilies",
+                "prod_trusted_bronze.internal.flights_pricing_intermediatepricingevent",
+                "prod_trusted_bronze.internal.flights_pricing_quotesupsellcoverage",
+                "prod_trusted_bronze.internal.flights_pricing_search_served_by_fast_path",
+                "prod_trusted_bronze.internal.flights_pricing_servedfromcache",
+                "prod_trusted_bronze.internal.fps_stop_early_classifier_debug_message",
+                "prod_trusted_bronze.internal.fqs_score_changes"
+              ]
+            },
+            {
+              "rule": "Datasets must have a description",
+              "failing_entity_count": 5,
+              "entities": [
+                "prod_trusted_silver.flights_search_speed.speed_ttfr_fps_per_session_100ms_channel",
+                "prod_trusted_silver.flights_search_speed.speed_ttfr_fps_per_session_channel",
+                "prod_trusted_silver.flights_search_speed.speed_ttlr_fps_itinerary_cache",
+                "prod_trusted_silver.flights_search_speed.speed_ttlr_fps_per_session_100ms_channel",
+                "prod_trusted_silver.flights_search_speed.speed_ttlr_fps_per_session_channel"
+              ]
+            },
+            {
+              "rule": "Datasets with business critical data must have all alerts actioned excluding any alerts that have fired in the last 3 days",
+              "failing_entity_count": 4,
+              "entities": [
+                "prod_trusted_bronze.internal.response_logger_fps_search_response",
+                "prod_trusted_bronze.internal.response_logger_fps_search_response_itineraries",
+                "prod_trusted_silver.flights_search_speed.speed_ttfr_fps_per_session_100ms_channel",
+                "prod_trusted_silver.flights_search_speed.speed_ttfr_fps_per_session_channel"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Production Observable and Resilient",
+          "rules": [
+            {
+              "rule": "Repositories must use only OpenTelemetry API",
+              "failing_entity_count": 10,
+              "entities": [
+                "dps-http-deadline",
+                "flights-pricing-svc-cells",
+                "flightspricing-statistics-java",
+                "global-cache-proxy",
+                "itineraryconstruction-cells",
+                "quoteretrievalservice-cells",
+                "response-logger",
+                "s3-client-lib",
+                "stop-early-worker",
+                "transport-pricing-svc"
+              ]
+            },
+            {
+              "rule": "Components must not write metrics to Slipstream",
+              "failing_entity_count": 8,
+              "entities": [
+                "conductor-cells",
+                "flights-pricing-svc-cells",
+                "global-cache-proxy",
+                "itineraryconstruction-cells",
+                "quoteretrievalservice-cells",
+                "response-logger",
+                "stop-early-worker",
+                "transport-pricing-svc"
+              ]
+            },
+            {
+              "rule": "Components must follow custom metric naming conventions",
+              "failing_entity_count": 5,
+              "entities": [
+                "conductor-cells",
+                "flights-pricing-svc-cells",
+                "itineraryconstruction-cells",
+                "quoteretrievalservice-cells",
+                "transport-pricing-svc"
+              ]
+            },
+            {
+              "rule": "Components must not rely on OpenTSDB for alerting",
+              "failing_entity_count": 5,
+              "entities": [
+                "flights-pricing-svc-cells",
+                "global-cache-proxy",
+                "itineraryconstruction-cells",
+                "quoteretrievalservice-cells",
+                "response-logger"
+              ]
+            },
+            {
+              "rule": "Components must limit short-duration internal spans",
+              "failing_entity_count": 3,
+              "entities": [
+                "conductor-cells",
+                "flights-pricing-svc-cells",
+                "itineraryconstruction-cells"
+              ]
+            },
+            {
+              "rule": "Components must not use Bosun for alerting",
+              "failing_entity_count": 1,
+              "entities": [
+                "bosun-penguins"
+              ]
+            },
+            {
+              "rule": "Components must have more than 0% budget remaining on all SLOs",
+              "failing_entity_count": 1,
+              "entities": [
+                "itineraryconstruction-cells"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Technology Stays Current",
+          "rules": [
+            {
+              "rule": "Services must set maxRequestHeaderSize to 32KiB in production Dropwizard config",
+              "failing_entity_count": 14,
+              "entities": [
+                "ai-hackathon-bold-tigers",
+                "conductor-cells",
+                "flights-pricing-svc-cells",
+                "global-cache-proxy",
+                "itineraryconstruction-cells",
+                "mock-backend-1",
+                "mock-backend-2",
+                "mock-backend-3",
+                "mock-backend-4",
+                "mock-backend-5",
+                "mock-backend-6",
+                "mock-service",
+                "quoteretrievalservice-cells",
+                "transport-pricing-svc"
+              ]
+            },
+            {
+              "rule": "Privacy and Consent Adoption",
+              "failing_entity_count": 9,
+              "entities": [
+                "global-cache-proxy",
+                "mock-backend-1",
+                "mock-backend-2",
+                "mock-backend-3",
+                "mock-backend-4",
+                "mock-backend-5",
+                "mock-backend-6",
+                "mock-service",
+                "response-logger"
+              ]
+            },
+            {
+              "rule": "Java services must be Dropwizard/MShell based applications",
+              "failing_entity_count": 1,
+              "entities": [
+                "ai-hackathon-bold-tigers"
+              ]
+            },
+            {
+              "rule": "Java services must be built with Gradle",
+              "failing_entity_count": 1,
+              "entities": [
+                "ai-hackathon-bold-tigers"
+              ]
+            },
+            {
+              "rule": "Services must be written in Java",
+              "failing_entity_count": 1,
+              "entities": [
+                "ai-hackathon-bold-tigers"
+              ]
+            },
+            {
+              "rule": "Projects must not use end-of-life versions of programming languages",
+              "failing_entity_count": 1,
+              "entities": [
+                "bosun-penguins-project"
+              ]
+            },
+            {
+              "rule": "Repositories must use Docker base images from ECR",
+              "failing_entity_count": 1,
+              "entities": [
+                "dancingpenguins"
+              ]
+            },
+            {
+              "rule": "Repositories must use supported Docker images",
+              "failing_entity_count": 1,
+              "entities": [
+                "dancingpenguins"
+              ]
+            },
+            {
+              "rule": "Web applications must use React Router, and not a competing framework",
+              "failing_entity_count": 1,
+              "entities": [
+                "pricing-test-harness-cells"
+              ]
+            },
+            {
+              "rule": "Web codebases must use Jest or Vitest as the Node.js test runner",
+              "failing_entity_count": 1,
+              "entities": [
+                "pricing-test-harness-cells"
+              ]
+            },
+            {
+              "rule": "Projects must not use non-compliant cache engines",
+              "failing_entity_count": 1,
+              "entities": [
+                "transport-pricing-svc-project"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Falcon",
+      "cortex_tag": "falcon-squad",
+      "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dfalcon-squad",
+      "total_failing_rule_instances": 78,
+      "total_affected_entities": 23,
+      "scorecards": [
+        {
+          "name": "Changes Ship Reliably",
+          "rules": [
+            {
+              "rule": "Components must be deployed regularly",
+              "failing_entity_count": 2,
+              "entities": [
+                "coverage-analysis-batch-job",
+                "partner-density-dag"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Customer Data Stays Protected",
+          "rules": [
+            {
+              "rule": "Teams must not have open vulnerability tickets",
+              "failing_entity_count": 1,
+              "entities": [
+                "falcon-squad"
+              ]
+            },
+            {
+              "rule": "Projects must have no CFRipper selected issues across all stacks",
+              "failing_entity_count": 1,
+              "entities": [
+                "pob-project"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Data, AI, and ML Governed",
+          "rules": [
+            {
+              "rule": "Datasets must have OOH support flag",
+              "failing_entity_count": 8,
+              "entities": [
+                "prod_trusted_bronze.internal.event_filtered_by_source",
+                "prod_trusted_bronze.internal.event_filtered_by_who_stack",
+                "prod_trusted_bronze.internal.event_filtered_for_partner_density",
+                "prod_trusted_bronze.internal.falcon_landing_pages_falconlandingpageaction",
+                "prod_trusted_bronze.internal.itineraries_internal_filter_batch_event",
+                "prod_trusted_bronze.internal.itineraries_whostar_batch_event",
+                "prod_trusted_bronze.price_accuracy.flight_pa_result",
+                "prod_trusted_bronze.price_accuracy.flight_pa_scraper"
+              ]
+            },
+            {
+              "rule": "Datasets must have SOX scope flag",
+              "failing_entity_count": 8,
+              "entities": [
+                "prod_trusted_bronze.internal.event_filtered_by_source",
+                "prod_trusted_bronze.internal.event_filtered_by_who_stack",
+                "prod_trusted_bronze.internal.event_filtered_for_partner_density",
+                "prod_trusted_bronze.internal.falcon_landing_pages_falconlandingpageaction",
+                "prod_trusted_bronze.internal.itineraries_internal_filter_batch_event",
+                "prod_trusted_bronze.internal.itineraries_whostar_batch_event",
+                "prod_trusted_bronze.price_accuracy.flight_pa_result",
+                "prod_trusted_bronze.price_accuracy.flight_pa_scraper"
+              ]
+            },
+            {
+              "rule": "Datasets must have column descriptions",
+              "failing_entity_count": 8,
+              "entities": [
+                "prod_trusted_bronze.internal.event_filtered_by_source",
+                "prod_trusted_bronze.internal.event_filtered_by_who_stack",
+                "prod_trusted_bronze.internal.event_filtered_for_partner_density",
+                "prod_trusted_bronze.internal.falcon_landing_pages_falconlandingpageaction",
+                "prod_trusted_bronze.internal.itineraries_internal_filter_batch_event",
+                "prod_trusted_bronze.internal.itineraries_whostar_batch_event",
+                "prod_trusted_bronze.price_accuracy.flight_pa_result",
+                "prod_trusted_silver.price_accuracy.dv_flight_e2e_price_accuracy"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid business criticality",
+              "failing_entity_count": 8,
+              "entities": [
+                "prod_trusted_bronze.internal.event_filtered_by_source",
+                "prod_trusted_bronze.internal.event_filtered_by_who_stack",
+                "prod_trusted_bronze.internal.event_filtered_for_partner_density",
+                "prod_trusted_bronze.internal.falcon_landing_pages_falconlandingpageaction",
+                "prod_trusted_bronze.internal.itineraries_internal_filter_batch_event",
+                "prod_trusted_bronze.internal.itineraries_whostar_batch_event",
+                "prod_trusted_bronze.price_accuracy.flight_pa_result",
+                "prod_trusted_bronze.price_accuracy.flight_pa_scraper"
+              ]
+            },
+            {
+              "rule": "Datasets must have data retention defined",
+              "failing_entity_count": 7,
+              "entities": [
+                "prod_trusted_bronze.internal.event_filtered_by_source",
+                "prod_trusted_bronze.internal.event_filtered_by_who_stack",
+                "prod_trusted_bronze.internal.falcon_landing_pages_falconlandingpageaction",
+                "prod_trusted_bronze.internal.itineraries_internal_filter_batch_event",
+                "prod_trusted_bronze.internal.itineraries_whostar_batch_event",
+                "prod_trusted_bronze.price_accuracy.flight_pa_result",
+                "prod_trusted_bronze.price_accuracy.flight_pa_scraper"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data category",
+              "failing_entity_count": 7,
+              "entities": [
+                "prod_trusted_bronze.internal.event_filtered_by_source",
+                "prod_trusted_bronze.internal.event_filtered_by_who_stack",
+                "prod_trusted_bronze.internal.falcon_landing_pages_falconlandingpageaction",
+                "prod_trusted_bronze.internal.itineraries_internal_filter_batch_event",
+                "prod_trusted_bronze.internal.itineraries_whostar_batch_event",
+                "prod_trusted_bronze.price_accuracy.flight_pa_result",
+                "prod_trusted_bronze.price_accuracy.flight_pa_scraper"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data classification",
+              "failing_entity_count": 7,
+              "entities": [
+                "prod_trusted_bronze.internal.event_filtered_by_source",
+                "prod_trusted_bronze.internal.event_filtered_by_who_stack",
+                "prod_trusted_bronze.internal.falcon_landing_pages_falconlandingpageaction",
+                "prod_trusted_bronze.internal.itineraries_internal_filter_batch_event",
+                "prod_trusted_bronze.internal.itineraries_whostar_batch_event",
+                "prod_trusted_bronze.price_accuracy.flight_pa_result",
+                "prod_trusted_bronze.price_accuracy.flight_pa_scraper"
+              ]
+            },
+            {
+              "rule": "Datasets must have a description",
+              "failing_entity_count": 2,
+              "entities": [
+                "prod_trusted_bronze.price_accuracy.flight_pa_result",
+                "prod_trusted_bronze.price_accuracy.flight_pa_scraper"
+              ]
+            },
+            {
+              "rule": "Datasets with business critical data must have all alerts actioned excluding any alerts that have fired in the last 3 days",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_gold.price_accuracy.w_dv_flight_price_accuracy_report"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Production Observable and Resilient",
+          "rules": [
+            {
+              "rule": "Repositories must use only OpenTelemetry API",
+              "failing_entity_count": 2,
+              "entities": [
+                "falcon-ai-tool",
+                "routes-collector"
+              ]
+            },
+            {
+              "rule": "Components must not write metrics to Slipstream",
+              "failing_entity_count": 2,
+              "entities": [
+                "poor-quote-detector",
+                "routes-collector"
+              ]
+            },
+            {
+              "rule": "Components must follow custom metric naming conventions",
+              "failing_entity_count": 2,
+              "entities": [
+                "quote-suppression",
+                "routes-collector"
+              ]
+            },
+            {
+              "rule": "Teams must not have live incidents",
+              "failing_entity_count": 1,
+              "entities": [
+                "falcon-squad"
+              ]
+            },
+            {
+              "rule": "Teams must not have pending incidents older than 14 days",
+              "failing_entity_count": 1,
+              "entities": [
+                "falcon-squad"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Technology Stays Current",
+          "rules": [
+            {
+              "rule": "Services must set maxRequestHeaderSize to 32KiB in production Dropwizard config",
+              "failing_entity_count": 2,
+              "entities": [
+                "falcon-ai-tool",
+                "quote-suppression"
+              ]
+            },
+            {
+              "rule": "Java services must be Dropwizard/MShell based applications",
+              "failing_entity_count": 1,
+              "entities": [
+                "falcon-ai-tool"
+              ]
+            },
+            {
+              "rule": "Java services must be built with Gradle",
+              "failing_entity_count": 1,
+              "entities": [
+                "falcon-ai-tool"
+              ]
+            },
+            {
+              "rule": "Services must be written in Java",
+              "failing_entity_count": 1,
+              "entities": [
+                "falcon-ai-tool"
+              ]
+            },
+            {
+              "rule": "Amazon Linux 1 and 2 must not be used",
+              "failing_entity_count": 1,
+              "entities": [
+                "jacquard-k8s-project"
+              ]
+            },
+            {
+              "rule": "Privacy and Consent Adoption",
+              "failing_entity_count": 1,
+              "entities": [
+                "partner-density-pipeline"
+              ]
+            },
+            {
+              "rule": "Lambda functions must not use end-of-life runtimes",
+              "failing_entity_count": 1,
+              "entities": [
+                "psm-tooling-project"
+              ]
+            },
+            {
+              "rule": "Projects must not use non-compliant cache engines",
+              "failing_entity_count": 1,
+              "entities": [
+                "quote-suppression-project"
+              ]
+            },
+            {
+              "rule": "Projects must not use end-of-life versions of programming languages",
+              "failing_entity_count": 1,
+              "entities": [
+                "revenuetracking-lambda-project"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fuel RaTS",
+      "cortex_tag": "fuel-rats-squad",
+      "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dfuel-rats-squad",
+      "total_failing_rule_instances": 34,
+      "total_affected_entities": 20,
+      "scorecards": [
+        {
+          "name": "Anyone Can Contribute Safely",
+          "rules": [
+            {
+              "rule": "Repositories must have recent commits scanned by SonarQube",
+              "failing_entity_count": 1,
+              "entities": [
+                "whotoask-shadow-precompute"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Changes Ship Reliably",
+          "rules": [
+            {
+              "rule": "Components must use the latest major Slingshot CI version",
+              "failing_entity_count": 2,
+              "entities": [
+                "precompute-cells-data-upload-batch",
+                "whotoask-shadow-precompute"
+              ]
+            },
+            {
+              "rule": "Components must be deployed regularly",
+              "failing_entity_count": 2,
+              "entities": [
+                "routeswho-shadow-whostar-aurora",
+                "whotoask-shadow-precompute"
+              ]
+            },
+            {
+              "rule": "Services must be deployed via Slingshot to shared cluster",
+              "failing_entity_count": 1,
+              "entities": [
+                "wrmd-shadow"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Customer Data Stays Protected",
+          "rules": [
+            {
+              "rule": "Repositories must not have critical-severity code scanning issues",
+              "failing_entity_count": 2,
+              "entities": [
+                "ws-test-harness",
+                "wta-test-harness"
+              ]
+            },
+            {
+              "rule": "Projects with CloudFormation stacks must have CFRipper data available",
+              "failing_entity_count": 1,
+              "entities": [
+                "carriers-project"
+              ]
+            },
+            {
+              "rule": "Projects must have no CFRipper selected issues across all stacks",
+              "failing_entity_count": 1,
+              "entities": [
+                "routeswho-project"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Production Observable and Resilient",
+          "rules": [
+            {
+              "rule": "Components must not write metrics to Slipstream",
+              "failing_entity_count": 3,
+              "entities": [
+                "carriers",
+                "whotoask-precompute",
+                "wrmd"
+              ]
+            },
+            {
+              "rule": "Teams must not have pending incidents older than 14 days",
+              "failing_entity_count": 1,
+              "entities": [
+                "fuel-rats-squad"
+              ]
+            },
+            {
+              "rule": "Components must limit short-duration internal spans",
+              "failing_entity_count": 1,
+              "entities": [
+                "whotoask-precompute"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Technology Stays Current",
+          "rules": [
+            {
+              "rule": "AI agents, batch jobs and ETL must be written in Python",
+              "failing_entity_count": 3,
+              "entities": [
+                "flying-circus",
+                "partner-markets",
+                "ws-precompute-dependency-fetch"
+              ]
+            },
+            {
+              "rule": "Repositories must use Docker base images from ECR",
+              "failing_entity_count": 3,
+              "entities": [
+                "routeswho-shadow-whostar-aurora",
+                "wrmd-aurora",
+                "ws-precompute-aurora-cells"
+              ]
+            },
+            {
+              "rule": "Repositories must use supported Docker images",
+              "failing_entity_count": 3,
+              "entities": [
+                "routeswho-shadow-whostar-aurora",
+                "wrmd-aurora",
+                "ws-precompute-aurora-cells"
+              ]
+            },
+            {
+              "rule": "Web applications must use React Router, and not a competing framework",
+              "failing_entity_count": 3,
+              "entities": [
+                "routeswho-th",
+                "ws-test-harness",
+                "wta-test-harness"
+              ]
+            },
+            {
+              "rule": "Services must set maxRequestHeaderSize to 32KiB in production Dropwizard config",
+              "failing_entity_count": 2,
+              "entities": [
+                "carriers",
+                "whostar-db-admin-proxy"
+              ]
+            },
+            {
+              "rule": "Privacy and Consent Adoption",
+              "failing_entity_count": 2,
+              "entities": [
+                "whostar-pre-compute",
+                "whotoask-shadow-precompute"
+              ]
+            },
+            {
+              "rule": "Docker images must be immutable",
+              "failing_entity_count": 2,
+              "entities": [
+                "whotoask-precompute",
+                "whotoask-shadow-precompute"
+              ]
+            },
+            {
+              "rule": "Web codebases must not use AWS SDK JS v2 (EOL 08/09/25)",
+              "failing_entity_count": 1,
+              "entities": [
+                "routeswho-th"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ganymede",
+      "cortex_tag": "ganymede-squad",
+      "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dganymede-squad",
+      "total_failing_rule_instances": 46,
+      "total_affected_entities": 26,
+      "scorecards": [
+        {
+          "name": "Changes Ship Reliably",
+          "rules": [
+            {
+              "rule": "Repositories must be deployed to Astro using the reusable workflow",
+              "failing_entity_count": 1,
+              "entities": [
+                "garen"
+              ]
+            },
+            {
+              "rule": "Components must be deployed regularly",
+              "failing_entity_count": 1,
+              "entities": [
+                "rail-connector"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Customer Data Stays Protected",
+          "rules": [
+            {
+              "rule": "Projects must have no CFRipper selected issues across all stacks",
+              "failing_entity_count": 1,
+              "entities": [
+                "shared-images-project"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Data, AI, and ML Governed",
+          "rules": [
+            {
+              "rule": "Datasets with business critical data must have all alerts actioned excluding any alerts that have fired in the last 3 days",
+              "failing_entity_count": 13,
+              "entities": [
+                "prod_trusted_gold.beyond_flight_integration_analytics.d_cug_hotel_partner_scape",
+                "prod_trusted_gold.beyond_flight_integration_analytics.d_los_abw_partner_market_accomm",
+                "prod_trusted_gold.beyond_flight_integration_analytics.d_los_abw_partner_market_hotel_scape",
+                "prod_trusted_gold.beyond_flight_integration_quality.f_hotel_itinerary_tax_comparison_agg",
+                "prod_trusted_gold.beyond_flight_integration_quality.f_hotel_itinerary_tax_rate_agg",
+                "prod_trusted_gold.beyond_flight_integration_quality.hotel_price_accuracy_payment_report",
+                "prod_trusted_gold.beyond_flight_integration_quality.hotel_price_accuracy_report",
+                "prod_trusted_gold.beyond_flight_integration_quality.hotel_price_inaccuracy_category",
+                "prod_trusted_gold.price_accuracy.w_dv_hotel_total_price_accuracy_report",
+                "prod_trusted_silver.beyond_flight_integration_quality.hotel_price_journey",
+                "prod_trusted_silver.beyond_flight_partner_api_health.hotel_request_scrape_daily",
+                "prod_trusted_silver.beyond_flight_partner_api_health.package_partner_api_health_daily",
+                "prod_trusted_silver.price_accuracy.vendor_hotel_preconversion"
+              ]
+            },
+            {
+              "rule": "Datasets must have column descriptions",
+              "failing_entity_count": 6,
+              "entities": [
+                "prod_trusted_bronze.google_hotel_price_accuracy.google_hotel_price_accuracy",
+                "prod_trusted_bronze.inhouse_scraper_hotel_price_accuracy.inhouse_scraper_hotel_price_accuracy",
+                "prod_trusted_bronze.internal.prod_rail_connector_scrape_partner_event",
+                "prod_trusted_gold.beyond_flight_integration_quality.f_hotel_itinerary_tax_rate_agg",
+                "prod_trusted_silver.beyond_flight_integration_quality.hotel_price_journey",
+                "prod_trusted_silver.beyond_flight_partner_api_health.carhire_partner_api_health_daily"
+              ]
+            },
+            {
+              "rule": "Datasets must have OOH support flag",
+              "failing_entity_count": 2,
+              "entities": [
+                "prod_trusted_bronze.inhouse_scraper_hotel_price_accuracy.inhouse_scraper_hotel_price_accuracy",
+                "prod_trusted_bronze.internal.prod_rail_connector_scrape_partner_event"
+              ]
+            },
+            {
+              "rule": "Datasets must have SOX scope flag",
+              "failing_entity_count": 2,
+              "entities": [
+                "prod_trusted_bronze.inhouse_scraper_hotel_price_accuracy.inhouse_scraper_hotel_price_accuracy",
+                "prod_trusted_bronze.internal.prod_rail_connector_scrape_partner_event"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid business criticality",
+              "failing_entity_count": 2,
+              "entities": [
+                "prod_trusted_bronze.inhouse_scraper_hotel_price_accuracy.inhouse_scraper_hotel_price_accuracy",
+                "prod_trusted_bronze.internal.prod_rail_connector_scrape_partner_event"
+              ]
+            },
+            {
+              "rule": "Models must have a business criticality defined",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_silicon.ml_platform.price_of_sin_kea"
+              ]
+            },
+            {
+              "rule": "Datasets must have a description",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_bronze.inhouse_scraper_hotel_price_accuracy.inhouse_scraper_hotel_price_accuracy"
+              ]
+            },
+            {
+              "rule": "Datasets must have data retention defined",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_bronze.inhouse_scraper_hotel_price_accuracy.inhouse_scraper_hotel_price_accuracy"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data category",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_bronze.inhouse_scraper_hotel_price_accuracy.inhouse_scraper_hotel_price_accuracy"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data classification",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_bronze.inhouse_scraper_hotel_price_accuracy.inhouse_scraper_hotel_price_accuracy"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Production Observable and Resilient",
+          "rules": [
+            {
+              "rule": "Teams must not have pending incidents older than 14 days",
+              "failing_entity_count": 1,
+              "entities": [
+                "ganymede-squad"
+              ]
+            },
+            {
+              "rule": "Repositories must use only OpenTelemetry API",
+              "failing_entity_count": 1,
+              "entities": [
+                "rail-connector"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Technology Stays Current",
+          "rules": [
+            {
+              "rule": "Privacy and Consent Adoption",
+              "failing_entity_count": 2,
+              "entities": [
+                "hotelcar-data-analysis",
+                "in-house-scraper-ai"
+              ]
+            },
+            {
+              "rule": "Repositories must use Docker base images from ECR",
+              "failing_entity_count": 1,
+              "entities": [
+                "hotelcar-data-analysis"
+              ]
+            },
+            {
+              "rule": "Repositories must use supported Docker images",
+              "failing_entity_count": 1,
+              "entities": [
+                "hotelcar-data-analysis"
+              ]
+            },
+            {
+              "rule": "Docker images must be immutable",
+              "failing_entity_count": 1,
+              "entities": [
+                "in-house-scraper-ai"
+              ]
+            },
+            {
+              "rule": "Java services must be Dropwizard/MShell based applications",
+              "failing_entity_count": 1,
+              "entities": [
+                "in-house-scraper-ai"
+              ]
+            },
+            {
+              "rule": "Java services must be built with Gradle",
+              "failing_entity_count": 1,
+              "entities": [
+                "in-house-scraper-ai"
+              ]
+            },
+            {
+              "rule": "Services must be written in Java",
+              "failing_entity_count": 1,
+              "entities": [
+                "in-house-scraper-ai"
+              ]
+            },
+            {
+              "rule": "Services must set maxRequestHeaderSize to 32KiB in production Dropwizard config",
+              "failing_entity_count": 1,
+              "entities": [
+                "in-house-scraper-ai"
+              ]
+            },
+            {
+              "rule": "Amazon Linux 1 and 2 must not be used",
+              "failing_entity_count": 1,
+              "entities": [
+                "in-house-scraper-project"
+              ]
+            },
+            {
+              "rule": "Lambda functions must not use end-of-life runtimes",
+              "failing_entity_count": 1,
+              "entities": [
+                "price-changed-lambda-project"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Halo",
+      "cortex_tag": "halo-squad",
+      "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dhalo-squad",
+      "total_failing_rule_instances": 86,
+      "total_affected_entities": 46,
+      "scorecards": [
+        {
+          "name": "Anyone Can Contribute Safely",
+          "rules": [
+            {
+              "rule": "Repositories must have recent commits scanned by SonarQube",
+              "failing_entity_count": 1,
+              "entities": [
+                "mario-longtail-migration"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Changes Ship Reliably",
+          "rules": [
+            {
+              "rule": "Components must be deployed regularly",
+              "failing_entity_count": 6,
+              "entities": [
+                "integration-proxy-cells",
+                "kuppa-infra",
+                "opex-insight-generator",
+                "partner-credential",
+                "quote-scrape-data-dag",
+                "quote-scrape-data-job"
+              ]
+            },
+            {
+              "rule": "Services must be deployed via Slingshot to shared cluster",
+              "failing_entity_count": 2,
+              "entities": [
+                "egressor-tools",
+                "website-link-loader-preprod"
+              ]
+            },
+            {
+              "rule": "Components must have consistent catalog naming",
+              "failing_entity_count": 1,
+              "entities": [
+                "website-link-loader"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Customer Data Stays Protected",
+          "rules": [
+            {
+              "rule": "Projects must have no CFRipper selected issues across all stacks",
+              "failing_entity_count": 1,
+              "entities": [
+                "website-link-service-project"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Data, AI, and ML Governed",
+          "rules": [
+            {
+              "rule": "Datasets with business critical data must have all alerts actioned excluding any alerts that have fired in the last 3 days",
+              "failing_entity_count": 11,
+              "entities": [
+                "prod_trusted_bronze.internal.redirects",
+                "prod_trusted_gold.inventory_analytics.w_aggregated_inventory_channel_cost",
+                "prod_trusted_gold.inventory_analytics.w_aggregated_inventory_cost",
+                "prod_trusted_gold.inventory_analytics.w_aggregated_look_to_book",
+                "prod_trusted_silver.inventory_analytics.infrastructure_live_pricing_cost",
+                "prod_trusted_silver.inventory_analytics.inventory_vendor_live_pricing_cost",
+                "prod_trusted_silver.inventory_cost_efficiency.inventory_vendor_analytics",
+                "prod_trusted_silver.quote_scraping.carhire_search_scrape",
+                "prod_trusted_silver.quote_scraping.flight_meta_scrape",
+                "prod_trusted_silver.quote_scraping.hotel_search_scrape",
+                "prod_trusted_silver.quote_scraping.package_search_scrape"
+              ]
+            },
+            {
+              "rule": "Datasets must have column descriptions",
+              "failing_entity_count": 10,
+              "entities": [
+                "prod_trusted_bronze.internal.egressor_carhire_search_scrape",
+                "prod_trusted_bronze.internal.egressor_flight_detail_scrape",
+                "prod_trusted_bronze.internal.egressor_flight_meta_scrape",
+                "prod_trusted_bronze.internal.egressor_flight_meta_scrape_engine_amadeus",
+                "prod_trusted_bronze.internal.egressor_hotel_search_scrape",
+                "prod_trusted_bronze.internal.egressor_package_search_scrape",
+                "prod_trusted_bronze.internal.jacquard_scrape",
+                "prod_trusted_bronze.inventory_cost_efficiency.infrastructure_cost",
+                "prod_trusted_silver.quote_scraping.carhire_search_scrape",
+                "prod_trusted_silver.quote_scraping.hotel_search_scrape"
+              ]
+            },
+            {
+              "rule": "Datasets must have OOH support flag",
+              "failing_entity_count": 7,
+              "entities": [
+                "prod_trusted_bronze.internal.egressor_carhire_search_scrape",
+                "prod_trusted_bronze.internal.egressor_flight_detail_scrape",
+                "prod_trusted_bronze.internal.egressor_flight_meta_scrape",
+                "prod_trusted_bronze.internal.egressor_flight_meta_scrape_engine_amadeus",
+                "prod_trusted_bronze.internal.egressor_hotel_search_scrape",
+                "prod_trusted_bronze.internal.egressor_package_search_scrape",
+                "prod_trusted_bronze.internal.jacquard_scrape"
+              ]
+            },
+            {
+              "rule": "Datasets must have SOX scope flag",
+              "failing_entity_count": 7,
+              "entities": [
+                "prod_trusted_bronze.internal.egressor_carhire_search_scrape",
+                "prod_trusted_bronze.internal.egressor_flight_detail_scrape",
+                "prod_trusted_bronze.internal.egressor_flight_meta_scrape",
+                "prod_trusted_bronze.internal.egressor_flight_meta_scrape_engine_amadeus",
+                "prod_trusted_bronze.internal.egressor_hotel_search_scrape",
+                "prod_trusted_bronze.internal.egressor_package_search_scrape",
+                "prod_trusted_bronze.internal.jacquard_scrape"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid business criticality",
+              "failing_entity_count": 5,
+              "entities": [
+                "prod_trusted_bronze.internal.egressor_carhire_search_scrape",
+                "prod_trusted_bronze.internal.egressor_flight_detail_scrape",
+                "prod_trusted_bronze.internal.egressor_flight_meta_scrape_engine_amadeus",
+                "prod_trusted_bronze.internal.egressor_hotel_search_scrape",
+                "prod_trusted_bronze.internal.egressor_package_search_scrape"
+              ]
+            },
+            {
+              "rule": "Datasets must have data retention defined",
+              "failing_entity_count": 3,
+              "entities": [
+                "prod_trusted_bronze.internal.egressor_carhire_search_scrape",
+                "prod_trusted_bronze.internal.egressor_flight_meta_scrape_engine_amadeus",
+                "prod_trusted_bronze.internal.egressor_hotel_search_scrape"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data category",
+              "failing_entity_count": 3,
+              "entities": [
+                "prod_trusted_bronze.internal.egressor_carhire_search_scrape",
+                "prod_trusted_bronze.internal.egressor_flight_meta_scrape_engine_amadeus",
+                "prod_trusted_bronze.internal.egressor_hotel_search_scrape"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data classification",
+              "failing_entity_count": 3,
+              "entities": [
+                "prod_trusted_bronze.internal.egressor_carhire_search_scrape",
+                "prod_trusted_bronze.internal.egressor_flight_meta_scrape_engine_amadeus",
+                "prod_trusted_bronze.internal.egressor_hotel_search_scrape"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Production Observable and Resilient",
+          "rules": [
+            {
+              "rule": "Components must follow custom metric naming conventions",
+              "failing_entity_count": 13,
+              "entities": [
+                "deeplink-cache-acc-carhire",
+                "deeplink-cache-acc-flight",
+                "deeplink-cache-acc-hotel",
+                "egressor-background",
+                "egressor-carhire",
+                "egressor-hotel",
+                "egressor-longtail",
+                "egressor-packages",
+                "redirects-service",
+                "website-link-loader",
+                "website-link-loader-preprod",
+                "website-link-preprod",
+                "website-link-service"
+              ]
+            },
+            {
+              "rule": "Repositories must use only OpenTelemetry API",
+              "failing_entity_count": 1,
+              "entities": [
+                "egressor-tools"
+              ]
+            },
+            {
+              "rule": "Teams must not have live incidents",
+              "failing_entity_count": 1,
+              "entities": [
+                "halo-squad"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Technology Stays Current",
+          "rules": [
+            {
+              "rule": "Repositories must use Docker base images from ECR",
+              "failing_entity_count": 4,
+              "entities": [
+                "eqt-data-ingestion-job",
+                "integration-proxy-cells",
+                "jacquard-tools",
+                "partner-limit-error-job"
+              ]
+            },
+            {
+              "rule": "Repositories must use supported Docker images",
+              "failing_entity_count": 4,
+              "entities": [
+                "eqt-data-ingestion-job",
+                "integration-proxy-cells",
+                "jacquard-tools",
+                "partner-limit-error-job"
+              ]
+            },
+            {
+              "rule": "Privacy and Consent Adoption",
+              "failing_entity_count": 2,
+              "entities": [
+                "eqt-data-ingestion-job",
+                "partner-limit-error-job"
+              ]
+            },
+            {
+              "rule": "Amazon Linux 1 and 2 must not be used",
+              "failing_entity_count": 1,
+              "entities": [
+                "moresops-project"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kylin",
+      "cortex_tag": "kylin-squad",
+      "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dkylin-squad",
+      "total_failing_rule_instances": 70,
+      "total_affected_entities": 34,
+      "scorecards": [
+        {
+          "name": "Changes Ship Reliably",
+          "rules": [
+            {
+              "rule": "Components must be deployed regularly",
+              "failing_entity_count": 2,
+              "entities": [
+                "dv-service",
+                "pc-hotel-mapping-batch"
+              ]
+            },
+            {
+              "rule": "Repositories must have all package.json files appropriately locked",
+              "failing_entity_count": 1,
+              "entities": [
+                "browser_extension"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Customer Data Stays Protected",
+          "rules": [
+            {
+              "rule": "Repositories must not have active and publicly leaked secrets",
+              "failing_entity_count": 1,
+              "entities": [
+                "dv-scrape-service"
+              ]
+            },
+            {
+              "rule": "Security Requirements must have priority set",
+              "failing_entity_count": 1,
+              "entities": [
+                "kylin-squad"
+              ]
+            },
+            {
+              "rule": "Teams must not have open \"Sensitive Data Handling\" Security Requirements",
+              "failing_entity_count": 1,
+              "entities": [
+                "kylin-squad"
+              ]
+            },
+            {
+              "rule": "Teams must not have open \"Usage of Tracking technologies\" Security Requirements",
+              "failing_entity_count": 1,
+              "entities": [
+                "kylin-squad"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Data, AI, and ML Governed",
+          "rules": [
+            {
+              "rule": "Datasets with business critical data must have all alerts actioned excluding any alerts that have fired in the last 3 days",
+              "failing_entity_count": 15,
+              "entities": [
+                "prod_trusted_bronze.internal.downstreamvisibility_conversion",
+                "prod_trusted_bronze.internal.downstreamvisibility_preconversion",
+                "prod_trusted_bronze.internal.heimdallr_landing_events",
+                "prod_trusted_bronze.internal.hotels_bookings_scrapers_booking_event",
+                "prod_trusted_bronze.price_competitiveness.flight_price_competitiveness",
+                "prod_trusted_bronze.ql2.flight_price_competitiveness",
+                "prod_trusted_bronze.rategain.flight_price_competitiveness",
+                "prod_trusted_bronze.revenue_scraper.package_partner_booking",
+                "prod_trusted_gold.price_competitiveness.w_flight_price_competitiveness_dayview_aggregated",
+                "prod_trusted_gold.price_competitiveness.w_flight_price_competitiveness_enriched",
+                "prod_trusted_gold.price_competitiveness.w_flight_price_competitiveness_itinerary_aggregated",
+                "prod_trusted_gold.price_competitiveness.w_flight_price_competitiveness_itinerary_loss",
+                "prod_trusted_gold.price_competitiveness.w_flight_price_competitiveness_supplier_aggregated",
+                "prod_trusted_silver.price_competitiveness.flight_data_quality_report_price_competitiveness",
+                "prod_trusted_silver.price_competitiveness.flight_price_competitiveness"
+              ]
+            },
+            {
+              "rule": "Datasets must have column descriptions",
+              "failing_entity_count": 10,
+              "entities": [
+                "prod_trusted_bronze.casc.downstreamvisibility__tracking_config__v2",
+                "prod_trusted_bronze.casc.downstreamvisibility_tracking_config",
+                "prod_trusted_bronze.internal.downstreamvisibility_scrape_preconversion",
+                "prod_trusted_bronze.internal.heimdallr_conversion_events",
+                "prod_trusted_bronze.internal.heimdallr_landing_events",
+                "prod_trusted_bronze.internal.skyscanner_tag_api_conversion_events",
+                "prod_trusted_bronze.revenue_scraper.hotels_bookings_scrapers_booking_event",
+                "prod_trusted_gold.price_competitiveness.w_flight_price_competitiveness_enriched",
+                "prod_trusted_silver.revenue_scraper.partner_booking_performance",
+                "prod_trusted_silver.revenue_scraper.tmp_partner_booking_anomaly_detection"
+              ]
+            },
+            {
+              "rule": "Datasets must have OOH support flag",
+              "failing_entity_count": 6,
+              "entities": [
+                "prod_trusted_bronze.casc.downstreamvisibility__tracking_config__v2",
+                "prod_trusted_bronze.internal.downstreamvisibility_scrape_preconversion",
+                "prod_trusted_bronze.internal.heimdallr_conversion_events",
+                "prod_trusted_bronze.internal.heimdallr_landing_events",
+                "prod_trusted_bronze.internal.skyscanner_tag_api_conversion_events",
+                "prod_trusted_silver.revenue_scraper.tmp_partner_booking_anomaly_detection"
+              ]
+            },
+            {
+              "rule": "Datasets must have SOX scope flag",
+              "failing_entity_count": 6,
+              "entities": [
+                "prod_trusted_bronze.casc.downstreamvisibility__tracking_config__v2",
+                "prod_trusted_bronze.internal.downstreamvisibility_scrape_preconversion",
+                "prod_trusted_bronze.internal.heimdallr_conversion_events",
+                "prod_trusted_bronze.internal.heimdallr_landing_events",
+                "prod_trusted_bronze.internal.skyscanner_tag_api_conversion_events",
+                "prod_trusted_silver.revenue_scraper.tmp_partner_booking_anomaly_detection"
+              ]
+            },
+            {
+              "rule": "Datasets must have a description",
+              "failing_entity_count": 3,
+              "entities": [
+                "prod_trusted_bronze.casc.downstreamvisibility__tracking_config__v2",
+                "prod_trusted_bronze.casc.downstreamvisibility_tracking_config",
+                "prod_trusted_silver.revenue_scraper.tmp_partner_booking_anomaly_detection"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid business criticality",
+              "failing_entity_count": 3,
+              "entities": [
+                "prod_trusted_bronze.casc.downstreamvisibility__tracking_config__v2",
+                "prod_trusted_bronze.internal.downstreamvisibility_scrape_preconversion",
+                "prod_trusted_silver.revenue_scraper.tmp_partner_booking_anomaly_detection"
+              ]
+            },
+            {
+              "rule": "Datasets must have data retention defined",
+              "failing_entity_count": 2,
+              "entities": [
+                "prod_trusted_bronze.casc.downstreamvisibility__tracking_config__v2",
+                "prod_trusted_silver.revenue_scraper.tmp_partner_booking_anomaly_detection"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data category",
+              "failing_entity_count": 2,
+              "entities": [
+                "prod_trusted_bronze.casc.downstreamvisibility__tracking_config__v2",
+                "prod_trusted_silver.revenue_scraper.tmp_partner_booking_anomaly_detection"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data classification",
+              "failing_entity_count": 2,
+              "entities": [
+                "prod_trusted_bronze.casc.downstreamvisibility__tracking_config__v2",
+                "prod_trusted_silver.revenue_scraper.tmp_partner_booking_anomaly_detection"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Technology Stays Current",
+          "rules": [
+            {
+              "rule": "Privacy and Consent Adoption",
+              "failing_entity_count": 4,
+              "entities": [
+                "dv-event-svc",
+                "dv-service",
+                "pc-download-daily-job",
+                "pc-hotel-mapping-batch"
+              ]
+            },
+            {
+              "rule": "Repositories must use Docker base images from ECR",
+              "failing_entity_count": 2,
+              "entities": [
+                "dv-dashboard-pipeline",
+                "dv-data-report-pipeline"
+              ]
+            },
+            {
+              "rule": "Repositories must use supported Docker images",
+              "failing_entity_count": 2,
+              "entities": [
+                "dv-dashboard-pipeline",
+                "dv-data-report-pipeline"
+              ]
+            },
+            {
+              "rule": "Services must set maxRequestHeaderSize to 32KiB in production Dropwizard config",
+              "failing_entity_count": 2,
+              "entities": [
+                "dv-scrape-service",
+                "hotels-pixel"
+              ]
+            },
+            {
+              "rule": "Java services must be Dropwizard/MShell based applications",
+              "failing_entity_count": 1,
+              "entities": [
+                "hotels-pixel"
+              ]
+            },
+            {
+              "rule": "Java services must be built with Gradle",
+              "failing_entity_count": 1,
+              "entities": [
+                "hotels-pixel"
+              ]
+            },
+            {
+              "rule": "Services must be written in Java",
+              "failing_entity_count": 1,
+              "entities": [
+                "hotels-pixel"
+              ]
+            },
+            {
+              "rule": "Lambda functions must not use end-of-life runtimes",
+              "failing_entity_count": 1,
+              "entities": [
+                "sandbox-test-project"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Libra",
+      "cortex_tag": "libra-squad",
+      "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dlibra-squad",
+      "total_failing_rule_instances": 120,
+      "total_affected_entities": 48,
+      "scorecards": [
+        {
+          "name": "Anyone Can Contribute Safely",
+          "rules": [
+            {
+              "rule": "Repositories must have recent commits scanned by SonarQube",
+              "failing_entity_count": 2,
+              "entities": [
+                "quote-scrape-dags",
+                "quote-scrape-spark-jobs"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Changes Ship Reliably",
+          "rules": [
+            {
+              "rule": "Components must have consistent catalog naming",
+              "failing_entity_count": 1,
+              "entities": [
+                "pqs-pipeline-batch-jobs"
+              ]
+            },
+            {
+              "rule": "Components must be deployed regularly",
+              "failing_entity_count": 1,
+              "entities": [
+                "pt-pipeline-batch-jobs-staging"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Data, AI, and ML Governed",
+          "rules": [
+            {
+              "rule": "Datasets must have column descriptions",
+              "failing_entity_count": 32,
+              "entities": [
+                "prod_trusted_bronze.grappler_master_archive.partner_quality_rating_2017_to_2022",
+                "prod_trusted_bronze.internal.frontend_pqs_mininegativesurvey",
+                "prod_trusted_bronze.internal.frontend_pqs_minisurvey",
+                "prod_trusted_bronze.internal.web_carhire_pqs_experience",
+                "prod_trusted_bronze.internal.web_carhire_pqs_rating",
+                "prod_trusted_bronze.pqs_chattermill.pqs_v2_user_feedback_chattermill",
+                "prod_trusted_gold.partner_quality_score.pqs_v2_analysis_partner_quality_score",
+                "prod_trusted_gold.partner_quality_score.pqs_v2_published_score",
+                "prod_trusted_gold.partner_quality_score.w_pqs_v1_booking_panels_agg",
+                "prod_trusted_gold.partner_quality_score.w_pqs_v1_partner_quality_score_data",
+                "prod_trusted_gold.partner_quality_score.w_pqs_v1_survey_data",
+                "prod_trusted_gold.partner_quality_score.w_pqs_v2_partner_quality_score_analysis_for_old_tb",
+                "prod_trusted_gold.partner_quality_score.w_pqs_v2_survey_analysis_for_old_tb",
+                "prod_trusted_silver.partner_quality_score.pqs_pv1_artner_quality_score_v3_temp",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_aggregated_redirect_count",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_brand_market_stats",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_incident_survey",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_incident",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_incident_audit",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_score_v3",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_score_v3_audit",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_score_v3_audit_temp",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_untrusted_user_feedback_record",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_user_complaint",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_user_complaint_all",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_user_feedback_record",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_user_feedback_records_theme",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_website_market",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_websites_meta_data",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_weighting_incident",
+                "prod_trusted_silver.partner_quality_score.pqs_v2_partner_quality_score",
+                "prod_trusted_silver.partner_quality_score.pqs_v2_user_feedback_score"
+              ]
+            },
+            {
+              "rule": "Datasets with business critical data must have all alerts actioned excluding any alerts that have fired in the last 3 days",
+              "failing_entity_count": 25,
+              "entities": [
+                "prod_trusted_bronze.pqs_unitq.pqs_v2_user_feedback_unitq",
+                "prod_trusted_gold.quote_scraping.w_quote_scrape_api_health",
+                "prod_trusted_silver.partner_quality_score.pqs_pv1_artner_quality_score_v3_temp",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_aggregated_redirect_count",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_brand_market_stats",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_incident_survey",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_incident",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_incident_audit",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_score_v3",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_score_v3_audit",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_score_v3_audit_temp",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_untrusted_user_feedback_record",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_user_complaint",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_user_complaint_all",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_user_feedback_record",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_user_feedback_records_theme",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_website_market",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_websites_meta_data",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_weighting_incident",
+                "prod_trusted_silver.partner_quality_score.pqs_v2_car_user_feedback_record",
+                "prod_trusted_silver.partner_quality_score.pqs_v2_trusted_user_feedback_silver",
+                "prod_trusted_silver.quote_scraping.carhire_scrape",
+                "prod_trusted_silver.quote_scraping.flight_scrape",
+                "prod_trusted_silver.quote_scraping.hotel_scrape",
+                "prod_trusted_silver.quote_scraping.package_scrape"
+              ]
+            },
+            {
+              "rule": "Datasets with business critical data must have basic monitors enabled in Monte Carlo",
+              "failing_entity_count": 19,
+              "entities": [
+                "prod_trusted_silver.partner_quality_score.pqs_pv1_artner_quality_score_v3_temp",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_aggregated_redirect_count",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_brand_market_stats",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_incident_survey",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_incident",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_incident_audit",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_score_v3",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_score_v3_audit",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_score_v3_audit_temp",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_untrusted_user_feedback_record",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_user_complaint",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_user_complaint_all",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_user_feedback_record",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_user_feedback_records_theme",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_website_market",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_websites_meta_data",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_weighting_incident",
+                "prod_trusted_silver.partner_quality_score.pqs_v2_trusted_user_feedback_silver",
+                "prod_trusted_silver.partner_quality_score.pqs_v2_user_feedback_chattermill_comment_theme"
+              ]
+            },
+            {
+              "rule": "Datasets with business critical data must be monitored by Monte Carlo",
+              "failing_entity_count": 18,
+              "entities": [
+                "prod_trusted_silver.partner_quality_score.pqs_pv1_artner_quality_score_v3_temp",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_aggregated_redirect_count",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_brand_market_stats",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_incident_survey",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_incident",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_incident_audit",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_score_v3",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_score_v3_audit",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_partner_quality_score_v3_audit_temp",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_untrusted_user_feedback_record",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_user_complaint",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_user_complaint_all",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_user_feedback_record",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_user_feedback_records_theme",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_website_market",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_websites_meta_data",
+                "prod_trusted_silver.partner_quality_score.pqs_v1_weighting_incident",
+                "prod_trusted_silver.partner_quality_score.pqs_v2_trusted_user_feedback_silver"
+              ]
+            },
+            {
+              "rule": "Datasets must have OOH support flag",
+              "failing_entity_count": 4,
+              "entities": [
+                "prod_trusted_bronze.internal.frontend_pqs_mininegativesurvey",
+                "prod_trusted_bronze.internal.frontend_pqs_minisurvey",
+                "prod_trusted_bronze.internal.web_carhire_pqs_experience",
+                "prod_trusted_bronze.internal.web_carhire_pqs_rating"
+              ]
+            },
+            {
+              "rule": "Datasets must have SOX scope flag",
+              "failing_entity_count": 4,
+              "entities": [
+                "prod_trusted_bronze.internal.frontend_pqs_mininegativesurvey",
+                "prod_trusted_bronze.internal.frontend_pqs_minisurvey",
+                "prod_trusted_bronze.internal.web_carhire_pqs_experience",
+                "prod_trusted_bronze.internal.web_carhire_pqs_rating"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid business criticality",
+              "failing_entity_count": 4,
+              "entities": [
+                "prod_trusted_bronze.internal.frontend_pqs_mininegativesurvey",
+                "prod_trusted_bronze.internal.frontend_pqs_minisurvey",
+                "prod_trusted_bronze.internal.web_carhire_pqs_experience",
+                "prod_trusted_bronze.internal.web_carhire_pqs_rating"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data category",
+              "failing_entity_count": 3,
+              "entities": [
+                "prod_trusted_bronze.internal.frontend_pqs_mininegativesurvey",
+                "prod_trusted_bronze.internal.frontend_pqs_minisurvey",
+                "prod_trusted_silver.partner_quality_score.pqs_v2_website_brand_transform_configuration"
+              ]
+            },
+            {
+              "rule": "Datasets must have data retention defined",
+              "failing_entity_count": 2,
+              "entities": [
+                "prod_trusted_bronze.internal.frontend_pqs_mininegativesurvey",
+                "prod_trusted_bronze.internal.frontend_pqs_minisurvey"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data classification",
+              "failing_entity_count": 2,
+              "entities": [
+                "prod_trusted_bronze.internal.frontend_pqs_mininegativesurvey",
+                "prod_trusted_bronze.internal.frontend_pqs_minisurvey"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Production Observable and Resilient",
+          "rules": [
+            {
+              "rule": "Components must follow custom metric naming conventions",
+              "failing_entity_count": 2,
+              "entities": [
+                "libra-agent-service",
+                "partner-metadata-svc"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Technology Stays Current",
+          "rules": [
+            {
+              "rule": "Services must be written in Java",
+              "failing_entity_count": 1,
+              "entities": [
+                "libra-agent-service"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ollivander",
+      "cortex_tag": "ollivander-squad",
+      "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dollivander-squad",
+      "total_failing_rule_instances": 4,
+      "total_affected_entities": 2,
+      "scorecards": [
+        {
+          "name": "Customer Data Stays Protected",
+          "rules": [
+            {
+              "rule": "Security Requirements must have priority set",
+              "failing_entity_count": 1,
+              "entities": [
+                "ollivander-squad"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Production Observable and Resilient",
+          "rules": [
+            {
+              "rule": "Teams must not have pending incidents older than 14 days",
+              "failing_entity_count": 1,
+              "entities": [
+                "ollivander-squad"
+              ]
+            },
+            {
+              "rule": "Components must follow custom metric naming conventions",
+              "failing_entity_count": 1,
+              "entities": [
+                "sonar"
+              ]
+            },
+            {
+              "rule": "Components must have more than 0% budget remaining on all SLOs",
+              "failing_entity_count": 1,
+              "entities": [
+                "sonar"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Orange",
+      "cortex_tag": "orange-squad",
+      "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dorange-squad",
+      "total_failing_rule_instances": 176,
+      "total_affected_entities": 46,
+      "scorecards": [
+        {
+          "name": "Anyone Can Contribute Safely",
+          "rules": [
+            {
+              "rule": "Repositories must have recent commits scanned by SonarQube",
+              "failing_entity_count": 1,
+              "entities": [
+                "cache-data-aggregator"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Changes Ship Reliably",
+          "rules": [
+            {
+              "rule": "Components must be deployed regularly",
+              "failing_entity_count": 7,
+              "entities": [
+                "cache-rule-generator",
+                "quote-pipeline-canary",
+                "quotesvc-testharness-cells",
+                "suppression-partner-collector",
+                "tiered-live-pricing-collector-dag",
+                "unbias_cache_consistency",
+                "uqs-agent"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Data, AI, and ML Governed",
+          "rules": [
+            {
+              "rule": "Datasets must have OOH support flag",
+              "failing_entity_count": 26,
+              "entities": [
+                "prod_trusted_bronze.internal.car_hire_no_quote_request_blocking",
+                "prod_trusted_bronze.internal.carhire_cache_status",
+                "prod_trusted_bronze.internal.carhire_quote_cache_consistency",
+                "prod_trusted_bronze.internal.dsaquotesuppressionbackup",
+                "prod_trusted_bronze.internal.flight_cache_status",
+                "prod_trusted_bronze.internal.flight_detail_create_result",
+                "prod_trusted_bronze.internal.flight_detail_polling_result",
+                "prod_trusted_bronze.internal.flight_quote_cache_consistency",
+                "prod_trusted_bronze.internal.hotel_cache_status",
+                "prod_trusted_bronze.internal.hotel_price_event",
+                "prod_trusted_bronze.internal.hotel_price_search_for_indicative_event",
+                "prod_trusted_bronze.internal.hotel_quote_cache_consistency",
+                "prod_trusted_bronze.internal.package_quote_cache_consistency",
+                "prod_trusted_bronze.internal.prod_quote_pipeline_qss_rule_quote_suppression_qssruleapplied",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_cache_quote",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_cache_quote_hotel_room",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_live_update_quote",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_live_update_quote_hotel_room",
+                "prod_trusted_bronze.internal.prod_quote_suppression_service_qss_rule_quote_suppression_qssflightrulecreated",
+                "prod_trusted_bronze.internal.prod_quote_suppression_service_qss_rule_quote_suppression_qssquoteidrulecreated",
+                "prod_trusted_bronze.internal.prod_quoteservice_qss_rule_quote_suppression_qssruleapplied",
+                "prod_trusted_bronze.internal.quote_cache_visibility_read_event",
+                "prod_trusted_bronze.internal.quote_cache_visibility_write_event",
+                "prod_trusted_bronze.internal.quote_search_session_event",
+                "prod_trusted_bronze.internal.quoteservice_aqs_model_suppressed_result"
+              ]
+            },
+            {
+              "rule": "Datasets must have SOX scope flag",
+              "failing_entity_count": 26,
+              "entities": [
+                "prod_trusted_bronze.internal.car_hire_no_quote_request_blocking",
+                "prod_trusted_bronze.internal.carhire_cache_status",
+                "prod_trusted_bronze.internal.carhire_quote_cache_consistency",
+                "prod_trusted_bronze.internal.dsaquotesuppressionbackup",
+                "prod_trusted_bronze.internal.flight_cache_status",
+                "prod_trusted_bronze.internal.flight_detail_create_result",
+                "prod_trusted_bronze.internal.flight_detail_polling_result",
+                "prod_trusted_bronze.internal.flight_quote_cache_consistency",
+                "prod_trusted_bronze.internal.hotel_cache_status",
+                "prod_trusted_bronze.internal.hotel_price_event",
+                "prod_trusted_bronze.internal.hotel_price_search_for_indicative_event",
+                "prod_trusted_bronze.internal.hotel_quote_cache_consistency",
+                "prod_trusted_bronze.internal.package_quote_cache_consistency",
+                "prod_trusted_bronze.internal.prod_quote_pipeline_qss_rule_quote_suppression_qssruleapplied",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_cache_quote",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_cache_quote_hotel_room",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_live_update_quote",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_live_update_quote_hotel_room",
+                "prod_trusted_bronze.internal.prod_quote_suppression_service_qss_rule_quote_suppression_qssflightrulecreated",
+                "prod_trusted_bronze.internal.prod_quote_suppression_service_qss_rule_quote_suppression_qssquoteidrulecreated",
+                "prod_trusted_bronze.internal.prod_quoteservice_qss_rule_quote_suppression_qssruleapplied",
+                "prod_trusted_bronze.internal.quote_cache_visibility_read_event",
+                "prod_trusted_bronze.internal.quote_cache_visibility_write_event",
+                "prod_trusted_bronze.internal.quote_search_session_event",
+                "prod_trusted_bronze.internal.quoteservice_aqs_model_suppressed_result"
+              ]
+            },
+            {
+              "rule": "Datasets must have column descriptions",
+              "failing_entity_count": 26,
+              "entities": [
+                "prod_trusted_bronze.internal.car_hire_no_quote_request_blocking",
+                "prod_trusted_bronze.internal.carhire_cache_status",
+                "prod_trusted_bronze.internal.carhire_quote_cache_consistency",
+                "prod_trusted_bronze.internal.dsaquotesuppressionbackup",
+                "prod_trusted_bronze.internal.flight_cache_status",
+                "prod_trusted_bronze.internal.flight_detail_create_result",
+                "prod_trusted_bronze.internal.flight_detail_polling_result",
+                "prod_trusted_bronze.internal.flight_quote_cache_consistency",
+                "prod_trusted_bronze.internal.hotel_cache_status",
+                "prod_trusted_bronze.internal.hotel_price_event",
+                "prod_trusted_bronze.internal.hotel_price_search_for_indicative_event",
+                "prod_trusted_bronze.internal.hotel_quote_cache_consistency",
+                "prod_trusted_bronze.internal.package_quote_cache_consistency",
+                "prod_trusted_bronze.internal.prod_quote_pipeline_qss_rule_quote_suppression_qssruleapplied",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_cache_quote",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_cache_quote_hotel_room",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_live_update_quote",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_live_update_quote_hotel_room",
+                "prod_trusted_bronze.internal.prod_quote_suppression_service_qss_rule_quote_suppression_qssflightrulecreated",
+                "prod_trusted_bronze.internal.prod_quote_suppression_service_qss_rule_quote_suppression_qssquoteidrulecreated",
+                "prod_trusted_bronze.internal.prod_quoteservice_qss_rule_quote_suppression_qssruleapplied",
+                "prod_trusted_bronze.internal.quote_cache_visibility_read_event",
+                "prod_trusted_bronze.internal.quote_cache_visibility_write_event",
+                "prod_trusted_bronze.internal.quote_search_session_event",
+                "prod_trusted_bronze.internal.quoteservice_aqs_model_suppressed_result"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid business criticality",
+              "failing_entity_count": 26,
+              "entities": [
+                "prod_trusted_bronze.internal.car_hire_no_quote_request_blocking",
+                "prod_trusted_bronze.internal.carhire_cache_status",
+                "prod_trusted_bronze.internal.carhire_quote_cache_consistency",
+                "prod_trusted_bronze.internal.dsaquotesuppressionbackup",
+                "prod_trusted_bronze.internal.flight_cache_status",
+                "prod_trusted_bronze.internal.flight_detail_create_result",
+                "prod_trusted_bronze.internal.flight_detail_polling_result",
+                "prod_trusted_bronze.internal.flight_quote_cache_consistency",
+                "prod_trusted_bronze.internal.hotel_cache_status",
+                "prod_trusted_bronze.internal.hotel_price_event",
+                "prod_trusted_bronze.internal.hotel_price_search_for_indicative_event",
+                "prod_trusted_bronze.internal.hotel_quote_cache_consistency",
+                "prod_trusted_bronze.internal.package_quote_cache_consistency",
+                "prod_trusted_bronze.internal.prod_quote_pipeline_qss_rule_quote_suppression_qssruleapplied",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_cache_quote",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_cache_quote_hotel_room",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_live_update_quote",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_live_update_quote_hotel_room",
+                "prod_trusted_bronze.internal.prod_quote_suppression_service_qss_rule_quote_suppression_qssflightrulecreated",
+                "prod_trusted_bronze.internal.prod_quote_suppression_service_qss_rule_quote_suppression_qssquoteidrulecreated",
+                "prod_trusted_bronze.internal.prod_quoteservice_qss_rule_quote_suppression_qssruleapplied",
+                "prod_trusted_bronze.internal.quote_cache_visibility_read_event",
+                "prod_trusted_bronze.internal.quote_cache_visibility_write_event",
+                "prod_trusted_bronze.internal.quote_search_session_event",
+                "prod_trusted_bronze.internal.quoteservice_aqs_model_suppressed_result"
+              ]
+            },
+            {
+              "rule": "Datasets must have data retention defined",
+              "failing_entity_count": 12,
+              "entities": [
+                "prod_trusted_bronze.internal.prod_quote_pipeline_qss_rule_quote_suppression_qssruleapplied",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_cache_quote",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_cache_quote_hotel_room",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_live_update_quote",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_live_update_quote_hotel_room",
+                "prod_trusted_bronze.internal.prod_quote_suppression_service_qss_rule_quote_suppression_qssflightrulecreated",
+                "prod_trusted_bronze.internal.prod_quote_suppression_service_qss_rule_quote_suppression_qssquoteidrulecreated",
+                "prod_trusted_bronze.internal.prod_quoteservice_qss_rule_quote_suppression_qssruleapplied",
+                "prod_trusted_bronze.internal.quote_cache_visibility_read_event",
+                "prod_trusted_bronze.internal.quote_cache_visibility_write_event",
+                "prod_trusted_bronze.internal.quoteservice_aqs_model_suppressed_result"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data category",
+              "failing_entity_count": 12,
+              "entities": [
+                "prod_trusted_bronze.internal.prod_quote_pipeline_qss_rule_quote_suppression_qssruleapplied",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_cache_quote",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_cache_quote_hotel_room",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_live_update_quote",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_live_update_quote_hotel_room",
+                "prod_trusted_bronze.internal.prod_quote_suppression_service_qss_rule_quote_suppression_qssflightrulecreated",
+                "prod_trusted_bronze.internal.prod_quote_suppression_service_qss_rule_quote_suppression_qssquoteidrulecreated",
+                "prod_trusted_bronze.internal.prod_quoteservice_qss_rule_quote_suppression_qssruleapplied",
+                "prod_trusted_bronze.internal.quote_cache_visibility_read_event",
+                "prod_trusted_bronze.internal.quote_cache_visibility_write_event",
+                "prod_trusted_bronze.internal.quoteservice_aqs_model_suppressed_result"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data classification",
+              "failing_entity_count": 12,
+              "entities": [
+                "prod_trusted_bronze.internal.prod_quote_pipeline_qss_rule_quote_suppression_qssruleapplied",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_cache_quote",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_cache_quote_hotel_room",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_live_update_quote",
+                "prod_trusted_bronze.internal.prod_quote_provider_hotel_quote_comparison_live_update_quote_hotel_room",
+                "prod_trusted_bronze.internal.prod_quote_suppression_service_qss_rule_quote_suppression_qssflightrulecreated",
+                "prod_trusted_bronze.internal.prod_quote_suppression_service_qss_rule_quote_suppression_qssquoteidrulecreated",
+                "prod_trusted_bronze.internal.prod_quoteservice_qss_rule_quote_suppression_qssruleapplied",
+                "prod_trusted_bronze.internal.quote_cache_visibility_read_event",
+                "prod_trusted_bronze.internal.quote_cache_visibility_write_event",
+                "prod_trusted_bronze.internal.quoteservice_aqs_model_suppressed_result"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Production Observable and Resilient",
+          "rules": [
+            {
+              "rule": "Components must follow custom metric naming conventions",
+              "failing_entity_count": 9,
+              "entities": [
+                "jacquard-proxy-cells",
+                "lus-state-store-cells",
+                "quote-cache-accessor",
+                "quote-cache-accessor-carhire",
+                "quote-cache-accessor-flight",
+                "quote-cache-accessor-pkg",
+                "quote-comparison",
+                "quote-pipeline-cells",
+                "quoteservice-cells"
+              ]
+            },
+            {
+              "rule": "Repositories must use only OpenTelemetry API",
+              "failing_entity_count": 2,
+              "entities": [
+                "quote-pipeline-canary",
+                "quote-pipeline-cells"
+              ]
+            },
+            {
+              "rule": "Teams must not have pending incidents older than 14 days",
+              "failing_entity_count": 1,
+              "entities": [
+                "orange-squad"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Technology Stays Current",
+          "rules": [
+            {
+              "rule": "Docker images must be immutable",
+              "failing_entity_count": 5,
+              "entities": [
+                "jacquard-proxy-cells",
+                "lus-state-store-cells",
+                "quote-comparison",
+                "quote-pipeline-cells",
+                "quoteservice-cells"
+              ]
+            },
+            {
+              "rule": "Services must set maxRequestHeaderSize to 32KiB in production Dropwizard config",
+              "failing_entity_count": 4,
+              "entities": [
+                "lus-state-store-cells",
+                "quote-pipeline-canary",
+                "quote-pipeline-cells",
+                "quoteservice-cells"
+              ]
+            },
+            {
+              "rule": "Privacy and Consent Adoption",
+              "failing_entity_count": 4,
+              "entities": [
+                "quote-cache-accessor",
+                "quote-cache-accessor-carhire",
+                "quote-cache-accessor-flight",
+                "quote-cache-accessor-pkg"
+              ]
+            },
+            {
+              "rule": "Lambda functions must not use end-of-life runtimes",
+              "failing_entity_count": 1,
+              "entities": [
+                "quote-cache-proxy-project"
+              ]
+            },
+            {
+              "rule": "Projects must not use non-compliant cache engines",
+              "failing_entity_count": 1,
+              "entities": [
+                "quoteservice-project"
+              ]
+            },
+            {
+              "rule": "AI agents, batch jobs and ETL must be written in Python",
+              "failing_entity_count": 1,
+              "entities": [
+                "uqs-agent"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Orca",
+      "cortex_tag": "orca-squad",
+      "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dorca-squad",
+      "total_failing_rule_instances": 37,
+      "total_affected_entities": 11,
+      "scorecards": [
+        {
+          "name": "Changes Ship Reliably",
+          "rules": [
+            {
+              "rule": "Components must be deployed regularly",
+              "failing_entity_count": 2,
+              "entities": [
+                "fare-coverage-tool",
+                "flight-amenities"
+              ]
+            },
+            {
+              "rule": "Components must use the latest major Slingshot CI version",
+              "failing_entity_count": 1,
+              "entities": [
+                "dv-tcs-dag"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Data, AI, and ML Governed",
+          "rules": [
+            {
+              "rule": "Datasets with business critical data must have all alerts actioned excluding any alerts that have fired in the last 3 days",
+              "failing_entity_count": 4,
+              "entities": [
+                "prod_trusted_gold.tcs_price_accuracy_flight.f_flight_tcs_attributes_accuracy_report",
+                "prod_trusted_gold.tcs_price_accuracy_flight.f_flight_tcs_overall_accuracy_report",
+                "prod_trusted_silver.price_accuracy.flight_tcs_attributes_accuracy",
+                "prod_trusted_silver.tcs_price_accuracy_flight.dv_tcs_attributes_accuracy"
+              ]
+            },
+            {
+              "rule": "Datasets with business critical data must be monitored by Monte Carlo",
+              "failing_entity_count": 3,
+              "entities": [
+                "prod_trusted_gold.tcs_price_accuracy_flight.f_flight_tcs_attributes_accuracy_report",
+                "prod_trusted_gold.tcs_price_accuracy_flight.f_flight_tcs_overall_accuracy_report",
+                "prod_trusted_silver.tcs_price_accuracy_flight.dv_tcs_attributes_accuracy"
+              ]
+            },
+            {
+              "rule": "Datasets with business critical data must have basic monitors enabled in Monte Carlo",
+              "failing_entity_count": 3,
+              "entities": [
+                "prod_trusted_gold.tcs_price_accuracy_flight.f_flight_tcs_attributes_accuracy_report",
+                "prod_trusted_gold.tcs_price_accuracy_flight.f_flight_tcs_overall_accuracy_report",
+                "prod_trusted_silver.tcs_price_accuracy_flight.dv_tcs_attributes_accuracy"
+              ]
+            },
+            {
+              "rule": "Datasets must have OOH support flag",
+              "failing_entity_count": 2,
+              "entities": [
+                "prod_trusted_bronze.internal.partner_user_foundation_behavior_view",
+                "prod_trusted_bronze.internal.revenue_tracking_detected_issue"
+              ]
+            },
+            {
+              "rule": "Datasets must have SOX scope flag",
+              "failing_entity_count": 2,
+              "entities": [
+                "prod_trusted_bronze.internal.partner_user_foundation_behavior_view",
+                "prod_trusted_bronze.internal.revenue_tracking_detected_issue"
+              ]
+            },
+            {
+              "rule": "Datasets must have column descriptions",
+              "failing_entity_count": 2,
+              "entities": [
+                "prod_trusted_bronze.internal.partner_user_foundation_behavior_view",
+                "prod_trusted_bronze.internal.revenue_tracking_detected_issue"
+              ]
+            },
+            {
+              "rule": "Datasets must have data retention defined",
+              "failing_entity_count": 2,
+              "entities": [
+                "prod_trusted_bronze.internal.partner_user_foundation_behavior_view",
+                "prod_trusted_bronze.internal.revenue_tracking_detected_issue"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid business criticality",
+              "failing_entity_count": 2,
+              "entities": [
+                "prod_trusted_bronze.internal.partner_user_foundation_behavior_view",
+                "prod_trusted_bronze.internal.revenue_tracking_detected_issue"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data category",
+              "failing_entity_count": 2,
+              "entities": [
+                "prod_trusted_bronze.internal.partner_user_foundation_behavior_view",
+                "prod_trusted_bronze.internal.revenue_tracking_detected_issue"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data classification",
+              "failing_entity_count": 2,
+              "entities": [
+                "prod_trusted_bronze.internal.partner_user_foundation_behavior_view",
+                "prod_trusted_bronze.internal.revenue_tracking_detected_issue"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Production Observable and Resilient",
+          "rules": [
+            {
+              "rule": "Components must follow custom metric naming conventions",
+              "failing_entity_count": 2,
+              "entities": [
+                "fare-attributes-svc",
+                "flight-amenities"
+              ]
+            },
+            {
+              "rule": "Repositories must use only OpenTelemetry API",
+              "failing_entity_count": 1,
+              "entities": [
+                "fare-coverage-tool"
+              ]
+            },
+            {
+              "rule": "Components must not write metrics to Slipstream",
+              "failing_entity_count": 1,
+              "entities": [
+                "flight-amenities"
+              ]
+            },
+            {
+              "rule": "Teams must not have pending incidents older than 14 days",
+              "failing_entity_count": 1,
+              "entities": [
+                "orca-squad"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Technology Stays Current",
+          "rules": [
+            {
+              "rule": "Privacy and Consent Adoption",
+              "failing_entity_count": 3,
+              "entities": [
+                "fare-attributes-svc",
+                "fare-coverage-tool",
+                "flight-amenities"
+              ]
+            },
+            {
+              "rule": "Services must set maxRequestHeaderSize to 32KiB in production Dropwizard config",
+              "failing_entity_count": 2,
+              "entities": [
+                "fare-attributes-svc",
+                "flight-amenities"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Pigeon",
+      "cortex_tag": "pigeon-squad",
+      "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dpigeon-squad",
+      "total_failing_rule_instances": 95,
+      "total_affected_entities": 23,
+      "scorecards": [
+        {
+          "name": "Anyone Can Contribute Safely",
+          "rules": [
+            {
+              "rule": "Repositories must have recent commits scanned by SonarQube",
+              "failing_entity_count": 3,
+              "entities": [
+                "local_fishmonger",
+                "local_wario",
+                "partner-integration-bot-agent"
+              ]
+            },
+            {
+              "rule": "Repositories must have a README.md file",
+              "failing_entity_count": 1,
+              "entities": [
+                "partner-integration-bot-agent"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Customer Data Stays Protected",
+          "rules": [
+            {
+              "rule": "Teams must not have open vulnerability tickets",
+              "failing_entity_count": 1,
+              "entities": [
+                "pigeon-squad"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Data, AI, and ML Governed",
+          "rules": [
+            {
+              "rule": "Datasets must have a description",
+              "failing_entity_count": 15,
+              "entities": [
+                "prod_trusted_bronze.casc.carriergroups__alliance__v2",
+                "prod_trusted_bronze.casc.carriergroups__brand__v2",
+                "prod_trusted_bronze.casc.carriergroups_alliance",
+                "prod_trusted_bronze.casc.carriergroups_brand",
+                "prod_trusted_bronze.casc.carriers__carrier__v2",
+                "prod_trusted_bronze.casc.carriers_carrier",
+                "prod_trusted_silver.airline_coverage.bp_coverage",
+                "prod_trusted_silver.airline_coverage.bp_coverage_airlines",
+                "prod_trusted_silver.airline_coverage.bp_coverage_route",
+                "prod_trusted_silver.airline_coverage.flight_booking_panels_detail",
+                "prod_trusted_silver.airline_coverage.flight_booking_panels_detail_with_reason",
+                "prod_trusted_silver.airline_coverage.flight_event_filtered_by_source",
+                "prod_trusted_silver.airline_coverage.flight_filtered_result_with_market_lan_loss",
+                "prod_trusted_silver.airline_coverage.flight_offline_airlines_missing_bps",
+                "prod_trusted_silver.airline_coverage.partner_density_coverage"
+              ]
+            },
+            {
+              "rule": "Datasets must have column descriptions",
+              "failing_entity_count": 13,
+              "entities": [
+                "prod_trusted_bronze.casc.carriergroups_alliance",
+                "prod_trusted_bronze.casc.carriergroups_brand",
+                "prod_trusted_bronze.casc.carriers_carrier",
+                "prod_trusted_bronze.internal.egressor_flight_fare_attribute_segment",
+                "prod_trusted_silver.airline_coverage.bp_coverage",
+                "prod_trusted_silver.airline_coverage.bp_coverage_airlines",
+                "prod_trusted_silver.airline_coverage.bp_coverage_route",
+                "prod_trusted_silver.airline_coverage.flight_booking_panels_detail",
+                "prod_trusted_silver.airline_coverage.flight_booking_panels_detail_with_reason",
+                "prod_trusted_silver.airline_coverage.flight_event_filtered_by_source",
+                "prod_trusted_silver.airline_coverage.flight_filtered_result_with_market_lan_loss",
+                "prod_trusted_silver.airline_coverage.flight_offline_airlines_missing_bps",
+                "prod_trusted_silver.airline_coverage.partner_density_coverage"
+              ]
+            },
+            {
+              "rule": "Datasets must have OOH support flag",
+              "failing_entity_count": 10,
+              "entities": [
+                "prod_trusted_bronze.internal.egressor_flight_fare_attribute_segment",
+                "prod_trusted_silver.airline_coverage.bp_coverage",
+                "prod_trusted_silver.airline_coverage.bp_coverage_airlines",
+                "prod_trusted_silver.airline_coverage.bp_coverage_route",
+                "prod_trusted_silver.airline_coverage.flight_booking_panels_detail",
+                "prod_trusted_silver.airline_coverage.flight_booking_panels_detail_with_reason",
+                "prod_trusted_silver.airline_coverage.flight_event_filtered_by_source",
+                "prod_trusted_silver.airline_coverage.flight_filtered_result_with_market_lan_loss",
+                "prod_trusted_silver.airline_coverage.flight_offline_airlines_missing_bps",
+                "prod_trusted_silver.airline_coverage.partner_density_coverage"
+              ]
+            },
+            {
+              "rule": "Datasets must have SOX scope flag",
+              "failing_entity_count": 10,
+              "entities": [
+                "prod_trusted_bronze.internal.egressor_flight_fare_attribute_segment",
+                "prod_trusted_silver.airline_coverage.bp_coverage",
+                "prod_trusted_silver.airline_coverage.bp_coverage_airlines",
+                "prod_trusted_silver.airline_coverage.bp_coverage_route",
+                "prod_trusted_silver.airline_coverage.flight_booking_panels_detail",
+                "prod_trusted_silver.airline_coverage.flight_booking_panels_detail_with_reason",
+                "prod_trusted_silver.airline_coverage.flight_event_filtered_by_source",
+                "prod_trusted_silver.airline_coverage.flight_filtered_result_with_market_lan_loss",
+                "prod_trusted_silver.airline_coverage.flight_offline_airlines_missing_bps",
+                "prod_trusted_silver.airline_coverage.partner_density_coverage"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid business criticality",
+              "failing_entity_count": 10,
+              "entities": [
+                "prod_trusted_bronze.internal.egressor_flight_fare_attribute_segment",
+                "prod_trusted_silver.airline_coverage.bp_coverage",
+                "prod_trusted_silver.airline_coverage.bp_coverage_airlines",
+                "prod_trusted_silver.airline_coverage.bp_coverage_route",
+                "prod_trusted_silver.airline_coverage.flight_booking_panels_detail",
+                "prod_trusted_silver.airline_coverage.flight_booking_panels_detail_with_reason",
+                "prod_trusted_silver.airline_coverage.flight_event_filtered_by_source",
+                "prod_trusted_silver.airline_coverage.flight_filtered_result_with_market_lan_loss",
+                "prod_trusted_silver.airline_coverage.flight_offline_airlines_missing_bps",
+                "prod_trusted_silver.airline_coverage.partner_density_coverage"
+              ]
+            },
+            {
+              "rule": "Datasets must have data retention defined",
+              "failing_entity_count": 9,
+              "entities": [
+                "prod_trusted_silver.airline_coverage.bp_coverage",
+                "prod_trusted_silver.airline_coverage.bp_coverage_airlines",
+                "prod_trusted_silver.airline_coverage.bp_coverage_route",
+                "prod_trusted_silver.airline_coverage.flight_booking_panels_detail",
+                "prod_trusted_silver.airline_coverage.flight_booking_panels_detail_with_reason",
+                "prod_trusted_silver.airline_coverage.flight_event_filtered_by_source",
+                "prod_trusted_silver.airline_coverage.flight_filtered_result_with_market_lan_loss",
+                "prod_trusted_silver.airline_coverage.flight_offline_airlines_missing_bps",
+                "prod_trusted_silver.airline_coverage.partner_density_coverage"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data category",
+              "failing_entity_count": 9,
+              "entities": [
+                "prod_trusted_silver.airline_coverage.bp_coverage",
+                "prod_trusted_silver.airline_coverage.bp_coverage_airlines",
+                "prod_trusted_silver.airline_coverage.bp_coverage_route",
+                "prod_trusted_silver.airline_coverage.flight_booking_panels_detail",
+                "prod_trusted_silver.airline_coverage.flight_booking_panels_detail_with_reason",
+                "prod_trusted_silver.airline_coverage.flight_event_filtered_by_source",
+                "prod_trusted_silver.airline_coverage.flight_filtered_result_with_market_lan_loss",
+                "prod_trusted_silver.airline_coverage.flight_offline_airlines_missing_bps",
+                "prod_trusted_silver.airline_coverage.partner_density_coverage"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data classification",
+              "failing_entity_count": 9,
+              "entities": [
+                "prod_trusted_silver.airline_coverage.bp_coverage",
+                "prod_trusted_silver.airline_coverage.bp_coverage_airlines",
+                "prod_trusted_silver.airline_coverage.bp_coverage_route",
+                "prod_trusted_silver.airline_coverage.flight_booking_panels_detail",
+                "prod_trusted_silver.airline_coverage.flight_booking_panels_detail_with_reason",
+                "prod_trusted_silver.airline_coverage.flight_event_filtered_by_source",
+                "prod_trusted_silver.airline_coverage.flight_filtered_result_with_market_lan_loss",
+                "prod_trusted_silver.airline_coverage.flight_offline_airlines_missing_bps",
+                "prod_trusted_silver.airline_coverage.partner_density_coverage"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Production Observable and Resilient",
+          "rules": [
+            {
+              "rule": "Repositories must use only OpenTelemetry API",
+              "failing_entity_count": 1,
+              "entities": [
+                "pibot-conflux-poc"
+              ]
+            },
+            {
+              "rule": "Teams must not have pending incidents older than 14 days",
+              "failing_entity_count": 1,
+              "entities": [
+                "pigeon-squad"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Technology Stays Current",
+          "rules": [
+            {
+              "rule": "Docker images must be immutable",
+              "failing_entity_count": 1,
+              "entities": [
+                "pibot-conflux-poc"
+              ]
+            },
+            {
+              "rule": "Projects must not use non-compliant cache engines",
+              "failing_entity_count": 1,
+              "entities": [
+                "pigeon-project"
+              ]
+            },
+            {
+              "rule": "Web applications must use React Router, and not a competing framework",
+              "failing_entity_count": 1,
+              "entities": [
+                "probot-access-repo"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Silver",
+      "cortex_tag": "silver-squad",
+      "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dsilver-squad",
+      "total_failing_rule_instances": 40,
+      "total_affected_entities": 17,
+      "scorecards": [
+        {
+          "name": "Customer Data Stays Protected",
+          "rules": [
+            {
+              "rule": "Projects must have no CFRipper selected issues across all stacks",
+              "failing_entity_count": 1,
+              "entities": [
+                "agora-lambda-project"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Data, AI, and ML Governed",
+          "rules": [
+            {
+              "rule": "Datasets with business critical data must have all alerts actioned excluding any alerts that have fired in the last 3 days",
+              "failing_entity_count": 9,
+              "entities": [
+                "prod_trusted_bronze.internal.agora_applys",
+                "prod_trusted_bronze.internal.agora_margins",
+                "prod_trusted_gold.dynamic_pricing.w_onsale_performance",
+                "prod_trusted_gold.dynamic_pricing.w_praas_overall_coverage",
+                "prod_trusted_gold.dynamic_pricing.w_praas_partner_coverage",
+                "prod_trusted_gold.dynamic_pricing.w_praas_performance",
+                "prod_trusted_gold.dynamic_pricing.w_self_fund_performance",
+                "prod_trusted_silver.dynamic_pricing.agora_booking_request_tracker",
+                "prod_trusted_silver.dynamic_pricing.agora_search_request_tracker"
+              ]
+            },
+            {
+              "rule": "Datasets must have OOH support flag",
+              "failing_entity_count": 6,
+              "entities": [
+                "prod_trusted_bronze.internal.agora_applys",
+                "prod_trusted_bronze.internal.agora_day_view_result",
+                "prod_trusted_bronze.internal.agora_margins",
+                "prod_trusted_bronze.internal.agora_redirects",
+                "prod_trusted_bronze.internal.deal_message_badges",
+                "prod_trusted_bronze.internal.supply_test_coverage_report"
+              ]
+            },
+            {
+              "rule": "Datasets must have SOX scope flag",
+              "failing_entity_count": 6,
+              "entities": [
+                "prod_trusted_bronze.internal.agora_applys",
+                "prod_trusted_bronze.internal.agora_day_view_result",
+                "prod_trusted_bronze.internal.agora_margins",
+                "prod_trusted_bronze.internal.agora_redirects",
+                "prod_trusted_bronze.internal.deal_message_badges",
+                "prod_trusted_bronze.internal.supply_test_coverage_report"
+              ]
+            },
+            {
+              "rule": "Datasets must have column descriptions",
+              "failing_entity_count": 6,
+              "entities": [
+                "prod_trusted_bronze.internal.agora_applys",
+                "prod_trusted_bronze.internal.agora_day_view_result",
+                "prod_trusted_bronze.internal.agora_margins",
+                "prod_trusted_bronze.internal.agora_redirects",
+                "prod_trusted_bronze.internal.deal_message_badges",
+                "prod_trusted_bronze.internal.supply_test_coverage_report"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid business criticality",
+              "failing_entity_count": 3,
+              "entities": [
+                "prod_trusted_bronze.internal.agora_day_view_result",
+                "prod_trusted_bronze.internal.deal_message_badges",
+                "prod_trusted_bronze.internal.supply_test_coverage_report"
+              ]
+            },
+            {
+              "rule": "Datasets must have data retention defined",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_bronze.internal.supply_test_coverage_report"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data category",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_bronze.internal.supply_test_coverage_report"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data classification",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_bronze.internal.supply_test_coverage_report"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Production Observable and Resilient",
+          "rules": [
+            {
+              "rule": "Repositories must use only OpenTelemetry API",
+              "failing_entity_count": 3,
+              "entities": [
+                "agora",
+                "agora-client",
+                "deal-message"
+              ]
+            },
+            {
+              "rule": "Components must follow custom metric naming conventions",
+              "failing_entity_count": 2,
+              "entities": [
+                "agora",
+                "deal-message"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Technology Stays Current",
+          "rules": [
+            {
+              "rule": "Services must set maxRequestHeaderSize to 32KiB in production Dropwizard config",
+              "failing_entity_count": 1,
+              "entities": [
+                "deal-message"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Spyro",
+      "cortex_tag": "spyro-squad",
+      "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dspyro-squad",
+      "total_failing_rule_instances": 6,
+      "total_affected_entities": 4,
+      "scorecards": [
+        {
+          "name": "Anyone Can Contribute Safely",
+          "rules": [
+            {
+              "rule": "Repositories must have recent commits scanned by SonarQube",
+              "failing_entity_count": 1,
+              "entities": [
+                "good-boy"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Production Observable and Resilient",
+          "rules": [
+            {
+              "rule": "Components must follow custom metric naming conventions",
+              "failing_entity_count": 2,
+              "entities": [
+                "fenryr-grpc-gateway",
+                "fetch-service"
+              ]
+            },
+            {
+              "rule": "Components must have more than 0% budget remaining on all SLOs",
+              "failing_entity_count": 1,
+              "entities": [
+                "fetch-service"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Technology Stays Current",
+          "rules": [
+            {
+              "rule": "Services must set maxRequestHeaderSize to 32KiB in production Dropwizard config",
+              "failing_entity_count": 1,
+              "entities": [
+                "fetch-service"
+              ]
+            },
+            {
+              "rule": "Privacy and Consent Adoption",
+              "failing_entity_count": 1,
+              "entities": [
+                "simple-messages-plugin"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tiger",
+      "cortex_tag": "tiger-squad",
+      "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dtiger-squad",
+      "total_failing_rule_instances": 38,
+      "total_affected_entities": 16,
+      "scorecards": [
+        {
+          "name": "Anyone Can Contribute Safely",
+          "rules": [
+            {
+              "rule": "Repositories must have recent commits scanned by SonarQube",
+              "failing_entity_count": 1,
+              "entities": [
+                "carhire-indicative-price-dags"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Changes Ship Reliably",
+          "rules": [
+            {
+              "rule": "Repositories must have all package.json files appropriately locked",
+              "failing_entity_count": 1,
+              "entities": [
+                "carhire-indicative-price-batch"
+              ]
+            },
+            {
+              "rule": "Components must be deployed regularly",
+              "failing_entity_count": 1,
+              "entities": [
+                "indicative-price-share-coverage-dag"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Data, AI, and ML Governed",
+          "rules": [
+            {
+              "rule": "Datasets with business critical data must have all alerts actioned excluding any alerts that have fired in the last 3 days",
+              "failing_entity_count": 8,
+              "entities": [
+                "prod_trusted_silver.carhire_indicative_price.carhire_compacted_quote",
+                "prod_trusted_silver.indicative_price.carhire_geo_indicative_prices",
+                "prod_trusted_silver.indicative_price.seo_carhire_coverage",
+                "prod_trusted_silver.indicative_price.seo_hotel_coverage",
+                "prod_trusted_silver.indicative_price_coverage.inventory_coverage_car_hire",
+                "prod_trusted_silver.indicative_price_coverage.inventory_coverage_flight",
+                "prod_trusted_silver.indicative_price_coverage.inventory_coverage_hotel",
+                "prod_trusted_silver.indicative_price_coverage.top_inventory"
+              ]
+            },
+            {
+              "rule": "Datasets must have column descriptions",
+              "failing_entity_count": 5,
+              "entities": [
+                "prod_trusted_bronze.internal.car_hire_indicative_price_search_event",
+                "prod_trusted_bronze.internal.car_hire_quote_search_event",
+                "prod_trusted_bronze.internal.indicative_carhire_search_event",
+                "prod_trusted_silver.indicative_price.carhire_geo_indicative_prices",
+                "prod_trusted_silver.indicative_price.carhire_indicative_prices"
+              ]
+            },
+            {
+              "rule": "Datasets must have OOH support flag",
+              "failing_entity_count": 4,
+              "entities": [
+                "prod_trusted_bronze.internal.car_hire_indicative_price_search_event",
+                "prod_trusted_bronze.internal.car_hire_quote_search_event",
+                "prod_trusted_bronze.internal.indicative_carhire_search_event",
+                "prod_trusted_silver.indicative_price.carhire_indicative_prices"
+              ]
+            },
+            {
+              "rule": "Datasets must have SOX scope flag",
+              "failing_entity_count": 4,
+              "entities": [
+                "prod_trusted_bronze.internal.car_hire_indicative_price_search_event",
+                "prod_trusted_bronze.internal.car_hire_quote_search_event",
+                "prod_trusted_bronze.internal.indicative_carhire_search_event",
+                "prod_trusted_silver.indicative_price.carhire_indicative_prices"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid business criticality",
+              "failing_entity_count": 4,
+              "entities": [
+                "prod_trusted_bronze.internal.car_hire_indicative_price_search_event",
+                "prod_trusted_bronze.internal.car_hire_quote_search_event",
+                "prod_trusted_bronze.internal.indicative_carhire_search_event",
+                "prod_trusted_silver.indicative_price.carhire_indicative_prices"
+              ]
+            },
+            {
+              "rule": "Datasets with business critical data must be monitored by Monte Carlo",
+              "failing_entity_count": 2,
+              "entities": [
+                "prod_trusted_silver.indicative_price.seo_carhire_coverage",
+                "prod_trusted_silver.indicative_price.seo_hotel_coverage"
+              ]
+            },
+            {
+              "rule": "Datasets with business critical data must have basic monitors enabled in Monte Carlo",
+              "failing_entity_count": 2,
+              "entities": [
+                "prod_trusted_silver.indicative_price.seo_carhire_coverage",
+                "prod_trusted_silver.indicative_price.seo_hotel_coverage"
+              ]
+            },
+            {
+              "rule": "Datasets must have a description",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_silver.indicative_price.carhire_indicative_prices"
+              ]
+            },
+            {
+              "rule": "Datasets must have data retention defined",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_silver.indicative_price.carhire_indicative_prices"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data category",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_silver.indicative_price.carhire_indicative_prices"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data classification",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_silver.indicative_price.carhire_indicative_prices"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Technology Stays Current",
+          "rules": [
+            {
+              "rule": "Repositories must use Docker base images from ECR",
+              "failing_entity_count": 1,
+              "entities": [
+                "carhire-indicative-price"
+              ]
+            },
+            {
+              "rule": "Repositories must use supported Docker images",
+              "failing_entity_count": 1,
+              "entities": [
+                "carhire-indicative-price"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Yellow",
+      "cortex_tag": "yellow-squad",
+      "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dyellow-squad",
+      "total_failing_rule_instances": 68,
+      "total_affected_entities": 30,
+      "scorecards": [
+        {
+          "name": "Anyone Can Contribute Safely",
+          "rules": [
+            {
+              "rule": "Repositories must have recent commits scanned by SonarQube",
+              "failing_entity_count": 6,
+              "entities": [
+                "timetable-pipeline-v2",
+                "timetable-pipeline-v2-astro",
+                "transport-catalog-data-upload",
+                "transport-catalog-routing-astro",
+                "transport-catalog-routing-spark",
+                "transportcataloginfra"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Changes Ship Reliably",
+          "rules": [
+            {
+              "rule": "Components must be deployed regularly",
+              "failing_entity_count": 10,
+              "entities": [
+                "route-summary",
+                "route-summary-api",
+                "single-flight-numbers",
+                "single-flight-numbers-cache-cells",
+                "timetable-ingest",
+                "timetable-relay-s3-sync",
+                "timetable-s3-sync",
+                "timetable-sfn-cw-cells",
+                "timetables-th",
+                "unpriced-itineraries-cells"
+              ]
+            },
+            {
+              "rule": "Operational data stores must identify if they are critical or not",
+              "failing_entity_count": 1,
+              "entities": [
+                "mercury-project"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Customer Data Stays Protected",
+          "rules": [
+            {
+              "rule": "Projects must have no CFRipper selected issues across all stacks",
+              "failing_entity_count": 2,
+              "entities": [
+                "mercury-project",
+                "timetable-project"
+              ]
+            },
+            {
+              "rule": "Projects with CloudFormation stacks must have CFRipper data available",
+              "failing_entity_count": 1,
+              "entities": [
+                "timetable-project"
+              ]
+            },
+            {
+              "rule": "Repositories must not have critical-severity code scanning issues",
+              "failing_entity_count": 1,
+              "entities": [
+                "timetables-th"
+              ]
+            },
+            {
+              "rule": "Repositories must not have failed code scanning runs",
+              "failing_entity_count": 1,
+              "entities": [
+                "transportcataloginfra"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Data, AI, and ML Governed",
+          "rules": [
+            {
+              "rule": "Datasets must have column descriptions",
+              "failing_entity_count": 6,
+              "entities": [
+                "prod_trusted_bronze.internal.price_competitiveness_backfill_event",
+                "prod_trusted_gold.price_competitiveness.w_flight_price_competitiveness_itinerary_miss_reason",
+                "prod_trusted_gold.price_competitiveness.w_flight_price_competitiveness_missing_itinerary_raw",
+                "prod_trusted_silver.meta_search_result_price_option.flight_search_result_itinerary",
+                "prod_trusted_silver.meta_search_result_price_option.flight_search_result_itinerary_segment",
+                "prod_trusted_silver.meta_search_result_price_option.flight_search_result_pricing_complete"
+              ]
+            },
+            {
+              "rule": "Datasets must have SOX scope flag",
+              "failing_entity_count": 4,
+              "entities": [
+                "prod_trusted_bronze.internal.price_competitiveness_backfill_event",
+                "prod_trusted_silver.meta_search_result_price_option.flight_search_result_itinerary",
+                "prod_trusted_silver.meta_search_result_price_option.flight_search_result_itinerary_segment",
+                "prod_trusted_silver.meta_search_result_price_option.flight_search_result_pricing_complete"
+              ]
+            },
+            {
+              "rule": "Datasets with business critical data must have basic monitors enabled in Monte Carlo",
+              "failing_entity_count": 3,
+              "entities": [
+                "prod_trusted_bronze.ql2.flight_inline_ads",
+                "prod_trusted_bronze.ubio.flight_price_competitiveness",
+                "prod_trusted_gold.inventory_catalog.transport_itinerary_leg"
+              ]
+            },
+            {
+              "rule": "Datasets must have a description",
+              "failing_entity_count": 3,
+              "entities": [
+                "prod_trusted_silver.meta_search_result_price_option.flight_search_result_itinerary",
+                "prod_trusted_silver.meta_search_result_price_option.flight_search_result_itinerary_segment",
+                "prod_trusted_silver.meta_search_result_price_option.flight_search_result_pricing_complete"
+              ]
+            },
+            {
+              "rule": "Datasets must have OOH support flag",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_bronze.internal.price_competitiveness_backfill_event"
+              ]
+            },
+            {
+              "rule": "Datasets must have data retention defined",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_bronze.internal.price_competitiveness_backfill_event"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid business criticality",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_bronze.internal.price_competitiveness_backfill_event"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data category",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_bronze.internal.price_competitiveness_backfill_event"
+              ]
+            },
+            {
+              "rule": "Datasets must have valid data classification",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_bronze.internal.price_competitiveness_backfill_event"
+              ]
+            },
+            {
+              "rule": "Datasets with business critical data must be monitored by Monte Carlo",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_gold.inventory_catalog.transport_itinerary_leg"
+              ]
+            },
+            {
+              "rule": "Datasets with business critical data must have all alerts actioned excluding any alerts that have fired in the last 3 days",
+              "failing_entity_count": 1,
+              "entities": [
+                "prod_trusted_gold.inventory_catalog.transport_itinerary_leg"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Production Observable and Resilient",
+          "rules": [
+            {
+              "rule": "Components must not write metrics to Slipstream",
+              "failing_entity_count": 4,
+              "entities": [
+                "route-summary",
+                "route-summary-api",
+                "single-flight-numbers",
+                "unpriced-itineraries-cells"
+              ]
+            },
+            {
+              "rule": "Components must follow custom metric naming conventions",
+              "failing_entity_count": 4,
+              "entities": [
+                "single-flight-numbers",
+                "timetable-sfn-cw-cells",
+                "transport-catalog-svc",
+                "unpriced-itineraries-cells"
+              ]
+            },
+            {
+              "rule": "Repositories must use only OpenTelemetry API",
+              "failing_entity_count": 3,
+              "entities": [
+                "timetable-dependency-fetch",
+                "timetables-th",
+                "transport-catalog-service"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Technology Stays Current",
+          "rules": [
+            {
+              "rule": "Privacy and Consent Adoption",
+              "failing_entity_count": 6,
+              "entities": [
+                "route-summary",
+                "route-summary-api",
+                "single-flight-numbers",
+                "timetable-dependency-fetch",
+                "transport-catalog-svc",
+                "unpriced-itineraries-cells"
+              ]
+            },
+            {
+              "rule": "Repositories must use Docker base images from ECR",
+              "failing_entity_count": 3,
+              "entities": [
+                "single-flight-numbers",
+                "timetable-sfn-cw-cells",
+                "transport-catalog-svc"
+              ]
+            },
+            {
+              "rule": "AI agents, batch jobs and ETL must be written in Python",
+              "failing_entity_count": 2,
+              "entities": [
+                "timetable-dependency-fetch",
+                "timetable-ingest"
+              ]
+            },
+            {
+              "rule": "Web applications must use React Router, and not a competing framework",
+              "failing_entity_count": 1,
+              "entities": [
+                "timetables-th"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "priority_rules": [
+    {
+      "rule": "Components must be deployed regularly",
+      "label": "Regular Deployments",
+      "squad_compliance": {
+        "Aqua": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Big Yus": {
+          "failing_entity_count": 3,
+          "entities": [
+            "file-cache-proxy-test",
+            "file-cache-read-test",
+            "file-cache-repl-lam-test"
+          ]
+        },
+        "Dancing Penguins": {
+          "failing_entity_count": 11,
+          "entities": [
+            "flights-search-speed-astro-dag",
+            "load-injector",
+            "mock-backend-1",
+            "mock-backend-2",
+            "mock-backend-3",
+            "mock-backend-4",
+            "mock-backend-5",
+            "mock-backend-6",
+            "mock-service",
+            "pricing-test-harness-cells",
+            "stop-early-worker"
+          ]
+        },
+        "Falcon": {
+          "failing_entity_count": 2,
+          "entities": [
+            "coverage-analysis-batch-job",
+            "partner-density-dag"
+          ]
+        },
+        "Fuel RaTS": {
+          "failing_entity_count": 2,
+          "entities": [
+            "routeswho-shadow-whostar-aurora",
+            "whotoask-shadow-precompute"
+          ]
+        },
+        "Ganymede": {
+          "failing_entity_count": 1,
+          "entities": [
+            "rail-connector"
+          ]
+        },
+        "Halo": {
+          "failing_entity_count": 6,
+          "entities": [
+            "integration-proxy-cells",
+            "kuppa-infra",
+            "opex-insight-generator",
+            "partner-credential",
+            "quote-scrape-data-dag",
+            "quote-scrape-data-job"
+          ]
+        },
+        "Kylin": {
+          "failing_entity_count": 2,
+          "entities": [
+            "dv-service",
+            "pc-hotel-mapping-batch"
+          ]
+        },
+        "Libra": {
+          "failing_entity_count": 1,
+          "entities": [
+            "pt-pipeline-batch-jobs-staging"
+          ]
+        },
+        "Ollivander": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Orange": {
+          "failing_entity_count": 7,
+          "entities": [
+            "cache-rule-generator",
+            "quote-pipeline-canary",
+            "quotesvc-testharness-cells",
+            "suppression-partner-collector",
+            "tiered-live-pricing-collector-dag",
+            "unbias_cache_consistency",
+            "uqs-agent"
+          ]
+        },
+        "Orca": {
+          "failing_entity_count": 2,
+          "entities": [
+            "fare-coverage-tool",
+            "flight-amenities"
+          ]
+        },
+        "Pigeon": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Silver": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Spyro": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Tiger": {
+          "failing_entity_count": 1,
+          "entities": [
+            "indicative-price-share-coverage-dag"
+          ]
+        },
+        "Yellow": {
+          "failing_entity_count": 10,
+          "entities": [
+            "route-summary",
+            "route-summary-api",
+            "single-flight-numbers",
+            "single-flight-numbers-cache-cells",
+            "timetable-ingest",
+            "timetable-relay-s3-sync",
+            "timetable-s3-sync",
+            "timetable-sfn-cw-cells",
+            "timetables-th",
+            "unpriced-itineraries-cells"
+          ]
+        }
+      }
+    },
+    {
+      "rule": "Repositories must have recent commits scanned by SonarQube",
+      "label": "SonarQube Scanning",
+      "squad_compliance": {
+        "Aqua": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Big Yus": {
+          "failing_entity_count": 7,
+          "entities": [
+            "flights-indicative-pipeline",
+            "indicative-query-planner",
+            "market_partners",
+            "market_partners_fixtures",
+            "taps_keys",
+            "taps_keys_fixtures",
+            "taps_keys_schemas"
+          ]
+        },
+        "Dancing Penguins": {
+          "failing_entity_count": 1,
+          "entities": [
+            "ai-hackathon-bold-tigers"
+          ]
+        },
+        "Falcon": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Fuel RaTS": {
+          "failing_entity_count": 1,
+          "entities": [
+            "whotoask-shadow-precompute"
+          ]
+        },
+        "Ganymede": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Halo": {
+          "failing_entity_count": 1,
+          "entities": [
+            "mario-longtail-migration"
+          ]
+        },
+        "Kylin": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Libra": {
+          "failing_entity_count": 2,
+          "entities": [
+            "quote-scrape-dags",
+            "quote-scrape-spark-jobs"
+          ]
+        },
+        "Ollivander": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Orange": {
+          "failing_entity_count": 1,
+          "entities": [
+            "cache-data-aggregator"
+          ]
+        },
+        "Orca": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Pigeon": {
+          "failing_entity_count": 3,
+          "entities": [
+            "local_fishmonger",
+            "local_wario",
+            "partner-integration-bot-agent"
+          ]
+        },
+        "Silver": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Spyro": {
+          "failing_entity_count": 1,
+          "entities": [
+            "good-boy"
+          ]
+        },
+        "Tiger": {
+          "failing_entity_count": 1,
+          "entities": [
+            "carhire-indicative-price-dags"
+          ]
+        },
+        "Yellow": {
+          "failing_entity_count": 6,
+          "entities": [
+            "timetable-pipeline-v2",
+            "timetable-pipeline-v2-astro",
+            "transport-catalog-data-upload",
+            "transport-catalog-routing-astro",
+            "transport-catalog-routing-spark",
+            "transportcataloginfra"
+          ]
+        }
+      }
+    },
+    {
+      "rule": "Privacy and Consent Adoption",
+      "label": "Privacy & Consent",
+      "squad_compliance": {
+        "Aqua": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Big Yus": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Dancing Penguins": {
+          "failing_entity_count": 9,
+          "entities": [
+            "global-cache-proxy",
+            "mock-backend-1",
+            "mock-backend-2",
+            "mock-backend-3",
+            "mock-backend-4",
+            "mock-backend-5",
+            "mock-backend-6",
+            "mock-service",
+            "response-logger"
+          ]
+        },
+        "Falcon": {
+          "failing_entity_count": 1,
+          "entities": [
+            "partner-density-pipeline"
+          ]
+        },
+        "Fuel RaTS": {
+          "failing_entity_count": 2,
+          "entities": [
+            "whostar-pre-compute",
+            "whotoask-shadow-precompute"
+          ]
+        },
+        "Ganymede": {
+          "failing_entity_count": 2,
+          "entities": [
+            "hotelcar-data-analysis",
+            "in-house-scraper-ai"
+          ]
+        },
+        "Halo": {
+          "failing_entity_count": 2,
+          "entities": [
+            "eqt-data-ingestion-job",
+            "partner-limit-error-job"
+          ]
+        },
+        "Kylin": {
+          "failing_entity_count": 4,
+          "entities": [
+            "dv-event-svc",
+            "dv-service",
+            "pc-download-daily-job",
+            "pc-hotel-mapping-batch"
+          ]
+        },
+        "Libra": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Ollivander": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Orange": {
+          "failing_entity_count": 4,
+          "entities": [
+            "quote-cache-accessor",
+            "quote-cache-accessor-carhire",
+            "quote-cache-accessor-flight",
+            "quote-cache-accessor-pkg"
+          ]
+        },
+        "Orca": {
+          "failing_entity_count": 3,
+          "entities": [
+            "fare-attributes-svc",
+            "fare-coverage-tool",
+            "flight-amenities"
+          ]
+        },
+        "Pigeon": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Silver": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Spyro": {
+          "failing_entity_count": 1,
+          "entities": [
+            "simple-messages-plugin"
+          ]
+        },
+        "Tiger": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Yellow": {
+          "failing_entity_count": 6,
+          "entities": [
+            "route-summary",
+            "route-summary-api",
+            "single-flight-numbers",
+            "timetable-dependency-fetch",
+            "transport-catalog-svc",
+            "unpriced-itineraries-cells"
+          ]
+        }
+      }
+    }
+  ]
+}
