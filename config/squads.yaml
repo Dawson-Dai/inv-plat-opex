@@ -1,0 +1,9 @@
+# Squad display name → Cortex team tag exceptions.
+# Auto-derived rule: lowercase, spaces/special-chars→hyphens, collapse, append -squad
+# e.g. "Halo" → "halo-squad", "Dancing Penguins" → "dancing-penguins-squad"
+# Add overrides here when auto-derivation produces the wrong tag.
+squad_tags:
+  "Fuel RaTS": "fuel-rats-squad"
+  "Big Yus": "big-yus-squad"
+  "Ollivander": "ollivander-squad"
+  "Spyro": "spyro-squad"

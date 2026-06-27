@@ -1,0 +1,10 @@
+priority_rules:
+  - rule: "Components must be deployed regularly"
+    label: "Regular Deployments"
+    reason: "Deployment health indicator"
+  - rule: "Repositories must have recent commits scanned by SonarQube"
+    label: "SonarQube Scanning"
+    reason: "Security baseline requirement"
+  - rule: "Privacy and Consent Adoption"
+    label: "Privacy & Consent"
+    reason: "Company-wide privacy compliance programme"
