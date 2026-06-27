@@ -55,10 +55,11 @@ def build_report(sorted_csv: str, output_xlsx: str) -> dict:
     wb = Workbook()
 
     # --- aggregate data ---
-    # squad → scorecard → rule → set of entities
-    data = defaultdict(lambda: defaultdict(lambda: defaultdict(set)))
+    # squad → scorecard → rule → {"entities": set, "rows": count}
+    data = defaultdict(lambda: defaultdict(lambda: defaultdict(lambda: {"entities": set(), "rows": 0})))
     for r in rows:
-        data[r["Squad"]][r["Scorecard"]][r["Rule"]].add(r["Entity"])
+        data[r["Squad"]][r["Scorecard"]][r["Rule"]]["entities"].add(r["Entity"])
+        data[r["Squad"]][r["Scorecard"]][r["Rule"]]["rows"] += 1
 
     squads = sorted(data.keys())
 
@@ -69,25 +70,23 @@ def build_report(sorted_csv: str, output_xlsx: str) -> dict:
     for ci, h in enumerate(headers, 1):
         _hdr(ws, 1, ci, h)
 
-    chart_rows = []  # (squad, rows_count, entities_count)
     ri = 2
     total_sc, total_ru, total_en, total_ro = set(), set(), set(), 0
     for squad in squads:
         scorecards = data[squad]
         sc_count = len(scorecards)
         ru_count = sum(len(rules) for rules in scorecards.values())
-        en_count = len({e for rules in scorecards.values() for ents in rules.values() for e in ents})
-        ro_count = sum(len(ents) for rules in scorecards.values() for ents in rules.values())
+        en_count = len({e for rules in scorecards.values() for rule_data in rules.values() for e in rule_data["entities"]})
+        ro_count = sum(rule_data["rows"] for rules in scorecards.values() for rule_data in rules.values())
         alt = (ri % 2 == 0)
         _cell(ws, ri, 1, squad, alt)
         _cell(ws, ri, 2, sc_count, alt)
         _cell(ws, ri, 3, ru_count, alt)
         _cell(ws, ri, 4, en_count, alt)
         _cell(ws, ri, 5, ro_count, alt)
-        chart_rows.append((squad, ro_count, en_count))
         total_sc.update(scorecards.keys())
         total_ru.update(r for rules in scorecards.values() for r in rules)
-        total_en.update(e for rules in scorecards.values() for ents in rules.values() for e in ents)
+        total_en.update(e for rules in scorecards.values() for rule_data in rules.values() for e in rule_data["entities"])
         total_ro += ro_count
         ri += 1
 
@@ -124,8 +123,8 @@ def build_report(sorted_csv: str, output_xlsx: str) -> dict:
         scorecards = data[squad]
 
         # KPI strip
-        total_rows_sq = sum(len(e) for sc in scorecards.values() for e in sc.values())
-        total_ents_sq = len({e for sc in scorecards.values() for ents in sc.values() for e in ents})
+        total_rows_sq = sum(rule_data["rows"] for sc in scorecards.values() for rule_data in sc.values())
+        total_ents_sq = len({e for sc in scorecards.values() for rule_data in sc.values() for e in rule_data["entities"]})
         total_rules_sq = sum(len(sc) for sc in scorecards.values())
         ws2["A1"] = f"Squad: {squad}"
         ws2["A1"].font = Font(bold=True, size=13)
@@ -142,8 +141,8 @@ def build_report(sorted_csv: str, output_xlsx: str) -> dict:
         ri2 = 6
         for sc_name, rules in sorted(scorecards.items()):
             ru_c = len(rules)
-            en_c = len({e for ents in rules.values() for e in ents})
-            ro_c = sum(len(ents) for ents in rules.values())
+            en_c = len({e for rule_data in rules.values() for e in rule_data["entities"]})
+            ro_c = sum(rule_data["rows"] for rule_data in rules.values())
             alt = (ri2 % 2 == 0)
             _cell(ws2, ri2, 1, sc_name, alt)
             _cell(ws2, ri2, 2, ru_c, alt)
@@ -159,12 +158,12 @@ def build_report(sorted_csv: str, output_xlsx: str) -> dict:
             _hdr(ws2, rb_start, ci, h)
         ri3 = rb_start + 1
         for sc_name, rules in sorted(scorecards.items()):
-            for rule, ents in sorted(rules.items(), key=lambda x: -len(x[1])):
+            for rule, rule_data in sorted(rules.items(), key=lambda x: -len(x[1]["entities"])):
                 alt = (ri3 % 2 == 0)
                 _cell(ws2, ri3, 1, sc_name, alt)
                 _cell(ws2, ri3, 2, rule, alt)
-                _cell(ws2, ri3, 3, len(ents), alt)
-                _cell(ws2, ri3, 4, len(ents), alt)
+                _cell(ws2, ri3, 3, len(rule_data["entities"]), alt)
+                _cell(ws2, ri3, 4, rule_data["rows"], alt)
                 ri3 += 1
 
         # Entity Detail
@@ -175,8 +174,8 @@ def build_report(sorted_csv: str, output_xlsx: str) -> dict:
             _hdr(ws2, ed_start, ci, h)
         ri4 = ed_start + 1
         for sc_name, rules in sorted(scorecards.items()):
-            for rule, ents in sorted(rules.items()):
-                for ent in sorted(ents):
+            for rule, rule_data in sorted(rules.items()):
+                for ent in sorted(rule_data["entities"]):
                     alt = (ri4 % 2 == 0)
                     _cell(ws2, ri4, 1, ent, alt)
                     _cell(ws2, ri4, 2, sc_name, alt)
@@ -186,7 +185,7 @@ def build_report(sorted_csv: str, output_xlsx: str) -> dict:
         _auto_width(ws2)
 
     wb.save(output_xlsx)
-    return {"squads": len(squads), "rows": sum(len(e) for sq in data.values() for sc in sq.values() for e in sc.values())}
+    return {"squads": len(squads), "rows": sum(rule_data["rows"] for sq in data.values() for sc in sq.values() for rule_data in sc.values())}
 
 
 if __name__ == "__main__":
