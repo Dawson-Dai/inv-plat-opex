@@ -58,10 +58,21 @@ Build the full page body as Confluence storage-format HTML. Construct each secti
 
 #### Section 1: Tribe Overview
 
+Load the previous snapshot too (`prev_snap`) for delta comparisons:
+
+```python
+prev_date = index['snapshots'][-2]
+prev_snap = json.loads((data_dir / prev_date / 'maturity.json').read_text())
+prev_sc_tribe = {sc['scorecard']: sc for sc in prev_snap['tribe_by_scorecard']}
+prev_squad_totals = {sq['name']: sq for sq in prev_snap['squads']}
+```
+
 ```html
 <h2>Tribe Overview</h2>
-<p><em>Date: {snap['date']} | Failing Rows: {snap['tribe_totals']['failing_rule_instances']} | Failing Rules: {snap['tribe_totals']['unique_rules']} | Affected Entities: {snap['tribe_totals']['affected_entities']}</em></p>
+<p><em>Date: {snap['date']} | Failing Rows: {delta(t['failing_rule_instances'], pt['failing_rule_instances'])} | Failing Rules: {delta(t['unique_rules'], pt['unique_rules'])} | Affected Entities: {delta(t['affected_entities'], pt['affected_entities'])} | Compared to: {prev_date}</em></p>
 ```
+
+Where `t = snap['tribe_totals']` and `pt = prev_snap['tribe_totals']`.
 
 **Sub-section: By Scorecard** — emit this heading then the scorecard table:
 
@@ -75,13 +86,15 @@ For each `sc` in `snap['tribe_by_scorecard']` (already sorted by `failing_rule_i
 - If `sc['all_squads']` is true: squads cell = `All squads`
 - Otherwise: take `sc['squads_affected']` (sorted by `failing_rule_instances` desc), show top-5 names comma-separated + `(+N more)` if needed
 
+Look up `psc = prev_sc_tribe.get(sc['scorecard'])` for the delta:
+
 ```html
 <tr>
   <td>{sc['scorecard']}</td>
   <td>{squads_text}</td>
-  <td>{sc['failing_rule_instances']}</td>
-  <td>{sc['unique_rules']}</td>
-  <td>{sc['affected_entities']}</td>
+  <td>{delta(sc['failing_rule_instances'], psc['failing_rule_instances'] if psc else None)}</td>
+  <td>{delta(sc['unique_rules'], psc['unique_rules'] if psc else None)}</td>
+  <td>{delta(sc['affected_entities'], psc['affected_entities'] if psc else None)}</td>
 </tr>
 ```
 
@@ -95,14 +108,16 @@ Close `</table>`.
 <tr><th><strong>Squad</strong></th><th><strong>Failing Rows</strong></th><th><strong>Failing Rules</strong></th><th><strong>Affected Entities</strong></th></tr>
 ```
 
+Look up `psq = prev_squad_totals.get(squad['name'])` for the delta. Note: `total_unique_rules` was not in snapshots before it was added to `build_json.py`, so use `psq.get('total_unique_rules')` which returns `None` if absent — `delta()` will then show the raw value with no comparison.
+
 For each `squad` in `snap['squads']` sorted by `total_failing_rule_instances` desc:
 
 ```html
 <tr>
   <td>{squad['name']}</td>
-  <td>{squad['total_failing_rule_instances']}</td>
-  <td>{squad['total_unique_rules']}</td>
-  <td>{squad['total_affected_entities']}</td>
+  <td>{delta(squad['total_failing_rule_instances'], psq['total_failing_rule_instances'] if psq else None)}</td>
+  <td>{delta(squad['total_unique_rules'], psq.get('total_unique_rules') if psq else None)}</td>
+  <td>{delta(squad['total_affected_entities'], psq['total_affected_entities'] if psq else None)}</td>
 </tr>
 ```
 
