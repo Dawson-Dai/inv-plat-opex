@@ -14,6 +14,7 @@ from collections import defaultdict
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.chart import BarChart, Reference
+from openpyxl.chart.series import SeriesLabel
 from openpyxl.utils import get_column_letter
 
 # ── Colours (exact RGB from 2026-06-20 reference) ───────────────────────────
@@ -285,21 +286,37 @@ def build_report(sorted_csv: str, output_xlsx: str) -> dict:
         _apply(ws.cell(gt_ri, ci), value=v, font=F_TOTAL_DARK, fill=FILL_TOTAL,
                align=Alignment(horizontal="center", vertical="center"))
 
-    # Bar chart — horizontal (barDir="bar"), squad names on left, matches reference
+    # Bar chart — horizontal, squad names on left, placed below Tribe Scorecard Summary
+    # Reference size: cx=10800000, cy=7920000 EMU = 30cm × 22cm; doubled = 60cm × 44cm
     chart = BarChart()
-    chart.type = "bar"          # horizontal bars
+    chart.type = "bar"           # horizontal bars — squad names appear on the left axis
     chart.grouping = "clustered"
     chart.title = "Failing Rows & Entities with Baseline Failures by Squad"
-    chart.width  = 15           # matches reference (EMU: cx=10800000 → ~15cm)
-    chart.height = 7.5          # matches reference (EMU: cy=7920000  → ~7.5cm)
-    # Rows series first, then Entities — anchored below the TOTAL row
-    rows_ref = Reference(ws, min_col=GT_COL+2, min_row=3, max_row=3 + len(squads))
-    ents_ref = Reference(ws, min_col=GT_COL+1, min_row=3, max_row=3 + len(squads))
-    cats_ref = Reference(ws, min_col=COL_SQUAD, min_row=4, max_row=3 + len(squads))
-    chart.add_data(rows_ref, titles_from_data=True)
-    chart.add_data(ents_ref, titles_from_data=True)
+    chart.width  = 60.0          # cm (doubled from reference 30cm)
+    chart.height = 44.0          # cm (doubled from reference 22cm)
+
+    # Data range excludes the header row so no phantom entry appears in the bars.
+    # Categories (col A) use min_row=4 (first squad name) — no title row — so squad
+    # names show on the axis. Series headers are set via titles_from_data=False +
+    # a separate title Reference pointing at row 3.
+    data_last_row = 3 + len(squads)
+
+    # Series 0: Entities (col B) — values only, no header row in range
+    ents_ref = Reference(ws, min_col=COL_ENTITIES, min_row=4, max_row=data_last_row)
+    # Series 1: Rows (grand total col GT_COL+2)
+    rows_ref = Reference(ws, min_col=GT_COL+2, min_row=4, max_row=data_last_row)
+    # Categories: squad names col A rows 4..end
+    cats_ref = Reference(ws, min_col=COL_SQUAD, min_row=4, max_row=data_last_row)
+
+    chart.add_data(ents_ref, titles_from_data=False)
+    chart.add_data(rows_ref, titles_from_data=False)
+    chart.series[0].title = SeriesLabel(v="Entities")
+    chart.series[1].title = SeriesLabel(v="Rows")
     chart.set_categories(cats_ref)
-    ws.add_chart(chart, f"A{total_ri + 3}")
+
+    # Place chart 2 rows below the Grand Total of the Tribe Scorecard Summary
+    chart_anchor_row = gt_ri + 2
+    ws.add_chart(chart, f"A{chart_anchor_row}")
 
     # ── Per-squad sheets ─────────────────────────────────────────────────────
     for squad in squads:
