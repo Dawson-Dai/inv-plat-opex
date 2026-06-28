@@ -359,6 +359,7 @@
       "cortex_tag": "aqua-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Daqua-squad",
       "total_failing_rule_instances": 26,
+      "total_unique_rules": 12,
       "total_affected_entities": 15,
       "scorecards": [
         {
@@ -491,6 +492,7 @@
       "cortex_tag": "big-yus-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dbig-yus-squad",
       "total_failing_rule_instances": 101,
+      "total_unique_rules": 22,
       "total_affected_entities": 33,
       "scorecards": [
         {
@@ -763,6 +765,7 @@
       "cortex_tag": "dancing-penguins-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Ddancing-penguins-squad",
       "total_failing_rule_instances": 201,
+      "total_unique_rules": 28,
       "total_affected_entities": 51,
       "scorecards": [
         {
@@ -1166,6 +1169,7 @@
       "cortex_tag": "falcon-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dfalcon-squad",
       "total_failing_rule_instances": 71,
+      "total_unique_rules": 26,
       "total_affected_entities": 23,
       "scorecards": [
         {
@@ -1427,6 +1431,7 @@
       "cortex_tag": "fuel-rats-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dfuel-rats-squad",
       "total_failing_rule_instances": 32,
+      "total_unique_rules": 17,
       "total_affected_entities": 19,
       "scorecards": [
         {
@@ -1595,6 +1600,7 @@
       "cortex_tag": "ganymede-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dganymede-squad",
       "total_failing_rule_instances": 47,
+      "total_unique_rules": 25,
       "total_affected_entities": 27,
       "scorecards": [
         {
@@ -1826,6 +1832,7 @@
       "cortex_tag": "halo-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dhalo-squad",
       "total_failing_rule_instances": 90,
+      "total_unique_rules": 19,
       "total_affected_entities": 45,
       "scorecards": [
         {
@@ -2064,6 +2071,7 @@
       "cortex_tag": "kylin-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dkylin-squad",
       "total_failing_rule_instances": 63,
+      "total_unique_rules": 23,
       "total_affected_entities": 34,
       "scorecards": [
         {
@@ -2294,6 +2302,7 @@
       "cortex_tag": "libra-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dlibra-squad",
       "total_failing_rule_instances": 121,
+      "total_unique_rules": 16,
       "total_affected_entities": 49,
       "scorecards": [
         {
@@ -2545,6 +2554,7 @@
       "cortex_tag": "orange-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dorange-squad",
       "total_failing_rule_instances": 178,
+      "total_unique_rules": 18,
       "total_affected_entities": 47,
       "scorecards": [
         {
@@ -2865,6 +2875,7 @@
       "cortex_tag": "orca-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dorca-squad",
       "total_failing_rule_instances": 37,
+      "total_unique_rules": 17,
       "total_affected_entities": 10,
       "scorecards": [
         {
@@ -3033,6 +3044,7 @@
       "cortex_tag": "pigeon-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dpigeon-squad",
       "total_failing_rule_instances": 102,
+      "total_unique_rules": 16,
       "total_affected_entities": 24,
       "scorecards": [
         {
@@ -3265,6 +3277,7 @@
       "cortex_tag": "silver-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dsilver-squad",
       "total_failing_rule_instances": 33,
+      "total_unique_rules": 9,
       "total_affected_entities": 16,
       "scorecards": [
         {
@@ -3381,6 +3394,7 @@
       "cortex_tag": "tiger-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dtiger-squad",
       "total_failing_rule_instances": 38,
+      "total_unique_rules": 16,
       "total_affected_entities": 16,
       "scorecards": [
         {
@@ -3544,6 +3558,7 @@
       "cortex_tag": "yellow-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dyellow-squad",
       "total_failing_rule_instances": 60,
+      "total_unique_rules": 25,
       "total_affected_entities": 28,
       "scorecards": [
         {
@@ -4125,6 +4140,244 @@
             "transport-catalog-svc",
             "unpriced-itineraries-cells"
           ]
+        }
+      }
+    },
+    {
+      "rule": "Teams must not have pending incidents older than 14 days",
+      "label": "No Stale Incidents",
+      "squad_compliance": {
+        "Aqua": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Big Yus": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Dancing Penguins": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Falcon": {
+          "failing_entity_count": 1,
+          "entities": [
+            "falcon-squad"
+          ]
+        },
+        "Fuel RaTS": {
+          "failing_entity_count": 1,
+          "entities": [
+            "fuel-rats-squad"
+          ]
+        },
+        "Ganymede": {
+          "failing_entity_count": 1,
+          "entities": [
+            "ganymede-squad"
+          ]
+        },
+        "Halo": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Kylin": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Libra": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Orange": {
+          "failing_entity_count": 1,
+          "entities": [
+            "orange-squad"
+          ]
+        },
+        "Orca": {
+          "failing_entity_count": 1,
+          "entities": [
+            "orca-squad"
+          ]
+        },
+        "Pigeon": {
+          "failing_entity_count": 1,
+          "entities": [
+            "pigeon-squad"
+          ]
+        },
+        "Silver": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Tiger": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Yellow": {
+          "failing_entity_count": 0,
+          "entities": []
+        }
+      }
+    },
+    {
+      "rule": "Teams must not have live incidents",
+      "label": "No Live Incidents",
+      "squad_compliance": {
+        "Aqua": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Big Yus": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Dancing Penguins": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Falcon": {
+          "failing_entity_count": 1,
+          "entities": [
+            "falcon-squad"
+          ]
+        },
+        "Fuel RaTS": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Ganymede": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Halo": {
+          "failing_entity_count": 1,
+          "entities": [
+            "halo-squad"
+          ]
+        },
+        "Kylin": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Libra": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Orange": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Orca": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Pigeon": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Silver": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Tiger": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Yellow": {
+          "failing_entity_count": 0,
+          "entities": []
+        }
+      }
+    },
+    {
+      "rule": "Repositories must use supported Docker images",
+      "label": "Supported Docker Images",
+      "squad_compliance": {
+        "Aqua": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Big Yus": {
+          "failing_entity_count": 5,
+          "entities": [
+            "market_partners",
+            "market_partners_fixtures",
+            "taps_keys",
+            "taps_keys_fixtures",
+            "taps_keys_schemas"
+          ]
+        },
+        "Dancing Penguins": {
+          "failing_entity_count": 1,
+          "entities": [
+            "dancingpenguins"
+          ]
+        },
+        "Falcon": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Fuel RaTS": {
+          "failing_entity_count": 3,
+          "entities": [
+            "routeswho-shadow-whostar-aurora",
+            "wrmd-aurora",
+            "ws-precompute-aurora-cells"
+          ]
+        },
+        "Ganymede": {
+          "failing_entity_count": 1,
+          "entities": [
+            "hotelcar-data-analysis"
+          ]
+        },
+        "Halo": {
+          "failing_entity_count": 4,
+          "entities": [
+            "eqt-data-ingestion-job",
+            "integration-proxy-cells",
+            "jacquard-tools",
+            "partner-limit-error-job"
+          ]
+        },
+        "Kylin": {
+          "failing_entity_count": 2,
+          "entities": [
+            "dv-dashboard-pipeline",
+            "dv-data-report-pipeline"
+          ]
+        },
+        "Libra": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Orange": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Orca": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Pigeon": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Silver": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Tiger": {
+          "failing_entity_count": 1,
+          "entities": [
+            "carhire-indicative-price"
+          ]
+        },
+        "Yellow": {
+          "failing_entity_count": 0,
+          "entities": []
         }
       }
     }
