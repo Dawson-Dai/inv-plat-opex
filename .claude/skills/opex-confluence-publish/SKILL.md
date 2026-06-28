@@ -60,9 +60,15 @@ Build the full page body as Confluence storage-format HTML. Construct each secti
 
 ```html
 <h2>Tribe Overview</h2>
-<p><em>Date: {snap['date']} | Rule-instances: {snap['tribe_totals']['failing_rule_instances']} | Unique rules: {snap['tribe_totals']['unique_rules']} | Entities: {snap['tribe_totals']['affected_entities']}</em></p>
+<p><em>Date: {snap['date']} | Failing Rows: {snap['tribe_totals']['failing_rule_instances']} | Failing Rules: {snap['tribe_totals']['unique_rules']} | Affected Entities: {snap['tribe_totals']['affected_entities']}</em></p>
+```
+
+**Sub-section: By Scorecard** — emit this heading then the scorecard table:
+
+```html
+<h3>By Scorecard</h3>
 <table data-layout="full-width">
-<tr><th><strong>Scorecard</strong></th><th><strong>Squads Affected</strong></th><th><strong>Failing Rule-instances</strong></th><th><strong>Unique Rules Failing</strong></th><th><strong>Affected Entities</strong></th></tr>
+<tr><th><strong>Scorecard</strong></th><th><strong>Squads Affected</strong></th><th><strong>Failing Rows</strong></th><th><strong>Failing Rules</strong></th><th><strong>Affected Entities</strong></th></tr>
 ```
 
 For each `sc` in `snap['tribe_by_scorecard']` (already sorted by `failing_rule_instances` desc):
@@ -76,6 +82,27 @@ For each `sc` in `snap['tribe_by_scorecard']` (already sorted by `failing_rule_i
   <td>{sc['failing_rule_instances']}</td>
   <td>{sc['unique_rules']}</td>
   <td>{sc['affected_entities']}</td>
+</tr>
+```
+
+Close `</table>`.
+
+**Sub-section: By Squad** — immediately after the scorecard table, emit this heading then the squad table:
+
+```html
+<h3>By Squad</h3>
+<table data-layout="full-width">
+<tr><th><strong>Squad</strong></th><th><strong>Failing Rows</strong></th><th><strong>Failing Rules</strong></th><th><strong>Affected Entities</strong></th></tr>
+```
+
+For each `squad` in `snap['squads']` sorted by `total_failing_rule_instances` desc:
+
+```html
+<tr>
+  <td>{squad['name']}</td>
+  <td>{squad['total_failing_rule_instances']}</td>
+  <td>{squad['total_unique_rules']}</td>
+  <td>{squad['total_affected_entities']}</td>
 </tr>
 ```
 
@@ -119,7 +146,7 @@ For each `squad` in the top 5 of `snap['squads']` sorted by `total_failing_rule_
 ```html
 <h3>{squad['name']} — {squad['total_failing_rule_instances']} rule-instances, {squad['total_affected_entities']} entities</h3>
 <table data-layout="full-width">
-<tr><th><strong>Scorecard</strong></th><th><strong>Rule</strong></th><th><strong>Failing Entities</strong></th></tr>
+<tr><th><strong>Scorecard</strong></th><th><strong>Rule</strong></th><th><strong>Affected Entities</strong></th></tr>
 ```
 
 For each `sc` in `squad['scorecards']`, for each `rule` in `sc['rules']` (already sorted by `failing_entity_count` desc):
