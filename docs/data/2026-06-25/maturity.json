@@ -387,6 +387,7 @@
       "cortex_tag": "aqua-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Daqua-squad",
       "total_failing_rule_instances": 16,
+      "total_unique_rules": 7,
       "total_affected_entities": 11,
       "scorecards": [
         {
@@ -479,6 +480,7 @@
       "cortex_tag": "big-yus-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dbig-yus-squad",
       "total_failing_rule_instances": 102,
+      "total_unique_rules": 23,
       "total_affected_entities": 34,
       "scorecards": [
         {
@@ -758,6 +760,7 @@
       "cortex_tag": "dancing-penguins-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Ddancing-penguins-squad",
       "total_failing_rule_instances": 208,
+      "total_unique_rules": 34,
       "total_affected_entities": 52,
       "scorecards": [
         {
@@ -1209,6 +1212,7 @@
       "cortex_tag": "falcon-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dfalcon-squad",
       "total_failing_rule_instances": 78,
+      "total_unique_rules": 26,
       "total_affected_entities": 23,
       "scorecards": [
         {
@@ -1477,6 +1481,7 @@
       "cortex_tag": "fuel-rats-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dfuel-rats-squad",
       "total_failing_rule_instances": 34,
+      "total_unique_rules": 18,
       "total_affected_entities": 20,
       "scorecards": [
         {
@@ -1653,6 +1658,7 @@
       "cortex_tag": "ganymede-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dganymede-squad",
       "total_failing_rule_instances": 46,
+      "total_unique_rules": 25,
       "total_affected_entities": 26,
       "scorecards": [
         {
@@ -1883,6 +1889,7 @@
       "cortex_tag": "halo-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dhalo-squad",
       "total_failing_rule_instances": 86,
+      "total_unique_rules": 20,
       "total_affected_entities": 46,
       "scorecards": [
         {
@@ -2128,6 +2135,7 @@
       "cortex_tag": "kylin-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dkylin-squad",
       "total_failing_rule_instances": 70,
+      "total_unique_rules": 23,
       "total_affected_entities": 34,
       "scorecards": [
         {
@@ -2365,6 +2373,7 @@
       "cortex_tag": "libra-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dlibra-squad",
       "total_failing_rule_instances": 120,
+      "total_unique_rules": 15,
       "total_affected_entities": 48,
       "scorecards": [
         {
@@ -2609,6 +2618,7 @@
       "cortex_tag": "ollivander-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dollivander-squad",
       "total_failing_rule_instances": 4,
+      "total_unique_rules": 4,
       "total_affected_entities": 2,
       "scorecards": [
         {
@@ -2656,6 +2666,7 @@
       "cortex_tag": "orange-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dorange-squad",
       "total_failing_rule_instances": 176,
+      "total_unique_rules": 18,
       "total_affected_entities": 46,
       "scorecards": [
         {
@@ -2974,6 +2985,7 @@
       "cortex_tag": "orca-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dorca-squad",
       "total_failing_rule_instances": 37,
+      "total_unique_rules": 18,
       "total_affected_entities": 11,
       "scorecards": [
         {
@@ -3148,6 +3160,7 @@
       "cortex_tag": "pigeon-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dpigeon-squad",
       "total_failing_rule_instances": 95,
+      "total_unique_rules": 16,
       "total_affected_entities": 23,
       "scorecards": [
         {
@@ -3373,6 +3386,7 @@
       "cortex_tag": "silver-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dsilver-squad",
       "total_failing_rule_instances": 40,
+      "total_unique_rules": 12,
       "total_affected_entities": 17,
       "scorecards": [
         {
@@ -3514,6 +3528,7 @@
       "cortex_tag": "spyro-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dspyro-squad",
       "total_failing_rule_instances": 6,
+      "total_unique_rules": 5,
       "total_affected_entities": 4,
       "scorecards": [
         {
@@ -3574,6 +3589,7 @@
       "cortex_tag": "tiger-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dtiger-squad",
       "total_failing_rule_instances": 38,
+      "total_unique_rules": 16,
       "total_affected_entities": 16,
       "scorecards": [
         {
@@ -3737,6 +3753,7 @@
       "cortex_tag": "yellow-squad",
       "cortex_url": "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26tm%3Dyellow-squad",
       "total_failing_rule_instances": 68,
+      "total_unique_rules": 25,
       "total_affected_entities": 30,
       "scorecards": [
         {

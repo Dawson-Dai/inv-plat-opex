@@ -109,11 +109,13 @@ def build_json(sorted_csv: str, date: str, config_dir: str = "config", data_dir:
             scorecards_out.append({"name": sc_name, "rules": rules_out})
         total_ri = sum(len(e) for sc in sc_data.values() for e in sc.values())
         total_ent = len({e for sc in sc_data.values() for ents in sc.values() for e in ents})
+        total_rules = len({rule for sc in sc_data.values() for rule in sc})
         squads_out.append({
             "name": squad,
             "cortex_tag": tag,
             "cortex_url": cortex_url,
             "total_failing_rule_instances": total_ri,
+            "total_unique_rules": total_rules,
             "total_affected_entities": total_ent,
             "scorecards": scorecards_out,
         })
