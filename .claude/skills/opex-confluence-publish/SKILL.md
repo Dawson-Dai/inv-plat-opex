@@ -155,12 +155,14 @@ for sq in prev_snap['squads']:
     prev_lookup[sq['name']] = {sc['name']: sc_agg(sc) for sc in sq['scorecards']}
 
 def delta(curr, prev):
-    """Return 'N (+D, was P)' or just 'N' if no prev."""
+    """Return 'N (+D)', 'N (no change)', 'N (-D)', or just 'N' if no prev."""
     if prev is None:
         return str(curr)
     d = curr - prev
-    sign = '+' if d >= 0 else ''
-    return f'{curr} ({sign}{d}, was {prev})'
+    if d == 0:
+        return f'{curr} (no change)'
+    sign = '+' if d > 0 else ''
+    return f'{curr} ({sign}{d})'
 ```
 
 For each `squad` in `snap['squads']` sorted by `total_failing_rule_instances` desc:
@@ -171,7 +173,9 @@ For each `squad` in `snap['squads']` sorted by `total_failing_rule_instances` de
 <tr><th><strong>Scorecard</strong></th><th><strong>Failing Rows</strong></th><th><strong>Failing Rules</strong></th><th><strong>Affected Entities</strong></th></tr>
 ```
 
-For each `sc` in `squad['scorecards']`:
+Sort `squad['scorecards']` by `sum(r['failing_entity_count'] for r in sc['rules'])` descending before iterating.
+
+For each `sc` in the sorted scorecards:
 - Compute `curr_rows, curr_rules, curr_entities = sc_agg(sc)`
 - Look up `prev_sc = prev_lookup.get(squad['name'], {}).get(sc['name'])` — this is `(rows, rules, entities)` or `None`
 - Scorecard name links to `squad['cortex_url']`
