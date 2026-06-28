@@ -136,31 +136,58 @@ Close `</table>`.
 <h2>Squad Detail</h2>
 ```
 
-**Show top 5 squads only** (full breakdown is on the GitHub Pages site). Add this note after the `<h2>Squad Detail</h2>` heading:
-```html
-<p><em>Top 5 squads by failing rule-instances (top 10 rules each). <a href="https://dawson-dai.github.io/inv-plat-opex/">Full breakdown on the live site.</a></em></p>
+**Show every squad** sorted by `total_failing_rule_instances` desc. Each squad gets one scorecard-level summary table (no rule-level rows).
+
+**Delta helper** — build a lookup from the previous snapshot before rendering:
+
+```python
+prev_snap = json.loads((data_dir / prev_date / 'maturity.json').read_text())
+# prev_date = second-to-last entry in index['snapshots']
+
+def sc_agg(sc):
+    rows = sum(r['failing_entity_count'] for r in sc['rules'])
+    rules = len(sc['rules'])
+    entities = len({e for r in sc['rules'] for e in r['entities']})
+    return rows, rules, entities
+
+prev_lookup = {}  # squad_name -> scorecard_name -> (rows, rules, entities)
+for sq in prev_snap['squads']:
+    prev_lookup[sq['name']] = {sc['name']: sc_agg(sc) for sc in sq['scorecards']}
+
+def delta(curr, prev):
+    """Return 'N (+D, was P)' or just 'N' if no prev."""
+    if prev is None:
+        return str(curr)
+    d = curr - prev
+    sign = '+' if d >= 0 else ''
+    return f'{curr} ({sign}{d}, was {prev})'
 ```
 
-For each `squad` in the top 5 of `snap['squads']` sorted by `total_failing_rule_instances` desc, show at most 10 rules per squad:
+For each `squad` in `snap['squads']` sorted by `total_failing_rule_instances` desc:
 
 ```html
-<h3>{squad['name']} — {squad['total_failing_rule_instances']} rule-instances, {squad['total_affected_entities']} entities</h3>
+<h3>{squad['name']}</h3>
 <table data-layout="full-width">
-<tr><th><strong>Scorecard</strong></th><th><strong>Rule</strong></th><th><strong>Affected Entities</strong></th></tr>
+<tr><th><strong>Scorecard</strong></th><th><strong>Failing Rows</strong></th><th><strong>Failing Rules</strong></th><th><strong>Affected Entities</strong></th></tr>
 ```
 
-For each `sc` in `squad['scorecards']`, for each `rule` in `sc['rules']` (already sorted by `failing_entity_count` desc):
-- Scorecard name: show only on the first rule row for each scorecard, empty string for subsequent rows
+For each `sc` in `squad['scorecards']`:
+- Compute `curr_rows, curr_rules, curr_entities = sc_agg(sc)`
+- Look up `prev_sc = prev_lookup.get(squad['name'], {}).get(sc['name'])` — this is `(rows, rules, entities)` or `None`
+- Scorecard name links to `squad['cortex_url']`
 
 ```html
 <tr>
-  <td><strong>{sc_name_or_empty}</strong></td>
-  <td>{rule['rule']}</td>
-  <td><a href="{squad['cortex_url']}">{rule['failing_entity_count']}</a></td>
+  <td><a href="{squad['cortex_url']}">{sc['name']}</a></td>
+  <td>{delta(curr_rows, prev_sc[0] if prev_sc else None)}</td>
+  <td>{delta(curr_rules, prev_sc[1] if prev_sc else None)}</td>
+  <td>{delta(curr_entities, prev_sc[2] if prev_sc else None)}</td>
 </tr>
 ```
 
 Close `</table>` after each squad.
+
+**New squads** (present in current snapshot but not in previous) have no prev data — `delta()` will just show the raw number with no comparison, which is correct.
 
 ### Step 3 — Find or create the Confluence page
 
