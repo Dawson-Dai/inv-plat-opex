@@ -26,6 +26,7 @@ def _fill(hex6):
 FILL_TITLE    = _fill("0D1B2A")   # very dark navy – title row
 FILL_SC_GRP   = _fill("2E5F9B")   # mid blue      – scorecard group headers
 FILL_SUB_HDR  = _fill("4A86C8")   # light blue    – sub-headers / column headers
+FILL_WHITE    = _fill("FFFFFF")   # white          – alternating row colour B
 FILL_SECTION  = _fill("1F3A5F")   # dark blue     – section headings in squad sheets
 FILL_ALT      = _fill("EBF2FB")   # very light    – alternating data rows
 FILL_TOTAL    = _fill("BDD7EE")   # pale blue     – total rows
@@ -181,7 +182,7 @@ def build_report(sorted_csv: str, output_xlsx: str) -> dict:
     tribe_all_rules = set()
 
     for ri, squad in enumerate(squads, start=4):
-        alt_fill = FILL_ALT  # all data rows use same alt fill (reference uses it on all rows)
+        alt_fill = FILL_ALT if (ri - 4) % 2 == 0 else FILL_WHITE  # ABAB by row
         sq = data[squad]
         sq_ent = {e for sc in sq.values() for rd in sc.values() for e in rd["entities"]}
         sq_rows = sum(rd["rows"] for sc in sq.values() for rd in sc.values())
@@ -271,11 +272,12 @@ def build_report(sorted_csv: str, output_xlsx: str) -> dict:
         ws.row_dimensions[ri2].height = 18.0
         pct_en = f"{len(agg['entities'])/len(tribe_entities)*100:.1f}%" if tribe_entities else "0.0%"
         pct_ro = f"{agg['rows']/tribe_rows*100:.1f}%" if tribe_rows else "0.0%"
-        _apply(ws.cell(ri2, 1), value=sc, font=F_DARK_10, fill=FILL_ALT,
+        tss_fill = FILL_ALT if i % 2 == 0 else FILL_WHITE
+        _apply(ws.cell(ri2, 1), value=sc, font=F_DARK_10, fill=tss_fill,
                align=Alignment(horizontal="left", vertical="center"))
         for ci, v in enumerate([len(agg["rules"]), len(agg["entities"]), pct_en,
                                  agg["rows"], pct_ro], start=2):
-            _apply(ws.cell(ri2, ci), value=v, font=F_DARK_10, fill=FILL_ALT,
+            _apply(ws.cell(ri2, ci), value=v, font=F_DARK_10, fill=tss_fill,
                    align=Alignment(horizontal="center", vertical="center"))
 
     # Grand total for summary
@@ -333,22 +335,36 @@ def build_report(sorted_csv: str, output_xlsx: str) -> dict:
         sq_rules_total = sum(len(sc) for sc in sq.values())
         sq_sc_count = len(sq)
 
-        # Fixed column widths (match reference exactly)
-        widths = {"A": 24.0, "B": 22.0, "C": 20.0, "D": 14.0, "E": 12.0, "F": 14.0, "G": 65.0}
-        for col_letter, w in widths.items():
+        # Column layout (side-by-side):
+        #   A–F  (1–6)  : Scorecard Summary
+        #   G    (7)    : gap
+        #   H–L  (8–12) : Rule Breakdown
+        #   M    (13)   : gap
+        #   N–Q  (14–17): Entity Detail
+        SC_COL  = 1   # Scorecard Summary starts col A
+        RB_COL  = 8   # Rule Breakdown starts col H
+        ED_COL  = 14  # Entity Detail starts col N
+
+        col_widths = {
+            "A": 24.0, "B": 22.0, "C": 20.0, "D": 14.0, "E": 12.0, "F": 14.0,
+            "G": 3.0,
+            "H": 18.0, "I": 28.0, "J": 12.0, "K": 10.0, "L": 40.0,
+            "M": 3.0,
+            "N": 24.0, "O": 18.0, "P": 50.0, "Q": 20.0,
+        }
+        for col_letter, w in col_widths.items():
             ws2.column_dimensions[col_letter].width = w
 
-        # No freeze panes (reference uses A5 but that cuts off the KPI — omit to match visual)
         ws2.freeze_panes = None
 
-        # Row 1: title (merged A:F, same as reference)
+        # Row 1: title (merged A:Q)
         ws2.row_dimensions[1].height = 30.0
         r1 = ws2.cell(1, 1, f"Squad: {squad}  –  Baseline Maturity Failures  |  {report_date}")
         _apply(r1, font=F_WHITE_BOLD_13, fill=FILL_TITLE, border=False,
                align=Alignment(horizontal="center", vertical="center"))
-        ws2.merge_cells(start_row=1, start_column=1, end_row=1, end_column=6)
+        ws2.merge_cells(start_row=1, start_column=1, end_row=1, end_column=17)
 
-        # Row 2: KPI headers (Entities / Scorecards / Failing Rules / Total Rows)
+        # Row 2: KPI headers
         ws2.row_dimensions[2].height = 20.0
         kpi_hdrs = ["Entities", "Scorecards", "Failing Rules", "Total Rows"]
         for ci, h in enumerate(kpi_hdrs, 1):
@@ -362,23 +378,57 @@ def build_report(sorted_csv: str, output_xlsx: str) -> dict:
             _apply(ws2.cell(3, ci), value=v, font=F_KPI_VALUE, fill=FILL_ALT,
                    align=Alignment(horizontal="center", vertical="center"))
 
-        # Row 5: "Scorecard Summary" section heading (merged A:F)
+        # ── Row 5: all three section headings on the same row ────────────────
         ws2.row_dimensions[5].height = 22.0
-        sh = ws2.cell(5, 1, "Scorecard Summary")
+
+        # Scorecard Summary heading (A:F)
+        sh = ws2.cell(5, SC_COL, "Scorecard Summary")
         _apply(sh, font=F_WHITE_BOLD_11, fill=FILL_SECTION, border=False,
                align=Alignment(horizontal="left", vertical="center"))
-        ws2.merge_cells(start_row=5, start_column=1, end_row=5, end_column=6)
+        ws2.merge_cells(start_row=5, start_column=SC_COL, end_row=5, end_column=SC_COL + 5)
 
-        # Row 6: Scorecard Summary headers
+        # Rule Breakdown heading (H:L)
+        rb_sh = ws2.cell(5, RB_COL,
+            "Rule Breakdown  –  distinct rules failing and how many entities are affected")
+        _apply(rb_sh, font=F_WHITE_BOLD_11, fill=FILL_SECTION, border=False,
+               align=Alignment(horizontal="left", vertical="center"))
+        ws2.merge_cells(start_row=5, start_column=RB_COL, end_row=5, end_column=RB_COL + 4)
+
+        # Entity Detail heading (N:Q)
+        ed_sh = ws2.cell(5, ED_COL, "Entity Detail  –  every failing rule per entity")
+        _apply(ed_sh, font=F_WHITE_BOLD_11, fill=FILL_SECTION, border=False,
+               align=Alignment(horizontal="left", vertical="center"))
+        ws2.merge_cells(start_row=5, start_column=ED_COL, end_row=5, end_column=ED_COL + 3)
+
+        # ── Row 6: all three header rows ─────────────────────────────────────
         ws2.row_dimensions[6].height = 28.0
+
+        # Scorecard Summary headers
         sc_hdrs = ["Scorecard", "Failing Rules", "Affected Entities",
                    "% of Squad Entities", "Total Rows", "% of Squad Rows"]
-        for ci, h in enumerate(sc_hdrs, 1):
+        for ci, h in enumerate(sc_hdrs, SC_COL):
             _apply(ws2.cell(6, ci), value=h, font=F_WHITE_BOLD_9, fill=FILL_SUB_HDR,
                    align=Alignment(horizontal="center", vertical="center", wrap_text=True))
 
-        # Scorecard Summary data rows
-        ri3 = 7
+        # Rule Breakdown headers
+        rb_hdrs = ["Scorecard", "Rule", "Failing Entities", "% of Squad", "Affected Entities (names)"]
+        for ci, h in enumerate(rb_hdrs, RB_COL):
+            _apply(ws2.cell(6, ci), value=h, font=F_WHITE_BOLD_9, fill=FILL_SUB_HDR,
+                   align=Alignment(horizontal="center", vertical="center", wrap_text=True))
+
+        # Entity Detail headers
+        ed_hdrs = ["Entity", "Scorecard", "Rule", "Last Evaluated"]
+        for ci, h in enumerate(ed_hdrs, ED_COL):
+            _apply(ws2.cell(6, ci), value=h, font=F_WHITE_BOLD_9, fill=FILL_SUB_HDR,
+                   align=Alignment(horizontal="center", vertical="center", wrap_text=True))
+
+        # ── Data rows (all three tables in parallel, starting row 7) ─────────
+        # Each table has independent ABAB alternating colours (FILL_ALT / FILL_WHITE).
+        # Rule Breakdown: scorecard cell merged across its rules.
+        # Entity Detail: entity cell merged across its rows.
+
+        # ── Scorecard Summary rows ────────────────────────────────────────────
+        sc_rows = []
         for sc in all_scorecards:
             rules = sq.get(sc, {})
             ru = len(rules)
@@ -386,82 +436,31 @@ def build_report(sorted_csv: str, output_xlsx: str) -> dict:
             ro = sum(rd["rows"] for rd in rules.values())
             pct_en = f"{en/len(sq_ent)*100:.1f}%" if sq_ent else "0.0%"
             pct_ro = f"{ro/sq_rows_total*100:.1f}%" if sq_rows_total else "0.0%"
-            ws2.row_dimensions[ri3].height = 18.0
-            _apply(ws2.cell(ri3, 1), value=_abbrev(sc), font=F_DARK_10, fill=FILL_ALT,
-                   align=Alignment(horizontal="left", vertical="center"))
-            for ci, v in enumerate([ru, en, pct_en, ro, pct_ro], start=2):
-                _apply(ws2.cell(ri3, ci), value=v, font=F_DARK_10, fill=FILL_ALT,
-                       align=Alignment(horizontal="center", vertical="center"))
-            ri3 += 1
+            sc_rows.append((_abbrev(sc), ru, en, pct_en, ro, pct_ro, False))
+        sc_rows.append(("Total", sq_rules_total, len(sq_ent), "–", sq_rows_total, "100%", True))
 
-        # Total row
-        ws2.row_dimensions[ri3].height = 22.0
-        _apply(ws2.cell(ri3, 1), value="Total", font=F_TOTAL_DARK, fill=FILL_TOTAL,
-               align=Alignment(horizontal="left", vertical="center"))
-        for ci, v in enumerate([sq_rules_total, len(sq_ent), "–", sq_rows_total, "100%"], start=2):
-            _apply(ws2.cell(ri3, ci), value=v, font=F_TOTAL_DARK, fill=FILL_TOTAL,
-                   align=Alignment(horizontal="center", vertical="center"))
-        ri3 += 1
-
-        # Row ri3+1: "Rule Breakdown" section heading (merged A:E)
-        rb_row = ri3 + 1
-        ws2.row_dimensions[rb_row].height = 22.0
-        rb_sh = ws2.cell(rb_row, 1,
-            "Rule Breakdown  –  distinct rules failing and how many entities are affected")
-        _apply(rb_sh, font=F_WHITE_BOLD_11, fill=FILL_SECTION, border=False,
-               align=Alignment(horizontal="left", vertical="center"))
-        ws2.merge_cells(start_row=rb_row, start_column=1, end_row=rb_row, end_column=5)
-
-        # Rule Breakdown headers
-        rb_hdr_row = rb_row + 1
-        ws2.row_dimensions[rb_hdr_row].height = 26.0
-        rb_hdrs = ["Scorecard", "Rule", "Failing Entities", "% of Squad", "Affected Entities (names)"]
-        for ci, h in enumerate(rb_hdrs, 1):
-            _apply(ws2.cell(rb_hdr_row, ci), value=h, font=F_WHITE_BOLD_9, fill=FILL_SUB_HDR,
-                   align=Alignment(horizontal="center", vertical="center", wrap_text=True))
-
-        # Rule Breakdown data
-        ri4 = rb_hdr_row + 1
+        # ── Rule Breakdown rows: (sc_abbrev, rule, en, pct, names, en_count, sc_group_idx)
+        rb_rows = []
+        rb_sc_groups = []  # list of (start_idx, length) for merge tracking
+        sc_group_idx = -1
+        cur_sc = None
         for sc in all_scorecards:
             rules = sq.get(sc, {})
             if not rules:
                 continue
             abbr = _abbrev(sc)
+            group_start = len(rb_rows)
             for rule, rd in sorted(rules.items(), key=lambda x: -len(x[1]["entities"])):
                 en = len(rd["entities"])
                 pct = f"{en/len(sq_ent)*100:.1f}%" if sq_ent else "0.0%"
-                names = ", ".join(sorted(rd["entities"]))
-                ws2.row_dimensions[ri4].height = 60.0 if en > 3 else (24.0 if en > 1 else 18.0)
-                _apply(ws2.cell(ri4, 1), value=abbr, font=F_DARK_10, fill=FILL_ALT,
-                       align=Alignment(horizontal="left", vertical="center", wrap_text=True))
-                _apply(ws2.cell(ri4, 2), value=rule, font=F_DARK_10, fill=FILL_ALT,
-                       align=Alignment(horizontal="left", vertical="center", wrap_text=True))
-                _apply(ws2.cell(ri4, 3), value=en, font=F_DARK_10, fill=FILL_ALT,
-                       align=Alignment(horizontal="center", vertical="center"))
-                _apply(ws2.cell(ri4, 4), value=pct, font=F_DARK_10, fill=FILL_ALT,
-                       align=Alignment(horizontal="center", vertical="center"))
-                _apply(ws2.cell(ri4, 5), value=names, font=F_DARK_10, fill=FILL_ALT,
-                       align=Alignment(horizontal="left", vertical="center", wrap_text=True))
-                ri4 += 1
+                names = "\n".join(sorted(rd["entities"]))
+                rb_rows.append((abbr, rule, en, pct, names, en))
+            group_len = len(rb_rows) - group_start
+            rb_sc_groups.append((group_start, group_len))
 
-        # Entity Detail section heading (merged A:D)
-        ed_row = ri4 + 1
-        ws2.row_dimensions[ed_row].height = 22.0
-        ed_sh = ws2.cell(ed_row, 1, "Entity Detail  –  every failing rule per entity")
-        _apply(ed_sh, font=F_WHITE_BOLD_11, fill=FILL_SECTION, border=False,
-               align=Alignment(horizontal="left", vertical="center"))
-        ws2.merge_cells(start_row=ed_row, start_column=1, end_row=ed_row, end_column=4)
-
-        # Entity Detail headers
-        ed_hdr_row = ed_row + 1
-        ws2.row_dimensions[ed_hdr_row].height = 24.0
-        ed_hdrs = ["Entity", "Scorecard", "Rule", "Last Evaluated"]
-        for ci, h in enumerate(ed_hdrs, 1):
-            _apply(ws2.cell(ed_hdr_row, ci), value=h, font=F_WHITE_BOLD_9, fill=FILL_SUB_HDR,
-                   align=Alignment(horizontal="center", vertical="center", wrap_text=True))
-
-        # Entity Detail data
-        ri5 = ed_hdr_row + 1
+        # ── Entity Detail rows: (entity, sc_abbrev, rule, last_eval, entity_group_idx)
+        ed_rows = []
+        ed_ent_groups = []  # list of (start_idx, length) for entity merge
         for sc in all_scorecards:
             rules = sq.get(sc, {})
             if not rules:
@@ -469,17 +468,99 @@ def build_report(sorted_csv: str, output_xlsx: str) -> dict:
             abbr = _abbrev(sc)
             for rule, rd in sorted(rules.items()):
                 for ent in sorted(rd["entities"]):
-                    ws2.row_dimensions[ri5].height = 18.0
-                    _apply(ws2.cell(ri5, 1), value=ent, font=F_DARK_10, fill=FILL_ALT,
-                           align=Alignment(horizontal="left", vertical="center"))
-                    _apply(ws2.cell(ri5, 2), value=abbr, font=F_DARK_10, fill=FILL_ALT,
-                           align=Alignment(horizontal="left", vertical="center"))
-                    _apply(ws2.cell(ri5, 3), value=rule, font=F_DARK_10, fill=FILL_ALT,
-                           align=Alignment(horizontal="left", vertical="center", wrap_text=True))
-                    _apply(ws2.cell(ri5, 4), value=rd["last_eval"].get(ent, ""), font=F_DARK_10,
-                           fill=FILL_ALT,
-                           align=Alignment(horizontal="left", vertical="center"))
-                    ri5 += 1
+                    ed_rows.append((ent, abbr, rule, rd["last_eval"].get(ent, "")))
+
+        # Build entity merge groups for ED (consecutive rows with same entity)
+        i = 0
+        while i < len(ed_rows):
+            ent = ed_rows[i][0]
+            j = i + 1
+            while j < len(ed_rows) and ed_rows[j][0] == ent:
+                j += 1
+            ed_ent_groups.append((i, j - i))
+            i = j
+
+        # ── Write all rows ────────────────────────────────────────────────────
+        ROW0 = 7  # first data row
+        max_rows = max(len(sc_rows), len(rb_rows), len(ed_rows), 1)
+
+        # ABAB alternates by individual row index (0=A, 1=B, 2=A, …).
+        # Merged columns (RB col H scorecard, ED col N entity) use FILL_ALT
+        # consistently — no alternating on those columns.
+        def _row_fill(row_idx):
+            return FILL_ALT if row_idx % 2 == 0 else FILL_WHITE
+
+        for i in range(max_rows):
+            row  = ROW0 + i
+            fill = _row_fill(i)          # ABAB by row for non-merged columns
+            ws2.row_dimensions[row].height = 18.0
+
+            # ── Scorecard Summary (no merged columns → ABAB on all cols) ──
+            if i < len(sc_rows):
+                sc_r = sc_rows[i]
+                is_total = sc_r[6]
+                f    = F_TOTAL_DARK if is_total else F_DARK_10
+                sfill = FILL_TOTAL  if is_total else fill
+                _apply(ws2.cell(row, SC_COL), value=sc_r[0], font=f, fill=sfill,
+                       align=Alignment(horizontal="left", vertical="center"))
+                for ci, v in enumerate(sc_r[1:6], SC_COL + 1):
+                    _apply(ws2.cell(row, ci), value=v, font=f, fill=sfill,
+                           align=Alignment(horizontal="center", vertical="center"))
+
+            # ── Rule Breakdown ─────────────────────────────────────────────
+            # Col H (scorecard) is merged → FILL_ALT always; cols I-L → ABAB
+            if i < len(rb_rows):
+                rb_r     = rb_rows[i]
+                en_count = rb_r[5]
+                row_h    = max(18.0, 15.0 * en_count)
+                ws2.row_dimensions[row].height = row_h
+                # Merged column: consistent fill
+                _apply(ws2.cell(row, RB_COL),   value=rb_r[0], font=F_DARK_10, fill=FILL_ALT,
+                       align=Alignment(horizontal="left", vertical="top", wrap_text=True))
+                # Non-merged columns: ABAB
+                _apply(ws2.cell(row, RB_COL+1), value=rb_r[1], font=F_DARK_10, fill=fill,
+                       align=Alignment(horizontal="left", vertical="top", wrap_text=True))
+                _apply(ws2.cell(row, RB_COL+2), value=rb_r[2], font=F_DARK_10, fill=fill,
+                       align=Alignment(horizontal="center", vertical="top"))
+                _apply(ws2.cell(row, RB_COL+3), value=rb_r[3], font=F_DARK_10, fill=fill,
+                       align=Alignment(horizontal="center", vertical="top"))
+                _apply(ws2.cell(row, RB_COL+4), value=rb_r[4], font=F_DARK_10, fill=fill,
+                       align=Alignment(horizontal="left", vertical="top", wrap_text=True))
+
+            # ── Entity Detail ──────────────────────────────────────────────
+            # Col N (entity) is merged → FILL_ALT always; cols O-Q → ABAB
+            if i < len(ed_rows):
+                ed_r = ed_rows[i]
+                # Merged column: consistent fill
+                _apply(ws2.cell(row, ED_COL),   value=ed_r[0], font=F_DARK_10, fill=FILL_ALT,
+                       align=Alignment(horizontal="left", vertical="center"))
+                # Non-merged columns: ABAB
+                _apply(ws2.cell(row, ED_COL+1), value=ed_r[1], font=F_DARK_10, fill=fill,
+                       align=Alignment(horizontal="left", vertical="center"))
+                _apply(ws2.cell(row, ED_COL+2), value=ed_r[2], font=F_DARK_10, fill=fill,
+                       align=Alignment(horizontal="left", vertical="center", wrap_text=True))
+                _apply(ws2.cell(row, ED_COL+3), value=ed_r[3], font=F_DARK_10, fill=fill,
+                       align=Alignment(horizontal="left", vertical="center"))
+
+        # ── Merge scorecard cells in Rule Breakdown ───────────────────────────
+        for g_start, g_len in rb_sc_groups:
+            if g_len > 1:
+                r1 = ROW0 + g_start
+                r2 = ROW0 + g_start + g_len - 1
+                ws2.merge_cells(start_row=r1, start_column=RB_COL,
+                                end_row=r2,   end_column=RB_COL)
+                ws2.cell(r1, RB_COL).alignment = Alignment(
+                    horizontal="left", vertical="center", wrap_text=True)
+
+        # ── Merge entity cells in Entity Detail ───────────────────────────────
+        for g_start, g_len in ed_ent_groups:
+            if g_len > 1:
+                r1 = ROW0 + g_start
+                r2 = ROW0 + g_start + g_len - 1
+                ws2.merge_cells(start_row=r1, start_column=ED_COL,
+                                end_row=r2,   end_column=ED_COL)
+                ws2.cell(r1, ED_COL).alignment = Alignment(
+                    horizontal="left", vertical="center")
 
     # Save to buffer first, then patch chart XML, then write final file
     buf = io.BytesIO()
