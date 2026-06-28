@@ -4367,6 +4367,270 @@
           ]
         }
       }
+    },
+    {
+      "rule": "Teams must not have pending incidents older than 14 days",
+      "label": "No Stale Incidents",
+      "squad_compliance": {
+        "Aqua": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Big Yus": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Dancing Penguins": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Falcon": {
+          "failing_entity_count": 1,
+          "entities": [
+            "falcon-squad"
+          ]
+        },
+        "Fuel RaTS": {
+          "failing_entity_count": 1,
+          "entities": [
+            "fuel-rats-squad"
+          ]
+        },
+        "Ganymede": {
+          "failing_entity_count": 1,
+          "entities": [
+            "ganymede-squad"
+          ]
+        },
+        "Halo": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Kylin": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Libra": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Ollivander": {
+          "failing_entity_count": 1,
+          "entities": [
+            "ollivander-squad"
+          ]
+        },
+        "Orange": {
+          "failing_entity_count": 1,
+          "entities": [
+            "orange-squad"
+          ]
+        },
+        "Orca": {
+          "failing_entity_count": 1,
+          "entities": [
+            "orca-squad"
+          ]
+        },
+        "Pigeon": {
+          "failing_entity_count": 1,
+          "entities": [
+            "pigeon-squad"
+          ]
+        },
+        "Silver": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Spyro": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Tiger": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Yellow": {
+          "failing_entity_count": 0,
+          "entities": []
+        }
+      }
+    },
+    {
+      "rule": "Teams must not have live incidents",
+      "label": "No Live Incidents",
+      "squad_compliance": {
+        "Aqua": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Big Yus": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Dancing Penguins": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Falcon": {
+          "failing_entity_count": 1,
+          "entities": [
+            "falcon-squad"
+          ]
+        },
+        "Fuel RaTS": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Ganymede": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Halo": {
+          "failing_entity_count": 1,
+          "entities": [
+            "halo-squad"
+          ]
+        },
+        "Kylin": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Libra": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Ollivander": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Orange": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Orca": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Pigeon": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Silver": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Spyro": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Tiger": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Yellow": {
+          "failing_entity_count": 0,
+          "entities": []
+        }
+      }
+    },
+    {
+      "rule": "Repositories must use supported Docker images",
+      "label": "Supported Docker Images",
+      "squad_compliance": {
+        "Aqua": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Big Yus": {
+          "failing_entity_count": 5,
+          "entities": [
+            "market_partners",
+            "market_partners_fixtures",
+            "taps_keys",
+            "taps_keys_fixtures",
+            "taps_keys_schemas"
+          ]
+        },
+        "Dancing Penguins": {
+          "failing_entity_count": 1,
+          "entities": [
+            "dancingpenguins"
+          ]
+        },
+        "Falcon": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Fuel RaTS": {
+          "failing_entity_count": 3,
+          "entities": [
+            "routeswho-shadow-whostar-aurora",
+            "wrmd-aurora",
+            "ws-precompute-aurora-cells"
+          ]
+        },
+        "Ganymede": {
+          "failing_entity_count": 1,
+          "entities": [
+            "hotelcar-data-analysis"
+          ]
+        },
+        "Halo": {
+          "failing_entity_count": 4,
+          "entities": [
+            "eqt-data-ingestion-job",
+            "integration-proxy-cells",
+            "jacquard-tools",
+            "partner-limit-error-job"
+          ]
+        },
+        "Kylin": {
+          "failing_entity_count": 2,
+          "entities": [
+            "dv-dashboard-pipeline",
+            "dv-data-report-pipeline"
+          ]
+        },
+        "Libra": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Ollivander": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Orange": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Orca": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Pigeon": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Silver": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Spyro": {
+          "failing_entity_count": 0,
+          "entities": []
+        },
+        "Tiger": {
+          "failing_entity_count": 1,
+          "entities": [
+            "carhire-indicative-price"
+          ]
+        },
+        "Yellow": {
+          "failing_entity_count": 0,
+          "entities": []
+        }
+      }
     }
   ]
 }

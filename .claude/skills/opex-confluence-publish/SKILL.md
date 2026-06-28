@@ -134,7 +134,7 @@ Close `</table>`.
 For each `pr` in `snap['priority_rules']`:
 - Collect failing squads: `[(squad, v['failing_entity_count']) for squad, v in pr['squad_compliance'].items() if v['failing_entity_count'] > 0]`, sorted by count desc
 - If none: `<span style="color:#217a45;">✅ All squads compliant</span>`
-- Otherwise: `• Squad Name (N)<br>• Squad Name (N)<br>…`
+- Otherwise: comma-separated inline, e.g. `Squad A (3), Squad B (2), Squad C (1)`
 
 ```html
 <tr>
