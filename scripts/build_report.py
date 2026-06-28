@@ -8,8 +8,10 @@ Passing the raw Cortex export directly may include excluded squads.
 Styling matches the 2026-06-20 reference report exactly.
 """
 import csv
+import io
 import re
 import sys
+import zipfile
 from collections import defaultdict
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
@@ -286,27 +288,22 @@ def build_report(sorted_csv: str, output_xlsx: str) -> dict:
         _apply(ws.cell(gt_ri, ci), value=v, font=F_TOTAL_DARK, fill=FILL_TOTAL,
                align=Alignment(horizontal="center", vertical="center"))
 
-    # Bar chart — horizontal, squad names on left, placed below Tribe Scorecard Summary
-    # Reference size: cx=10800000, cy=7920000 EMU = 30cm × 22cm; doubled = 60cm × 44cm
+    # Bar chart — horizontal, squad names on left, placed below Tribe Scorecard Summary.
+    # openpyxl always serialises category refs as numRef and titles as inline <v>.
+    # Neither shows squad name labels in Excel. We patch the XML after saving via
+    # _patch_chart_xml() to use strRef exactly as the 2026-06-20 reference does.
     chart = BarChart()
-    chart.type = "bar"           # horizontal bars — squad names appear on the left axis
+    chart.type = "bar"
     chart.grouping = "clustered"
     chart.title = "Failing Rows & Entities with Baseline Failures by Squad"
-    chart.width  = 60.0          # cm (doubled from reference 30cm)
-    chart.height = 44.0          # cm (doubled from reference 22cm)
+    # Match reference exactly: cx=10800000, cy=7920000 EMU = 30cm × 22cm
+    chart.width  = 30.0
+    chart.height = 22.0
 
-    # Data range excludes the header row so no phantom entry appears in the bars.
-    # Categories (col A) use min_row=4 (first squad name) — no title row — so squad
-    # names show on the axis. Series headers are set via titles_from_data=False +
-    # a separate title Reference pointing at row 3.
     data_last_row = 3 + len(squads)
-
-    # Series 0: Entities (col B) — values only, no header row in range
     ents_ref = Reference(ws, min_col=COL_ENTITIES, min_row=4, max_row=data_last_row)
-    # Series 1: Rows (grand total col GT_COL+2)
-    rows_ref = Reference(ws, min_col=GT_COL+2, min_row=4, max_row=data_last_row)
-    # Categories: squad names col A rows 4..end
-    cats_ref = Reference(ws, min_col=COL_SQUAD, min_row=4, max_row=data_last_row)
+    rows_ref = Reference(ws, min_col=GT_COL+2,     min_row=4, max_row=data_last_row)
+    cats_ref = Reference(ws, min_col=COL_SQUAD,    min_row=4, max_row=data_last_row)
 
     chart.add_data(ents_ref, titles_from_data=False)
     chart.add_data(rows_ref, titles_from_data=False)
@@ -314,9 +311,14 @@ def build_report(sorted_csv: str, output_xlsx: str) -> dict:
     chart.series[1].title = SeriesLabel(v="Rows")
     chart.set_categories(cats_ref)
 
-    # Place chart 2 rows below the Grand Total of the Tribe Scorecard Summary
+    # Place chart 2 rows below Grand Total of Tribe Scorecard Summary
     chart_anchor_row = gt_ri + 2
     ws.add_chart(chart, f"A{chart_anchor_row}")
+
+    # Store patching info for post-save XML fix
+    _chart_cat_range  = f"'Tribe Overview'!$A$4:$A${data_last_row}"
+    _chart_title_ents = f"'Tribe Overview'!B3"
+    _chart_title_rows = f"'Tribe Overview'!{get_column_letter(GT_COL+2)}3"
 
     # ── Per-squad sheets ─────────────────────────────────────────────────────
     for squad in squads:
@@ -479,11 +481,77 @@ def build_report(sorted_csv: str, output_xlsx: str) -> dict:
                            align=Alignment(horizontal="left", vertical="center"))
                     ri5 += 1
 
-    wb.save(output_xlsx)
+    # Save to buffer first, then patch chart XML, then write final file
+    buf = io.BytesIO()
+    wb.save(buf)
+    patched = _patch_chart_xml(
+        buf.getvalue(),
+        cat_range=_chart_cat_range,
+        title_ents=_chart_title_ents,
+        title_rows=_chart_title_rows,
+    )
+    with open(output_xlsx, "wb") as fh:
+        fh.write(patched)
+
     total_rows = sum(
         rd["rows"] for sq in data.values() for sc in sq.values() for rd in sc.values()
     )
     return {"squads": len(squads), "rows": total_rows}
+
+
+def _patch_chart_xml(xlsx_bytes: bytes, cat_range: str, title_ents: str, title_rows: str) -> bytes:
+    """
+    Post-process chart XML to match 2026-06-20 reference:
+    - Replace <cat><numRef> with <cat><strRef> so squad names appear on the axis
+    - Replace inline <tx><v> series titles with <tx><strRef> pointing to header cells
+    - Fix valAx axPos from 'l' to 'b' (bottom axis for values)
+    """
+    buf = io.BytesIO()
+    with zipfile.ZipFile(io.BytesIO(xlsx_bytes), "r") as zin, \
+         zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as zout:
+        for item in zin.infolist():
+            data = zin.read(item.filename)
+            if re.match(r"xl/charts/chart\d+\.xml", item.filename):
+                xml = data.decode("utf-8")
+                # categories: numRef → strRef
+                xml = xml.replace(
+                    f"<cat><numRef><f>{cat_range}</f></numRef></cat>",
+                    f"<cat><strRef><f>{cat_range}</f></strRef></cat>",
+                )
+                # series 0 title: inline v → strRef
+                xml = xml.replace(
+                    "<tx><v>Entities</v></tx>",
+                    f"<tx><strRef><f>{title_ents}</f></strRef></tx>",
+                )
+                # series 1 title: inline v → strRef
+                xml = xml.replace(
+                    "<tx><v>Rows</v></tx>",
+                    f"<tx><strRef><f>{title_rows}</f></strRef></tx>",
+                )
+                # catAx: add <delete val="0"/> and <tickLblPos val="nextTo"/> which
+                # openpyxl omits — without <delete val="0"> Excel hides the axis labels
+                xml = xml.replace(
+                    '<catAx><axId val="10"/><scaling><orientation val="minMax"/></scaling><axPos val="l"/>',
+                    '<catAx><axId val="10"/><scaling><orientation val="minMax"/></scaling>'
+                    '<delete val="0"/><axPos val="l"/><majorTickMark val="none"/>'
+                    '<minorTickMark val="none"/><tickLblPos val="nextTo"/>',
+                )
+                # Remove the duplicate majorTickMark/minorTickMark that openpyxl adds after axPos
+                xml = xml.replace(
+                    '<delete val="0"/><axPos val="l"/><majorTickMark val="none"/>'
+                    '<minorTickMark val="none"/><tickLblPos val="nextTo"/>'
+                    '<majorTickMark val="none"/><minorTickMark val="none"/>',
+                    '<delete val="0"/><axPos val="l"/><majorTickMark val="none"/>'
+                    '<minorTickMark val="none"/><tickLblPos val="nextTo"/>',
+                )
+                # valAx axPos: catAx has axPos="l" (left), valAx must be "b" (bottom)
+                # Replace the second occurrence only
+                parts = xml.split('<axPos val="l"/>')
+                if len(parts) == 3:
+                    xml = parts[0] + '<axPos val="l"/>' + parts[1] + '<axPos val="b"/>' + parts[2]
+                data = xml.encode("utf-8")
+            zout.writestr(item, data)
+    return buf.getvalue()
 
 
 if __name__ == "__main__":
