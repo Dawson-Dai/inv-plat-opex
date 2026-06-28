@@ -5,7 +5,7 @@ Usage:
     python3 scripts/run.py <input_csv>
 
 Example:
-    python3 scripts/run.py ~/Downloads/maturity-export-2026-06-27.csv
+    python3 scripts/run.py ~/Downloads/maturity-export-2026-06-28.csv
 
 Steps:
   1. Derive date from filename (YYYY-MM-DD)
@@ -46,10 +46,13 @@ def run(input_csv: str):
     date = _extract_date(input_path.name)
     print(f"\n📅 Date: {date}")
 
-    # Step 2: Copy to snapshots/
+    # Canonical file stem for all outputs regardless of input filename
+    stem = f"Inventory-platform-maturity-{date}"
+
+    # Step 2: Copy to snapshots/ using canonical name
     snap_dir = REPO_ROOT / "snapshots" / date
     snap_dir.mkdir(parents=True, exist_ok=True)
-    dest_csv = snap_dir / input_path.name
+    dest_csv = snap_dir / f"{stem}.csv"
     if not dest_csv.exists():
         shutil.copy2(input_path, dest_csv)
         print(f"✓ Copied input → {dest_csv.relative_to(REPO_ROOT)}")
@@ -57,7 +60,6 @@ def run(input_csv: str):
         print(f"  (input already in snapshots, skipping copy)")
 
     # Step 3: Sort
-    stem = input_path.stem  # e.g. maturity-export-2026-06-27
     sorted_path = snap_dir / f"{stem}-sorted-raw.csv"
     row_count = sort_csv(str(dest_csv), str(sorted_path))
     print(f"✓ Sorted CSV ({row_count} rows) → {sorted_path.relative_to(REPO_ROOT)}")
