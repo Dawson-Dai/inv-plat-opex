@@ -1,0 +1,24 @@
+# Tier-based anomaly thresholds for CloudZero cost change detection.
+# A squad is flagged if abs(abs_change) > abs_threshold OR abs(pct_change) > pct_threshold.
+# Tiers are evaluated in order; the first matching tier wins.
+tiers:
+  - tier: 1
+    label: "< $1,000"
+    max_cost: 1000
+    abs_threshold: 100
+    pct_threshold: 20
+  - tier: 2
+    label: "$1,000 – $4,999"
+    max_cost: 5000
+    abs_threshold: 500
+    pct_threshold: 15
+  - tier: 3
+    label: "$5,000 – $19,999"
+    max_cost: 20000
+    abs_threshold: 1000
+    pct_threshold: 10
+  - tier: 4
+    label: ">= $20,000"
+    max_cost: .inf
+    abs_threshold: 2000
+    pct_threshold: 10

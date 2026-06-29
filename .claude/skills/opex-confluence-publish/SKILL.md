@@ -43,14 +43,17 @@ data_dir = Path('/Users/dawsondai/ai/inv-plat-opex/data')
 index = json.loads((data_dir / 'index.json').read_text())
 latest = index['snapshots'][-1]
 snap = json.loads((data_dir / latest / 'maturity.json').read_text())
+cz_path = data_dir / latest / 'cloudzero.json'
+cz = json.loads(cz_path.read_text()) if cz_path.exists() else None
 print('Date:', snap['date'])
 print('Tribe totals:', snap['tribe_totals'])
 print('Squads:', len(snap['squads']))
 print('Priority rules:', [p['label'] for p in snap['priority_rules']])
+print('CloudZero data:', 'present' if cz else 'MISSING — run opex-fetch-cloudzero skill first')
 "
 ```
 
-Store the loaded `snap` dict in context for HTML generation.
+Store `snap` and `cz` (may be `None`) in context for HTML generation.
 
 ### Step 2 — Build the page HTML
 
@@ -145,6 +148,71 @@ Render identically to Subsection A, with heading and fallback link:
 <!-- table or "No issues found" -->
 <p><a href="https://skyscanner.atlassian.net/issues/?jql={url_encoded_jql}">View Overdue ILD Issues in Jira</a></p>
 ```
+
+#### Section 0b: CloudZero Cost Insights
+
+This section goes **after Incident and before Tribe Overview**.
+
+**If `cz` is present** (i.e. `data/{date}/cloudzero.json` exists):
+
+Build the section from `cz`:
+
+```python
+t = cz["tribe_total"]
+period = cz["period"]
+sign = "+" if t["abs_change"] >= 0 else ""
+tribe_summary = f"${t['recent']:,.0f} ({sign}${abs(t['abs_change']):,.0f} / {sign}{t['pct_change']:.1f}%)"
+```
+
+```html
+<h2>CloudZero Cost Insights</h2>
+<p><em>Period: {period['start']} to {period['end']} ({period['lookback_days']}-day comparison) | Tribe total: {tribe_summary} | Fetched: {cz['fetched_at'][:10]}</em></p>
+```
+
+For each provider in `cz["providers"]`, collect only squads where `squad["anomaly"] == true`, sorted by `abs(abs_change)` desc. If a provider has no anomalous squads, skip it entirely.
+
+```html
+<table data-layout="full-width">
+<tr><th><strong>Provider</strong></th><th><strong>Squad</strong></th><th><strong>14d Cost</strong></th><th><strong>Change</strong></th></tr>
+```
+
+For each anomalous squad row:
+```python
+s_sign = "+" if s["abs_change"] >= 0 else "-"
+cost_cell = f"${s['recent']:,.0f}"
+change_cell = f"{s_sign}${abs(s['abs_change']):,.0f} ({s_sign}{abs(s['pct_change']):.1f}%)"
+```
+
+```html
+<tr>
+  <td>{provider['name']}</td>
+  <td>{s['name']}</td>
+  <td>{cost_cell}</td>
+  <td>{change_cell}</td>
+</tr>
+```
+
+After the table:
+```html
+<p><em>Only squads with anomalous cost changes shown.
+Tier thresholds — 1 (&lt;$1k): $100/20% | 2 ($1k–$5k): $500/15% | 3 ($5k–$20k): $1k/10% | 4 (≥$20k): $2k/10%</em></p>
+```
+
+If no anomalous squads exist across any provider, replace the table with:
+```html
+<p><span style="color:#217a45;">&#x2705; No anomalous cost changes detected.</span></p>
+```
+
+---
+
+**If `cz` is `None`** (file missing):
+
+```html
+<h2>CloudZero Cost Insights</h2>
+<div data-type="panel-warning"><p>&#x26A0;&#xFE0F; Cost data unavailable for {snap['date']}. Run the <strong>opex-fetch-cloudzero</strong> skill to populate this section, then republish.</p></div>
+```
+
+---
 
 #### Section 1: Tribe Overview
 
