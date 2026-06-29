@@ -138,11 +138,14 @@ def build_json(sorted_csv: str, date: str, config_dir: str = "config", data_dir:
                 "failing_entity_count": len(failing),
                 "entities": sorted(failing),
             }
-        priority_rules_out.append({
+        entry = {
             "rule": rule_name,
             "label": p_cfg.get("label", rule_name),
             "squad_compliance": squad_compliance,
-        })
+        }
+        if p_cfg.get("id"):
+            entry["id"] = p_cfg["id"]
+        priority_rules_out.append(entry)
 
     result = {
         "date": date,

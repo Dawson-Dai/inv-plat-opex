@@ -56,6 +56,96 @@ Store the loaded `snap` dict in context for HTML generation.
 
 Build the full page body as Confluence storage-format HTML. Construct each section in Python/inline, then combine.
 
+#### Section 0: Incident
+
+This section goes **first** on the page, before Tribe Overview. It has two subsections, each backed by a live Jira JQL query via `mcp__plugin_atlassian_atlassian__searchJiraIssuesUsingJql`.
+
+```html
+<h2>Incident</h2>
+```
+
+**Subsection A — Outdated ILD Actions**
+
+JQL (fetch up to 50 issues, fields: `issuetype,summary,assignee,priority,status`):
+
+```
+statusCategory != Done AND
+project IN (AQUA, "Big Yus", "Dancing Penguins", FDA, "Fuel RaTS",
+  Ganymede, Halo, Kylin, Libra, Orange, Orca, Silver, Tiger, Yellow) AND
+labels = ILDAction AND
+created <= -14d
+ORDER BY created DESC
+```
+
+Call:
+```
+mcp__plugin_atlassian_atlassian__searchJiraIssuesUsingJql:
+  cloudId: skyscanner.atlassian.net
+  jql: <above>
+  maxResults: 50
+  fields: ["issuetype", "summary", "assignee", "priority", "status"]
+```
+
+Render the results as an HTML table:
+
+```html
+<h3>Outdated ILD Actions</h3>
+```
+
+If issues returned, render:
+```html
+<table data-layout="full-width">
+<tr><th><strong>Type</strong></th><th><strong>Key</strong></th><th><strong>Summary</strong></th><th><strong>Assignee</strong></th><th><strong>Priority</strong></th><th><strong>Status</strong></th></tr>
+<!-- one <tr> per issue -->
+<tr>
+  <td>{issuetype.name}</td>
+  <td><a href="https://skyscanner.atlassian.net/browse/{key}">{key}</a></td>
+  <td>{summary}</td>
+  <td>{assignee.displayName or "Unassigned"}</td>
+  <td>{priority.name}</td>
+  <td>{status.name}</td>
+</tr>
+</table>
+```
+
+If no issues: `<p><em>No outdated ILD actions found.</em></p>`
+
+Always append a fallback link (JQL URL-encoded):
+```html
+<p><a href="https://skyscanner.atlassian.net/issues/?jql={url_encoded_jql}">View Outdated ILD Actions in Jira</a></p>
+```
+
+Then add `<hr />` between the two subsections.
+
+**Subsection B — Overdue ILD**
+
+JQL:
+
+```
+project = "Incident Library" AND
+text ~ "Inventory Platform" AND
+statusCategory != Done AND
+created >= -14d
+ORDER BY created DESC
+```
+
+Call:
+```
+mcp__plugin_atlassian_atlassian__searchJiraIssuesUsingJql:
+  cloudId: skyscanner.atlassian.net
+  jql: <above>
+  maxResults: 50
+  fields: ["issuetype", "summary", "assignee", "priority", "status"]
+```
+
+Render identically to Subsection A, with heading and fallback link:
+
+```html
+<h3>Overdue ILD</h3>
+<!-- table or "No issues found" -->
+<p><a href="https://skyscanner.atlassian.net/issues/?jql={url_encoded_jql}">View Overdue ILD Issues in Jira</a></p>
+```
+
 #### Section 1: Tribe Overview
 
 Load the previous snapshot too (`prev_snap`) for delta comparisons:
@@ -135,10 +225,20 @@ For each `pr` in `snap['priority_rules']`:
 - Collect failing squads: `[(squad, v['failing_entity_count']) for squad, v in pr['squad_compliance'].items() if v['failing_entity_count'] > 0]`, sorted by count desc
 - If none: `<span style="color:#217a45;">✅ All squads compliant</span>`
 - Otherwise: comma-separated inline, e.g. `Squad A (3), Squad B (2), Squad C (1)`
+- For the Standard cell: if `pr` has an `id` field, render a hyperlink to the Cortex maturity filter; otherwise plain text:
+
+```python
+CORTEX_RULE_URL = "https://app.getcortexapp.com/admin/plugins/4033?engineeringExcellenceOverviewPluginRoute=%2Fmaturity%3Flv%3D0%26hp%3D1%26hh%3D1%26rl%3D{id}"
+
+if pr.get("id"):
+    standard_cell = f'<a href="{CORTEX_RULE_URL.format(id=pr["id"])}">{pr["label"]}</a>'
+else:
+    standard_cell = pr["label"]
+```
 
 ```html
 <tr>
-  <td>{pr['label']}</td>
+  <td>{standard_cell}</td>
   <td>{failing_squads_html}</td>
 </tr>
 ```
