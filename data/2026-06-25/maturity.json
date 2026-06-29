@@ -4140,7 +4140,8 @@
             "unpriced-itineraries-cells"
           ]
         }
-      }
+      },
+      "id": "37f3e005-9db4-30c2-9cc3-a16a39c53d83"
     },
     {
       "rule": "Repositories must have recent commits scanned by SonarQube",
@@ -4248,7 +4249,8 @@
             "transportcataloginfra"
           ]
         }
-      }
+      },
+      "id": "2912fe6e-1f8a-3f2c-920b-248e27a12eeb"
     },
     {
       "rule": "Privacy and Consent Adoption",
@@ -4366,7 +4368,8 @@
             "unpriced-itineraries-cells"
           ]
         }
-      }
+      },
+      "id": "5f224f9b-7a77-4442-9e97-343adc3fb120"
     },
     {
       "rule": "Teams must not have pending incidents older than 14 days",
@@ -4454,7 +4457,8 @@
           "failing_entity_count": 0,
           "entities": []
         }
-      }
+      },
+      "id": "07b641e8-879c-36af-bbad-fc42863df78a"
     },
     {
       "rule": "Teams must not have live incidents",
@@ -4532,7 +4536,8 @@
           "failing_entity_count": 0,
           "entities": []
         }
-      }
+      },
+      "id": "12017668-26ae-39e5-a66a-99ba1b66f2ef"
     },
     {
       "rule": "Repositories must use supported Docker images",
