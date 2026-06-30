@@ -160,37 +160,45 @@ Build the section from `cz`:
 ```python
 t = cz["tribe_total"]
 period = cz["period"]
-sign = "+" if t["abs_change"] >= 0 else ""
-tribe_summary = f"${t['recent']:,.0f} ({sign}${abs(t['abs_change']):,.0f} / {sign}{t['pct_change']:.1f}%)"
 ```
 
 ```html
 <h2>CloudZero Cost Insights</h2>
-<p><em>Period: {period['start']} to {period['end']} ({period['lookback_days']}-day comparison) | Tribe total: {tribe_summary} | Fetched: {cz['fetched_at'][:10]}</em></p>
+<p><em>Period: {period['start']} to {period['end']} ({period['lookback_days']}-day comparison) | Fetched: {cz['fetched_at'][:10]}</em></p>
 ```
 
-**Plain-English cost summary** — emit immediately after the metadata line, before the table.
-
-Build one sentence for the tribe total and one per provider (all providers, not just those with anomalies):
+**Concise bullet-point cost summary** — emit immediately after the metadata line. Tribe total at the top level, providers as a nested second level. Include all providers (not just those with anomalies).
 
 ```python
-def cost_sentence(label, recent, abs_change, pct_change):
-    direction = "increased" if abs_change >= 0 else "decreased"
+def cost_bullet(recent, abs_change, pct_change):
     sign = "+" if abs_change >= 0 else "-"
-    return (
-        f"The {label} cost of the tribe in the past 14 days is "
-        f"${recent:,.0f}, {direction} ${abs(abs_change):,.0f} "
-        f"({sign}{abs(pct_change):.1f}%) compared with the previous 14 days."
-    )
+    return f"${recent:,.0f} ({sign}${abs(abs_change):,.0f} / {sign}{abs(pct_change):.1f}%)"
 
-summary_lines = [cost_sentence("total", t["recent"], t["abs_change"], t["pct_change"])]
-for p in cz["providers"]:
-    summary_lines.append(cost_sentence(p["name"], p["recent"], p["abs_change"], p["pct_change"]))
-summary_html = "<br />".join(summary_lines)
+tribe_item = f"<li><strong>Tribe total:</strong> {cost_bullet(t['recent'], t['abs_change'], t['pct_change'])}</li>"
+provider_items = "".join(
+    f"<li>{p['name']}: {cost_bullet(p['recent'], p['abs_change'], p['pct_change'])}</li>"
+    for p in cz["providers"]
+)
+summary_html = f"<ul>{tribe_item}<ul>{provider_items}</ul></ul>"
 ```
 
 ```html
-<p>{summary_html}</p>
+{summary_html}
+```
+
+**Tier thresholds expand block** — emit immediately after the summary, before the anomaly table:
+
+```html
+<details><summary>Cost Alert Thresholds (Tier-Based)</summary>
+<table data-layout="full-width">
+<tr><th><strong>Tier</strong></th><th><strong>Squad 14d Spend</strong></th><th><strong>Abs Change Threshold</strong></th><th><strong>% Change Threshold</strong></th></tr>
+<tr><td>1</td><td>&lt; $1,000</td><td>$100</td><td>20%</td></tr>
+<tr><td>2</td><td>$1,000 – $4,999</td><td>$500</td><td>15%</td></tr>
+<tr><td>3</td><td>$5,000 – $19,999</td><td>$1,000</td><td>10%</td></tr>
+<tr><td>4</td><td>&#8805; $20,000</td><td>$2,000</td><td>10%</td></tr>
+</table>
+<p><em>A squad is flagged if |abs change| &gt; threshold OR |% change| &gt; threshold.</em></p>
+</details>
 ```
 
 **Anomaly table** — group rows by provider and merge the Provider cell using `rowspan` so each provider name appears only once. Skip squads whose name is empty or starts with `"Service Category"`.
@@ -230,21 +238,6 @@ Close `</table>`.
 If no anomalous squads exist across any provider, replace the table with:
 ```html
 <p><span style="color:#217a45;">&#x2705; No anomalous cost changes detected.</span></p>
-```
-
-**Tier thresholds expand block** — emit after the table (or after the "no anomalies" message):
-
-```html
-<details><summary>Cost Alert Thresholds (Tier-Based)</summary>
-<table data-layout="full-width">
-<tr><th><strong>Tier</strong></th><th><strong>Squad 14d Spend</strong></th><th><strong>Abs Change Threshold</strong></th><th><strong>% Change Threshold</strong></th></tr>
-<tr><td>1</td><td>&lt; $1,000</td><td>$100</td><td>20%</td></tr>
-<tr><td>2</td><td>$1,000 – $4,999</td><td>$500</td><td>15%</td></tr>
-<tr><td>3</td><td>$5,000 – $19,999</td><td>$1,000</td><td>10%</td></tr>
-<tr><td>4</td><td>&#8805; $20,000</td><td>$2,000</td><td>10%</td></tr>
-</table>
-<p><em>A squad is flagged if |abs change| &gt; threshold OR |% change| &gt; threshold.</em></p>
-</details>
 ```
 
 ---
