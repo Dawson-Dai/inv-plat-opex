@@ -413,6 +413,56 @@ Close `</table>` after each squad.
 
 **New squads** (present in current snapshot but not in previous) have no prev data — `delta()` will just show the raw number with no comparison, which is correct.
 
+#### Section 4: Workstreams
+
+This section goes **last**, after Squad Detail.
+
+Fetch the source page using the MCP:
+
+```
+mcp__plugin_atlassian_atlassian__getConfluencePage:
+  cloudId: skyscanner.atlassian.net
+  pageId: "2018508986"
+  contentFormat: html
+```
+
+Extract the active workstreams table from the response `body` using Python:
+
+```python
+import re
+
+body = page_response["body"]  # HTML string from MCP
+
+# Find the excerpt div containing workstreams-2026
+match = re.search(
+    r'<div[^>]*data-extension-key="excerpt"[^>]*workstreams-2026[^>]*>(.*?)</div>',
+    body, re.DOTALL
+)
+if match:
+    inner = match.group(1)
+    # Extract only the table (skip trailing placeholder paragraphs)
+    table_match = re.search(r'(<table.*?</table>)', inner, re.DOTALL)
+    table_html = table_match.group(1) if table_match else inner
+    # Strip internal data-local-id noise attributes
+    table_html = re.sub(r' data-local-id="[^"]*"', '', table_html)
+    workstreams_html = (
+        '<h2>Workstreams</h2>'
+        + table_html
+        + '<p><em>Source: <a href="https://skyscanner.atlassian.net/wiki/spaces/IP/pages/2018508986/Opex+Governance+-+2026">Opex Governance - 2026</a></em></p>'
+    )
+else:
+    workstreams_html = None  # trigger fallback
+```
+
+**If extraction succeeds**, emit `workstreams_html` as-is. The Confluence HTML format natively renders `data-type="status"` (coloured lozenges), `data-type="mention"` (@mentions), `<details>` expand blocks, and links — no further transformation needed.
+
+**If the MCP call fails or no excerpt table is found**, fall back to:
+
+```html
+<h2>Workstreams</h2>
+<div data-type="panel-warning"><p>Workstreams content unavailable. See <a href="https://skyscanner.atlassian.net/wiki/spaces/IP/pages/2018508986/Opex+Governance+-+2026">Opex Governance - 2026</a>.</p></div>
+```
+
 ### Step 3 — Find or create the Confluence page
 
 Search for existing page:
