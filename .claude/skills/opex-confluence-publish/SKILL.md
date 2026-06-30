@@ -454,16 +454,64 @@ else:
     workstreams_html = None  # trigger fallback
 ```
 
-**If extraction succeeds**, emit `workstreams_html` as-is. The Confluence HTML format natively renders `data-type="status"` (coloured lozenges), `data-type="mention"` (@mentions), `<details>` expand blocks, and links — no further transformation needed.
+**If extraction succeeds**, write the table HTML to a temp file — **never pass it as a shell argument**. Shell argument passing introduces backslash-escaped quotes (`data-local-id=\"...\"`) that make the Confluence API reject the page:
 
-**If the MCP call fails or no excerpt table is found**, fall back to:
+```python
+from pathlib import Path
+Path('/tmp/workstreams_raw.txt').write_text(table_html, encoding='utf-8')
+workstreams_file = '/tmp/workstreams_raw.txt'
+```
 
-```html
-<h2>Workstreams</h2>
-<div data-type="panel-warning"><p>Workstreams content unavailable. See <a href="https://skyscanner.atlassian.net/wiki/spaces/IP/pages/2018508986/Opex+Governance+-+2026">Opex Governance - 2026</a>.</p></div>
+The Confluence HTML format natively renders `data-type="status"` (coloured lozenges), `data-type="mention"` (@mentions), `<details>` expand blocks, and links — no further transformation needed.
+
+**If the MCP call fails or no excerpt table is found**, write the fallback to the same temp file:
+
+```python
+fallback = (
+    '<div data-type="panel-warning"><p>Workstreams content unavailable. See '
+    '<a href="https://skyscanner.atlassian.net/wiki/spaces/IP/pages/2018508986/Opex+Governance+-+2026">'
+    'Opex Governance - 2026</a>.</p></div>'
+)
+Path('/tmp/workstreams_raw.txt').write_text(fallback, encoding='utf-8')
+workstreams_file = '/tmp/workstreams_raw.txt'
+```
+
+### Step 2b — Invoke the build script
+
+Call `build_confluence_html.py` passing the Jira results as JSON strings and the workstreams file path as the third argument:
+
+```bash
+python3 scripts/build_confluence_html.py \
+  '{ild_issues_json}' \
+  '{overdue_issues_json}' \
+  /tmp/workstreams_raw.txt \
+  > /tmp/opex_page.html
+```
+
+Where:
+- `{ild_issues_json}` — JSON array string of issues from Subsection A (empty array `'[]'` if none)
+- `{overdue_issues_json}` — JSON array string of issues from Subsection B (empty array `'[]'` if none)
+- `/tmp/workstreams_raw.txt` — the file written in the Workstreams step above (file path, NOT raw HTML)
+
+Verify the output has no escaping issues:
+
+```bash
+python3 -c "
+import re
+from pathlib import Path
+html = Path('/tmp/opex_page.html').read_text()
+ws = html[html.find('<h2>Workstreams'):]
+bs = len(re.findall(r'\\\\\\\"', ws))
+print(f'Backslash-escaped quotes in Workstreams: {bs}  (must be 0)')
+sections = ['Incident', 'CloudZero', 'Tribe Overview', 'Priority Standards', 'Squad Detail', 'Workstreams']
+for s in sections:
+    print(s, ':', 'OK' if f'<h2>{s}' in html else 'MISSING')
+"
 ```
 
 ### Step 3 — Find or create the Confluence page
+
+**IMPORTANT — connection size limit:** `createConfluencePage` always echoes the full body in its response. Bodies over ~35KB cause a "Connection closed mid-response" error. Always use the **stub-then-update** pattern: create with a placeholder body, then update with the real content and `includeBody: false`.
 
 Search for existing page:
 
@@ -473,11 +521,37 @@ mcp__plugin_atlassian_atlassian__searchConfluenceUsingCql:
   cql: title = "Opex-Report-{date}" AND space = "~dawsondai" AND type = page
 ```
 
-- **Found:** call `mcp__plugin_atlassian_atlassian__updateConfluencePage` with the found `pageId`, passing `body` (the HTML) and `contentFormat: "html"`, `title: "Opex-Report-{date}"`
-- **Not found:** call `mcp__plugin_atlassian_atlassian__createConfluencePage`:
-  - Get `spaceId` from `mcp__plugin_atlassian_atlassian__getConfluenceSpaces` filtering key `~dawsondai`
-  - `parentId`: `2047672627` (hardcoded — the "AI" page in Dawson's personal space)
-  - Pass `title`, `body`, `spaceId`, `parentId`, `contentFormat: "html"`
+**Found:** call `mcp__plugin_atlassian_atlassian__updateConfluencePage`:
+  - `pageId`: the found page ID
+  - `body`: the full HTML from `/tmp/opex_page.html`
+  - `contentFormat: "html"`
+  - `title: "Opex-Report-{date}"`
+  - `includeBody: false` ← **required, prevents connection close**
+
+**Not found:** two-step create:
+
+1. Create stub page (tiny body, response is small and safe):
+   ```
+   mcp__plugin_atlassian_atlassian__createConfluencePage:
+     cloudId: skyscanner.atlassian.net
+     spaceId: 45776898
+     parentId: 2047672627
+     title: "Opex-Report-{date}"
+     contentFormat: html
+     body: <p>Generating report…</p>
+   ```
+   Note the returned `pageId`.
+
+2. Immediately update with the full body:
+   ```
+   mcp__plugin_atlassian_atlassian__updateConfluencePage:
+     cloudId: skyscanner.atlassian.net
+     pageId: {pageId from step 1}
+     title: "Opex-Report-{date}"
+     body: {full HTML}
+     contentFormat: html
+     includeBody: false
+   ```
 
 ### Step 4 — Report back
 

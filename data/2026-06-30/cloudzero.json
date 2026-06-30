@@ -1,0 +1,629 @@
+{
+  "date": "2026-06-30",
+  "fetched_at": "2026-06-30T07:11:39Z",
+  "period": {
+    "start": "2026-05-31",
+    "end": "2026-06-28",
+    "lookback_days": 14
+  },
+  "tribe_total": {
+    "recent": 433802.92,
+    "old": 412217.6,
+    "abs_change": 21585.32,
+    "pct_change": 5.2
+  },
+  "providers": [
+    {
+      "name": "AWS",
+      "recent": 337158.6,
+      "old": 335721.76,
+      "abs_change": 1436.85,
+      "pct_change": 0.4,
+      "squads": [
+        {
+          "name": "Big Yus",
+          "recent": 95811.51,
+          "old": 122336.05,
+          "abs_change": -26524.54,
+          "pct_change": -21.7,
+          "tier": 4,
+          "anomaly": true
+        },
+        {
+          "name": "Orange",
+          "recent": 60088.55,
+          "old": 57088.56,
+          "abs_change": 2999.99,
+          "pct_change": 5.3,
+          "tier": 4,
+          "anomaly": true
+        },
+        {
+          "name": "Yellow",
+          "recent": 52289.72,
+          "old": 27530.46,
+          "abs_change": 24759.26,
+          "pct_change": 89.9,
+          "tier": 4,
+          "anomaly": true
+        },
+        {
+          "name": "Halo",
+          "recent": 49035.79,
+          "old": 46391.79,
+          "abs_change": 2644.0,
+          "pct_change": 5.7,
+          "tier": 4,
+          "anomaly": true
+        },
+        {
+          "name": "Dancing Penguins",
+          "recent": 45499.79,
+          "old": 46222.32,
+          "abs_change": -722.54,
+          "pct_change": -1.6,
+          "tier": 4,
+          "anomaly": false
+        },
+        {
+          "name": "Fuel RaTS",
+          "recent": 17022.78,
+          "old": 17370.37,
+          "abs_change": -347.59,
+          "pct_change": -2.0,
+          "tier": 3,
+          "anomaly": false
+        },
+        {
+          "name": "Tiger",
+          "recent": 5097.89,
+          "old": 5103.18,
+          "abs_change": -5.29,
+          "pct_change": -0.1,
+          "tier": 3,
+          "anomaly": false
+        },
+        {
+          "name": "Orca",
+          "recent": 4581.44,
+          "old": 4524.78,
+          "abs_change": 56.66,
+          "pct_change": 1.3,
+          "tier": 2,
+          "anomaly": false
+        },
+        {
+          "name": "Aqua",
+          "recent": 3182.58,
+          "old": 3953.98,
+          "abs_change": -771.4,
+          "pct_change": -19.5,
+          "tier": 2,
+          "anomaly": true
+        },
+        {
+          "name": "Kylin",
+          "recent": 896.13,
+          "old": 991.01,
+          "abs_change": -94.87,
+          "pct_change": -9.6,
+          "tier": 1,
+          "anomaly": false
+        },
+        {
+          "name": "Falcon",
+          "recent": 894.57,
+          "old": 925.02,
+          "abs_change": -30.45,
+          "pct_change": -3.3,
+          "tier": 1,
+          "anomaly": false
+        },
+        {
+          "name": "Pigeon",
+          "recent": 892.86,
+          "old": 1140.61,
+          "abs_change": -247.74,
+          "pct_change": -21.7,
+          "tier": 1,
+          "anomaly": true
+        },
+        {
+          "name": "Libra",
+          "recent": 739.87,
+          "old": 844.27,
+          "abs_change": -104.4,
+          "pct_change": -12.4,
+          "tier": 1,
+          "anomaly": true
+        },
+        {
+          "name": "Silver",
+          "recent": 571.35,
+          "old": 665.68,
+          "abs_change": -94.34,
+          "pct_change": -14.2,
+          "tier": 1,
+          "anomaly": false
+        },
+        {
+          "name": "Ganymede",
+          "recent": 553.77,
+          "old": 633.67,
+          "abs_change": -79.9,
+          "pct_change": -12.6,
+          "tier": 1,
+          "anomaly": false
+        }
+      ]
+    },
+    {
+      "name": "New Relic",
+      "recent": 42929.95,
+      "old": 39241.9,
+      "abs_change": 3688.05,
+      "pct_change": 9.4,
+      "squads": [
+        {
+          "name": "Halo",
+          "recent": 11987.37,
+          "old": 8864.16,
+          "abs_change": 3123.21,
+          "pct_change": 35.2,
+          "tier": 3,
+          "anomaly": true
+        },
+        {
+          "name": "Big Yus",
+          "recent": 9276.15,
+          "old": 9440.12,
+          "abs_change": -163.97,
+          "pct_change": -1.7,
+          "tier": 3,
+          "anomaly": false
+        },
+        {
+          "name": "Dancing Penguins",
+          "recent": 9238.54,
+          "old": 9560.73,
+          "abs_change": -322.2,
+          "pct_change": -3.4,
+          "tier": 3,
+          "anomaly": false
+        },
+        {
+          "name": "Orange",
+          "recent": 8656.37,
+          "old": 7957.27,
+          "abs_change": 699.1,
+          "pct_change": 8.8,
+          "tier": 3,
+          "anomaly": false
+        },
+        {
+          "name": "Orca",
+          "recent": 1315.34,
+          "old": 1454.57,
+          "abs_change": -139.24,
+          "pct_change": -9.6,
+          "tier": 2,
+          "anomaly": false
+        },
+        {
+          "name": "Tiger",
+          "recent": 1045.96,
+          "old": 680.72,
+          "abs_change": 365.24,
+          "pct_change": 53.7,
+          "tier": 2,
+          "anomaly": true
+        },
+        {
+          "name": "Silver",
+          "recent": 550.41,
+          "old": 388.0,
+          "abs_change": 162.41,
+          "pct_change": 41.9,
+          "tier": 1,
+          "anomaly": true
+        },
+        {
+          "name": "Aqua",
+          "recent": 320.36,
+          "old": 369.03,
+          "abs_change": -48.66,
+          "pct_change": -13.2,
+          "tier": 1,
+          "anomaly": false
+        },
+        {
+          "name": "Fuel RaTS",
+          "recent": 185.16,
+          "old": 180.55,
+          "abs_change": 4.61,
+          "pct_change": 2.6,
+          "tier": 1,
+          "anomaly": false
+        },
+        {
+          "name": "Yellow",
+          "recent": 134.85,
+          "old": 135.6,
+          "abs_change": -0.75,
+          "pct_change": -0.6,
+          "tier": 1,
+          "anomaly": false
+        },
+        {
+          "name": "Kylin",
+          "recent": 102.5,
+          "old": 93.49,
+          "abs_change": 9.01,
+          "pct_change": 9.6,
+          "tier": 1,
+          "anomaly": false
+        },
+        {
+          "name": "Libra",
+          "recent": 57.4,
+          "old": 56.75,
+          "abs_change": 0.66,
+          "pct_change": 1.2,
+          "tier": 1,
+          "anomaly": false
+        },
+        {
+          "name": "Falcon",
+          "recent": 35.29,
+          "old": 37.13,
+          "abs_change": -1.84,
+          "pct_change": -5.0,
+          "tier": 1,
+          "anomaly": false
+        },
+        {
+          "name": "Pigeon",
+          "recent": 15.03,
+          "old": 14.59,
+          "abs_change": 0.44,
+          "pct_change": 3.0,
+          "tier": 1,
+          "anomaly": false
+        },
+        {
+          "name": "Ganymede",
+          "recent": 9.23,
+          "old": 9.19,
+          "abs_change": 0.04,
+          "pct_change": 0.4,
+          "tier": 1,
+          "anomaly": false
+        }
+      ]
+    },
+    {
+      "name": "Databricks",
+      "recent": 32060.95,
+      "old": 29364.44,
+      "abs_change": 2696.51,
+      "pct_change": 9.2,
+      "squads": [
+        {
+          "name": "Big Yus",
+          "recent": 15995.52,
+          "old": 16695.3,
+          "abs_change": -699.78,
+          "pct_change": -4.2,
+          "tier": 3,
+          "anomaly": false
+        },
+        {
+          "name": "Yellow",
+          "recent": 5544.1,
+          "old": 2839.55,
+          "abs_change": 2704.55,
+          "pct_change": 95.2,
+          "tier": 3,
+          "anomaly": true
+        },
+        {
+          "name": "Tiger",
+          "recent": 2861.56,
+          "old": 2705.02,
+          "abs_change": 156.53,
+          "pct_change": 5.8,
+          "tier": 2,
+          "anomaly": false
+        },
+        {
+          "name": "Fuel RaTS",
+          "recent": 2699.66,
+          "old": 2722.83,
+          "abs_change": -23.17,
+          "pct_change": -0.9,
+          "tier": 2,
+          "anomaly": false
+        },
+        {
+          "name": "Aqua",
+          "recent": 1436.94,
+          "old": 1487.19,
+          "abs_change": -50.25,
+          "pct_change": -3.4,
+          "tier": 2,
+          "anomaly": false
+        },
+        {
+          "name": "Falcon",
+          "recent": 869.98,
+          "old": 756.28,
+          "abs_change": 113.7,
+          "pct_change": 15.0,
+          "tier": 1,
+          "anomaly": true
+        },
+        {
+          "name": "Libra",
+          "recent": 670.57,
+          "old": 331.99,
+          "abs_change": 338.58,
+          "pct_change": 102.0,
+          "tier": 1,
+          "anomaly": true
+        },
+        {
+          "name": "Pigeon",
+          "recent": 629.26,
+          "old": 612.93,
+          "abs_change": 16.32,
+          "pct_change": 2.7,
+          "tier": 1,
+          "anomaly": false
+        },
+        {
+          "name": "Dancing Penguins",
+          "recent": 618.79,
+          "old": 576.17,
+          "abs_change": 42.62,
+          "pct_change": 7.4,
+          "tier": 1,
+          "anomaly": false
+        },
+        {
+          "name": "Kylin",
+          "recent": 309.49,
+          "old": 271.74,
+          "abs_change": 37.76,
+          "pct_change": 13.9,
+          "tier": 1,
+          "anomaly": false
+        },
+        {
+          "name": "Ganymede",
+          "recent": 128.7,
+          "old": 107.32,
+          "abs_change": 21.38,
+          "pct_change": 19.9,
+          "tier": 1,
+          "anomaly": false
+        },
+        {
+          "name": "Silver",
+          "recent": 109.63,
+          "old": 102.07,
+          "abs_change": 7.55,
+          "pct_change": 7.4,
+          "tier": 1,
+          "anomaly": false
+        },
+        {
+          "name": "Orange",
+          "recent": 98.8,
+          "old": 74.65,
+          "abs_change": 24.15,
+          "pct_change": 32.4,
+          "tier": 1,
+          "anomaly": true
+        },
+        {
+          "name": "Halo",
+          "recent": 87.93,
+          "old": 81.37,
+          "abs_change": 6.56,
+          "pct_change": 8.1,
+          "tier": 1,
+          "anomaly": false
+        }
+      ]
+    },
+    {
+      "name": "Portkey",
+      "recent": 21271.25,
+      "old": 7430.77,
+      "abs_change": 13840.48,
+      "pct_change": 186.3,
+      "squads": [
+        {
+          "name": "Halo",
+          "recent": 3470.01,
+          "old": 2411.61,
+          "abs_change": 1058.39,
+          "pct_change": 43.9,
+          "tier": 2,
+          "anomaly": true
+        },
+        {
+          "name": "Big Yus",
+          "recent": 2980.96,
+          "old": 2136.65,
+          "abs_change": 844.31,
+          "pct_change": 39.5,
+          "tier": 2,
+          "anomaly": true
+        },
+        {
+          "name": "Service Category (untagged): AI and Machine Learning",
+          "recent": 2879.28,
+          "old": 1201.74,
+          "abs_change": 1677.54,
+          "pct_change": 139.6,
+          "tier": 2,
+          "anomaly": true
+        },
+        {
+          "name": "Pigeon",
+          "recent": 2089.0,
+          "old": 1975.56,
+          "abs_change": 113.44,
+          "pct_change": 5.7,
+          "tier": 2,
+          "anomaly": false
+        },
+        {
+          "name": "Libra",
+          "recent": 1642.71,
+          "old": 1066.47,
+          "abs_change": 576.24,
+          "pct_change": 54.0,
+          "tier": 2,
+          "anomaly": true
+        },
+        {
+          "name": "Silver",
+          "recent": 1515.84,
+          "old": 1420.72,
+          "abs_change": 95.12,
+          "pct_change": 6.7,
+          "tier": 2,
+          "anomaly": false
+        },
+        {
+          "name": "Falcon",
+          "recent": 1341.39,
+          "old": 823.92,
+          "abs_change": 517.47,
+          "pct_change": 62.8,
+          "tier": 2,
+          "anomaly": true
+        },
+        {
+          "name": "Ganymede",
+          "recent": 1152.74,
+          "old": 964.57,
+          "abs_change": 188.17,
+          "pct_change": 19.5,
+          "tier": 2,
+          "anomaly": true
+        },
+        {
+          "name": "Tiger",
+          "recent": 1113.52,
+          "old": 727.55,
+          "abs_change": 385.97,
+          "pct_change": 53.1,
+          "tier": 2,
+          "anomaly": true
+        },
+        {
+          "name": "Aqua",
+          "recent": 992.95,
+          "old": 1047.88,
+          "abs_change": -54.93,
+          "pct_change": -5.2,
+          "tier": 1,
+          "anomaly": false
+        },
+        {
+          "name": "Orange",
+          "recent": 859.64,
+          "old": 461.0,
+          "abs_change": 398.65,
+          "pct_change": 86.5,
+          "tier": 1,
+          "anomaly": true
+        },
+        {
+          "name": "Yellow",
+          "recent": 834.0,
+          "old": 1171.4,
+          "abs_change": -337.41,
+          "pct_change": -28.8,
+          "tier": 1,
+          "anomaly": true
+        },
+        {
+          "name": "Kylin",
+          "recent": 810.04,
+          "old": 1030.8,
+          "abs_change": -220.77,
+          "pct_change": -21.4,
+          "tier": 1,
+          "anomaly": true
+        },
+        {
+          "name": "Orca",
+          "recent": 667.19,
+          "old": 829.07,
+          "abs_change": -161.88,
+          "pct_change": -19.5,
+          "tier": 1,
+          "anomaly": true
+        },
+        {
+          "name": "Dancing Penguins",
+          "recent": 463.79,
+          "old": 486.44,
+          "abs_change": -22.65,
+          "pct_change": -4.7,
+          "tier": 1,
+          "anomaly": false
+        },
+        {
+          "name": "Fuel RaTS",
+          "recent": 232.96,
+          "old": 232.18,
+          "abs_change": 0.78,
+          "pct_change": 0.3,
+          "tier": 1,
+          "anomaly": false
+        }
+      ]
+    },
+    {
+      "name": "Azure",
+      "recent": 382.17,
+      "old": 458.73,
+      "abs_change": -76.57,
+      "pct_change": -16.7,
+      "squads": [
+        {
+          "name": "Ganymede",
+          "recent": 374.89,
+          "old": 446.37,
+          "abs_change": -71.49,
+          "pct_change": -16.0,
+          "tier": 1,
+          "anomaly": false
+        },
+        {
+          "name": "Falcon",
+          "recent": 6.83,
+          "old": 12.36,
+          "abs_change": -5.52,
+          "pct_change": -44.7,
+          "tier": 1,
+          "anomaly": true
+        },
+        {
+          "name": "Libra",
+          "recent": 0.45,
+          "old": 0.45,
+          "abs_change": 0.0,
+          "pct_change": 0.0,
+          "tier": 1,
+          "anomaly": false
+        }
+      ]
+    }
+  ]
+}
