@@ -1,36 +1,31 @@
 *Inventory Platform Opex — 2026-06-30*
 
-━━━━━━━━━━━━━━━━━━━━━━━━
 *TLDR*
-• Maturity: 1221 failing rule instances across 17 squads (-3 vs last week)
-• Cost: Tribe cost $433,803 (+5.2%) — Portkey +186% ⚠️
-• ⚠️ Live/stale incidents open — immediate action required
+:large_yellow_circle: Baseline Maturity: 1,221 failing rule instances across 17 squads (-3 vs last week)
+:large_yellow_circle: Cost: Tribe $433,803 (+$21,585, +5.2%) — Portkey +$13,840 (+186%) :warning: (last 2 weeks)
 
-━━━━━━━━━━━━━━━━━━━━━━━━
 *Production Standards — Action Required*
+:red_circle: *No Stale Incidents* — Falcon, Fuel RaTS, Ganymede, Halo, Ollivander, Orange, Orca, Pigeon (resolve immediately)
+:red_circle: *No Live Incidents* — Halo, Orca (resolve immediately)
+:large_yellow_circle: *Regular Deployments* — 11 squad(s) failing — Yellow [9], Orange [7], Halo [6]
+:red_circle: *SonarQube Scanning* — 10 squad(s) failing (worsened) — Big Yus [7], Yellow [6], Libra [4]
+:large_yellow_circle: *Privacy & Consent* — 10 squad(s) failing — Yellow [6], Kylin [4], Orange [4]
+:large_yellow_circle: *Supported Docker Images* — 7 squad(s) failing — Big Yus [5], Halo [4], Fuel RaTS [3]
 
-🔴 *No Stale Incidents* — Falcon, Fuel RaTS, Ganymede, Halo, Ollivander, Orange, Orca, Pigeon (resolve immediately)
-
-🔴 *No Live Incidents* — Halo, Orca (resolve immediately)
-
-🟡 *Regular Deployments* — 11 squad(s) failing
-  Worst: Yellow [9] @Jimmy | Orange [7] @kevingu | Halo [6] @dawsondai (+8 more)
-
-🔴 *SonarQube Scanning* — 10 squad(s) failing
-  Worst: Big Yus [7] @leoli @Krishna Chalasani | Yellow [6] @Jimmy | Libra [4] (+7 more)
-
-🟡 *Privacy & Consent* — 10 squad(s) failing
-  Worst: Yellow [6] @Jimmy | Kylin [4] | Orange [4] @kevingu (+7 more)
-
-🟡 *Supported Docker Images* — 7 squad(s) failing
-  Worst: Big Yus [5] @leoli @Krishna Chalasani | Halo [4] @dawsondai | Fuel RaTS [3] (+4 more)
-
-━━━━━━━━━━━━━━━━━━━━━━━━
 *Cost Anomalies — 2026-05-31 ~ 2026-06-28*
-
-⚠️ *Portkey* $21,271 (+$13,840, +186.3%) — top contributors:
-  Halo $3,470 (+$1,058, +43.9%) @dawsondai
-  Big Yus $2,981 (+$844, +39.5%) @leoli @Krishna Chalasani
-  Libra $1,643 (+$576, +54.0%)
-
-✅ Stable: AWS (+$1,437, +0.4%) | New Relic (+$3,688, +9.4%) | Databricks (+$2,697, +9.2%) | Azure (-$77, -16.7%)
+:warning: *Portkey* $21,271 (+$13,840, +186.3%)
+  ↑ Halo $3,470 (+$1,058, +43.9%) @dawsondai
+  ↑ Big Yus $2,981 (+$844, +39.5%) @leoli @Krishna Chalasani
+  ↑ Libra $1,643 (+$576, +54.0%)
+:large_yellow_circle: *New Relic* $42,930 (+$3,688, +9.4%)
+  ↑ Halo $11,987 (+$3,123, +35.2%) @dawsondai
+  ↑ Orange $8,656 (+$699, +8.8%) @kevingu
+  ↑ Tiger $1,046 (+$365, +53.7%) @Riddick
+:large_yellow_circle: *Databricks* $32,061 (+$2,697, +9.2%)
+  ↑ Yellow $5,544 (+$2,705, +95.2%) @Jimmy
+  ↓ Big Yus $15,996 (-$700, -4.2%) @leoli @Krishna Chalasani
+  ↑ Libra $671 (+$339, +102.0%)
+:white_circle: *AWS* $337,159 (+$1,437, +0.4%) — stable overall, but notable squad movement:
+  ↓ Big Yus $95,812 (-$26,525, -21.7%) @leoli @Krishna Chalasani
+  ↑ Yellow $52,290 (+$24,759, +89.9%) @Jimmy
+:white_circle: *Azure* $382 (-$77, -16.7%) — negligible spend
