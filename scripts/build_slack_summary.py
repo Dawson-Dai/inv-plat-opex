@@ -14,21 +14,20 @@ import json
 import sys
 from pathlib import Path
 
+import yaml
+
 REPO = Path(__file__).parent.parent
 DATA = REPO / "data"
 CONFIG = REPO / "config"
 
-# ── Load config ───────────────────────────────────────────────────────────────
-import yaml
+# ── Config ────────────────────────────────────────────────────────────────────
 owners_cfg = yaml.safe_load((CONFIG / "squad-owners.yaml").read_text())
 SQUAD_OWNERS = owners_cfg.get("squad_owners", {})
 
 
-def owners_str(squad_name: str) -> str:
+def mention(squad_name: str) -> str:
     handles = SQUAD_OWNERS.get(squad_name, [])
-    if not handles:
-        return ""
-    return " - " + " / ".join(f"@{h}" for h in handles)
+    return " " + " ".join(f"@{h}" for h in handles) if handles else ""
 
 
 # ── Load snapshots ────────────────────────────────────────────────────────────
@@ -47,20 +46,12 @@ snap = json.loads((DATA / date / "maturity.json").read_text())
 cz_path = DATA / date / "cloudzero.json"
 cz = json.loads(cz_path.read_text()) if cz_path.exists() else None
 
-# Load previous snapshot for maturity deltas
-prev_date = dates[dates.index(date) - 1] if dates.index(date) > 0 else None
+prev_idx = dates.index(date) - 1
+prev_date = dates[prev_idx] if prev_idx >= 0 else None
 prev_snap = json.loads((DATA / prev_date / "maturity.json").read_text()) if prev_date else None
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
-def pct(value, total):
-    return (value / total * 100) if total else 0
-
-
-def sign(n):
-    return "+" if n >= 0 else ""
-
-
 def fmt_cost(n):
     return f"${n:,.0f}"
 
@@ -71,113 +62,149 @@ def fmt_change(abs_c, pct_c):
     return f"({abs_str}, {pct_str})"
 
 
-# ── Section 1: Scorecard alerts ───────────────────────────────────────────────
-# Build scorecard → total entities per scorecard (tribe-level)
-# "alerted" = squads with ≥1 failing rule for that scorecard
-# "avg %" = average compliance rate across failing squads (entities failing / total entities)
-# We approximate compliance rate as: failing_entities / total tribe entities * 100
+# ── TLDR ──────────────────────────────────────────────────────────────────────
+t = snap["tribe_totals"]
+pt = prev_snap["tribe_totals"] if prev_snap else None
 
-# tribe_by_scorecard gives us squads_affected and counts
-# For the alert format: sort by failing_rule_instances desc, show top ones
+maturity_delta = t["failing_rule_instances"] - pt["failing_rule_instances"] if pt else 0
+maturity_delta_str = f"+{maturity_delta}" if maturity_delta > 0 else str(maturity_delta)
 
-sc_lines = []
-prev_sc = {}
-if prev_snap:
-    prev_sc = {sc["scorecard"]: sc for sc in prev_snap["tribe_by_scorecard"]}
-
-for sc in snap["tribe_by_scorecard"]:
-    name = sc["scorecard"]
-    affected = sc["squads_affected"]
-    n_squads = len(affected)
-    # avg "alert rate" = avg of (failing_rule_instances / squad entity count) across affected squads
-    # Simpler proxy: failing_rule_instances / affected_entities as a % of all entities
-    total_entities = sc["affected_entities"]
-    total_rows = sc["failing_rule_instances"]
-    # Use failing entity % as alert severity proxy
-    psc = prev_sc.get(name)
-    delta_entities = sc["affected_entities"] - psc["affected_entities"] if psc else 0
-
-    pct_val = pct(sc["affected_entities"], snap["tribe_totals"]["affected_entities"]) if snap["tribe_totals"]["affected_entities"] else 0
-    prev_pct = pct(psc["affected_entities"], prev_snap["tribe_totals"]["affected_entities"]) if (psc and prev_snap) else None
-
-    if prev_pct is not None:
-        delta_pct = pct_val - prev_pct
-        change_str = f"no change" if abs(delta_pct) < 0.1 else f"change: {sign(delta_pct)}{delta_pct:.2f}%"
-        trend = "(DOWN) " if delta_pct < -0.5 else ("(UP) " if delta_pct > 0.5 else "")
-    else:
-        change_str = "no prior data"
-        trend = ""
-
-    sc_lines.append(
-        f"{trend}{name}: {n_squads} squad(s) alerted "
-        f"(avg {pct_val:.0f}%, {change_str})"
-    )
-
-# ── Section 2: Cost summary ───────────────────────────────────────────────────
-cost_section = ""
-cost_detail = ""
-
+# Find worst cost anomaly for TLDR callout
+cost_tldr = ""
 if cz:
-    t = cz["tribe_total"]
+    ct = cz["tribe_total"]
+    cost_tldr = f"Tribe cost {fmt_cost(ct['recent'])} ({'+' if ct['pct_change'] >= 0 else ''}{ct['pct_change']:.1f}%)"
+    # Flag any provider anomaly >20%
+    anomaly_flags = [
+        f"{p['name']} +{p['pct_change']:.0f}% ⚠️"
+        for p in cz["providers"]
+        if p["pct_change"] > 20
+    ]
+    if anomaly_flags:
+        cost_tldr += " — " + ", ".join(anomaly_flags)
+
+tldr_lines = [
+    f"• Maturity: {t['failing_rule_instances']} failing rule instances across {len(snap['squads'])} squads "
+    f"({maturity_delta_str} vs last week)",
+]
+if cost_tldr:
+    tldr_lines.append(f"• Cost: {cost_tldr}")
+
+# ── Production Standards ──────────────────────────────────────────────────────
+# Use priority_rules (already the highest-priority standards)
+# 🔴 = worsened vs last week (more failing entities), 🟡 = stable/improved
+
+prev_pr_compliance = {}
+if prev_snap:
+    for pr in prev_snap["priority_rules"]:
+        prev_pr_compliance[pr["label"]] = {
+            sq: v["failing_entity_count"]
+            for sq, v in pr["squad_compliance"].items()
+        }
+
+std_lines = []
+incident_squads = []
+
+for pr in snap["priority_rules"]:
+    failing = [
+        (sq, v["failing_entity_count"])
+        for sq, v in pr["squad_compliance"].items()
+        if v["failing_entity_count"] > 0
+    ]
+    if not failing:
+        continue
+
+    failing.sort(key=lambda x: -x[1])
+    n = len(failing)
+
+    # Detect worsening: any squad's count increased vs last week
+    prev_counts = prev_pr_compliance.get(pr["label"], {})
+    worsened = any(
+        count > prev_counts.get(sq, count)  # count > prev means worse
+        for sq, count in failing
+    )
+    icon = "🔴" if worsened else "🟡"
+
+    # For live/stale incidents, surface squad names directly
+    if pr["label"] in ("No Live Incidents", "No Stale Incidents"):
+        squads_str = ", ".join(sq for sq, _ in failing)
+        incident_squads.append(f"{icon} *{pr['label']}* — {squads_str} (resolve immediately)")
+        continue
+
+    # Top 3 worst squads with @mentions
+    top3 = failing[:3]
+    top3_str = " | ".join(
+        f"{sq} [{cnt}]{mention(sq)}" for sq, cnt in top3
+    )
+    suffix = f" (+{n - 3} more)" if n > 3 else ""
+    std_lines.append(f"{icon} *{pr['label']}* — {n} squad(s) failing\n  Worst: {top3_str}{suffix}")
+
+# Prepend incident lines (most urgent)
+all_std_lines = incident_squads + std_lines
+
+# Add incident TLDR if any
+if incident_squads:
+    tldr_lines.append(f"• ⚠️ Live/stale incidents open — immediate action required")
+
+# ── Cost Anomalies ────────────────────────────────────────────────────────────
+cost_lines = []
+if cz:
     period = cz["period"]
     cost_period = f"{period['start']} ~ {period['end']}"
 
-    # Overall + per-provider summary
-    cost_lines = [
-        f"The overall cost is {fmt_cost(t['recent'])} {fmt_change(t['abs_change'], t['pct_change'])}."
-    ]
     for p in cz["providers"]:
-        cost_lines.append(
-            f"The {p['name']} cost is {fmt_cost(p['recent'])} {fmt_change(p['abs_change'], p['pct_change'])}."
-        )
-    cost_section = "\n".join(cost_lines)
+        # Only surface providers with significant spend (>$1k) AND notable change (>10%)
+        if p["recent"] < 1000 or abs(p["pct_change"]) < 10:
+            continue
 
-    # Per-provider top-3 squad breakdown
-    detail_parts = [f"Cost Summary ({cost_period})"]
-    for p in cz["providers"]:
+        icon = "⚠️" if p["pct_change"] > 20 else "🟡"
+        header = (
+            f"{icon} *{p['name']}* {fmt_cost(p['recent'])} "
+            f"{fmt_change(p['abs_change'], p['pct_change'])} — top contributors:"
+        )
+
         top3 = sorted(
-            [s for s in p["squads"] if s["name"] and not s["name"].startswith("Service Category")
-             and s["abs_change"] != 0],
+            [s for s in p["squads"]
+             if s["name"] and not s["name"].startswith("Service Category") and s["abs_change"] != 0],
             key=lambda s: -abs(s["abs_change"])
         )[:3]
-        if not top3:
-            continue
-        detail_parts.append(
-            f"{p['name']}: {fmt_cost(p['recent'])} {fmt_change(p['abs_change'], p['pct_change'])} "
-            f"Top 3 squads by cost change:"
-        )
-        for s in top3:
-            ow = owners_str(s["name"])
-            detail_parts.append(
-                f"  {s['name']}: {fmt_cost(s['recent'])} {fmt_change(s['abs_change'], s['pct_change'])}{ow}"
-            )
-    cost_detail = "\n".join(detail_parts)
+
+        squad_lines = [
+            f"  {s['name']} {fmt_cost(s['recent'])} {fmt_change(s['abs_change'], s['pct_change'])}{mention(s['name'])}"
+            for s in top3
+        ]
+        cost_lines.append(header + "\n" + "\n".join(squad_lines))
+
+    # One-liner for stable providers
+    stable = [
+        f"{p['name']} {fmt_change(p['abs_change'], p['pct_change'])}"
+        for p in cz["providers"]
+        if not (p["recent"] >= 1000 and abs(p["pct_change"]) >= 10)
+    ]
+    if stable:
+        cost_lines.append("✅ Stable: " + " | ".join(stable))
+
+# ── Assemble ──────────────────────────────────────────────────────────────────
+sep = "\n━━━━━━━━━━━━━━━━━━━━━━━━"
+
+parts = [f"*Inventory Platform Opex — {date}*"]
+parts.append(f"{sep}\n*TLDR*\n" + "\n".join(tldr_lines))
+
+if all_std_lines:
+    parts.append(f"{sep}\n*Production Standards — Action Required*\n\n" + "\n\n".join(all_std_lines))
+
+if cost_lines:
+    label = f"Cost Anomalies — {cost_period}" if cz else "Cost Anomalies"
+    parts.append(f"{sep}\n*{label}*\n\n" + "\n\n".join(cost_lines))
+elif cz:
+    parts.append(f"{sep}\n✅ *Cost* — no anomalies this period")
 else:
-    cost_section = "_Cost data unavailable — run opex-fetch-cloudzero skill first._"
-    cost_detail = ""
+    parts.append(f"{sep}\n_Cost data unavailable — run opex-fetch-cloudzero skill first._")
 
-# ── Assemble message ──────────────────────────────────────────────────────────
-sc_block = "\n".join(f"- {line}" for line in sc_lines)
-squad_period = f"{cz['period']['start']} ~ {cz['period']['end']}" if cz else date
-
-msg = f"""Scorecard alerts:
-- Target: all components at least meet the Baseline maturity
-
-{sc_block}
-
-Cost Changes:
-
-{cost_section}
-
-Squad Alerts Summary ({squad_period})
-
-There are quite a lot, please check the Squad Performance for details
-
-{cost_detail}"""
+msg = "\n".join(parts)
 
 print(msg)
 
-# Write to docs/data/YYYY-MM-DD/
 out_dir = REPO / "docs" / "data" / date
 out_dir.mkdir(parents=True, exist_ok=True)
 out_path = out_dir / "slack_summary.md"
