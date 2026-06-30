@@ -169,38 +169,82 @@ tribe_summary = f"${t['recent']:,.0f} ({sign}${abs(t['abs_change']):,.0f} / {sig
 <p><em>Period: {period['start']} to {period['end']} ({period['lookback_days']}-day comparison) | Tribe total: {tribe_summary} | Fetched: {cz['fetched_at'][:10]}</em></p>
 ```
 
-For each provider in `cz["providers"]`, collect only squads where `squad["anomaly"] == true`, sorted by `abs(abs_change)` desc. If a provider has no anomalous squads, skip it entirely.
+**Plain-English cost summary** — emit immediately after the metadata line, before the table.
 
+Build one sentence for the tribe total and one per provider (all providers, not just those with anomalies):
+
+```python
+def cost_sentence(label, recent, abs_change, pct_change):
+    direction = "increased" if abs_change >= 0 else "decreased"
+    sign = "+" if abs_change >= 0 else "-"
+    return (
+        f"The {label} cost of the tribe in the past 14 days is "
+        f"${recent:,.0f}, {direction} ${abs(abs_change):,.0f} "
+        f"({sign}{abs(pct_change):.1f}%) compared with the previous 14 days."
+    )
+
+summary_lines = [cost_sentence("total", t["recent"], t["abs_change"], t["pct_change"])]
+for p in cz["providers"]:
+    summary_lines.append(cost_sentence(p["name"], p["recent"], p["abs_change"], p["pct_change"]))
+summary_html = "<br />".join(summary_lines)
+```
+
+```html
+<p>{summary_html}</p>
+```
+
+**Anomaly table** — group rows by provider and merge the Provider cell using `rowspan` so each provider name appears only once. Skip squads whose name is empty or starts with `"Service Category"`.
+
+Build provider groups first:
+```python
+provider_groups = {}  # ordered: provider name -> list of anomalous squads
+for p in cz["providers"]:
+    rows = [s for s in sorted(p["squads"], key=lambda x: -abs(x["abs_change"]))
+            if s["anomaly"] and s["name"] and not s["name"].startswith("Service Category")]
+    if rows:
+        provider_groups[p["name"]] = rows
+```
+
+Then render:
 ```html
 <table data-layout="full-width">
 <tr><th><strong>Provider</strong></th><th><strong>Squad</strong></th><th><strong>14d Cost</strong></th><th><strong>Change</strong></th></tr>
 ```
 
-For each anomalous squad row:
+For each provider group, emit rows with the provider cell only on the first row:
 ```python
-s_sign = "+" if s["abs_change"] >= 0 else "-"
-cost_cell = f"${s['recent']:,.0f}"
-change_cell = f"{s_sign}${abs(s['abs_change']):,.0f} ({s_sign}{abs(s['pct_change']):.1f}%)"
+for provider_name, squads in provider_groups.items():
+    for i, s in enumerate(squads):
+        s_sign = "+" if s["abs_change"] >= 0 else "-"
+        cost_cell = f"${s['recent']:,.0f}"
+        change_cell = f"{s_sign}${abs(s['abs_change']):,.0f} ({s_sign}{abs(s['pct_change']):.1f}%)"
+        if i == 0:
+            provider_cell = f'<td rowspan="{len(squads)}">{provider_name}</td>'
+        else:
+            provider_cell = ""
+        # emit: <tr>{provider_cell}<td>{s['name']}</td><td>{cost_cell}</td><td>{change_cell}</td></tr>
 ```
 
-```html
-<tr>
-  <td>{provider['name']}</td>
-  <td>{s['name']}</td>
-  <td>{cost_cell}</td>
-  <td>{change_cell}</td>
-</tr>
-```
-
-After the table:
-```html
-<p><em>Only squads with anomalous cost changes shown.
-Tier thresholds — 1 (&lt;$1k): $100/20% | 2 ($1k–$5k): $500/15% | 3 ($5k–$20k): $1k/10% | 4 (≥$20k): $2k/10%</em></p>
-```
+Close `</table>`.
 
 If no anomalous squads exist across any provider, replace the table with:
 ```html
 <p><span style="color:#217a45;">&#x2705; No anomalous cost changes detected.</span></p>
+```
+
+**Tier thresholds expand block** — emit after the table (or after the "no anomalies" message):
+
+```html
+<details><summary>Cost Alert Thresholds (Tier-Based)</summary>
+<table data-layout="full-width">
+<tr><th><strong>Tier</strong></th><th><strong>Squad 14d Spend</strong></th><th><strong>Abs Change Threshold</strong></th><th><strong>% Change Threshold</strong></th></tr>
+<tr><td>1</td><td>&lt; $1,000</td><td>$100</td><td>20%</td></tr>
+<tr><td>2</td><td>$1,000 – $4,999</td><td>$500</td><td>15%</td></tr>
+<tr><td>3</td><td>$5,000 – $19,999</td><td>$1,000</td><td>10%</td></tr>
+<tr><td>4</td><td>&#8805; $20,000</td><td>$2,000</td><td>10%</td></tr>
+</table>
+<p><em>A squad is flagged if |abs change| &gt; threshold OR |% change| &gt; threshold.</em></p>
+</details>
 ```
 
 ---
