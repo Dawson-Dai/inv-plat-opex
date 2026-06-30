@@ -1,0 +1,21 @@
+# Squad Slack handle(s) for the weekly summary message.
+# Used by scripts/build_slack_summary.py.
+# Format: squad display name -> list of Slack handles (without @)
+squad_owners:
+  Aqua: []
+  Big Yus: ["leoli", "Krishna Chalasani"]
+  Dancing Penguins: ["Renjith Kamath"]
+  Falcon: []
+  Fuel RaTS: []
+  Ganymede: []
+  Halo: ["dawsondai"]
+  Kylin: []
+  Libra: []
+  Ollivander: []
+  Orange: ["kevingu"]
+  Orca: []
+  Pigeon: []
+  Silver: []
+  Spyro: []
+  Tiger: ["Riddick"]
+  Yellow: ["Jimmy"]
