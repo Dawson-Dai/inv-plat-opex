@@ -50,12 +50,12 @@ def fmt_change(abs_c: float, pct_c: float) -> str:
 
 def cost_icon(recent: float, pct_c: float) -> str:
     if recent < COST_NEGLIGIBLE:
-        return ":white_circle:"
+        return "⚪"
     if abs(pct_c) >= COST_WARNING_PCT:
-        return ":warning:"
+        return "⚠️"
     if abs(pct_c) >= COST_YELLOW_PCT:
-        return ":large_yellow_circle:"
-    return ":white_circle:"
+        return "🟡"
+    return "⚪"
 
 
 def squad_arrow(abs_c: float) -> str:
@@ -89,9 +89,9 @@ delta = t["failing_rule_instances"] - pt["failing_rule_instances"] if pt else 0
 delta_str = f"+{delta}" if delta > 0 else str(delta)
 
 # Maturity icon: 🔴 if worsened, 🟡 otherwise
-maturity_icon = ":red_circle:" if delta > 0 else ":large_yellow_circle:"
+maturity_icon = "🔴" if delta > 0 else "🟡"
 maturity_line = (
-    f"{maturity_icon} Baseline Maturity: {t['failing_rule_instances']:,} failing rule instances "
+    f"• {maturity_icon} *Baseline Maturity*: {t['failing_rule_instances']:,} failing rule instances "
     f"across {len(snap['squads'])} squads ({delta_str} vs last week)"
 )
 
@@ -101,16 +101,15 @@ if cz:
     period = cz["period"]
     cost_period = f"{period['start']} ~ {period['end']}"
     tribe_icon = cost_icon(ct["recent"], ct["pct_change"])
-    cost_tldr = f"{tribe_icon} Cost: Tribe {fmt_cost(ct['recent'])} {fmt_change(ct['abs_change'], ct['pct_change'])}"
-    # Find worst provider anomaly for inline callout
+    cost_tldr = f"• {tribe_icon} *Cost*: Tribe {fmt_cost(ct['recent'])} {fmt_change(ct['abs_change'], ct['pct_change'])}"
     worst = max(cz["providers"], key=lambda p: abs(p["pct_change"]) if p["recent"] >= COST_NEGLIGIBLE else 0)
     if abs(worst["pct_change"]) >= COST_WARNING_PCT and worst["recent"] >= COST_NEGLIGIBLE:
         abs_str = f"+{fmt_cost(worst['abs_change'])}" if worst["abs_change"] >= 0 else f"-{fmt_cost(-worst['abs_change'])}"
-        cost_tldr += f" — {worst['name']} {abs_str} ({'+' if worst['pct_change'] >= 0 else ''}{worst['pct_change']:.0f}%) :warning: (last 2 weeks)"
+        cost_tldr += f" — *{worst['name']}* {abs_str} (+{worst['pct_change']:.0f}%) ⚠️ (last 2 weeks)"
     else:
         cost_tldr += " (last 2 weeks)"
 else:
-    cost_tldr = ":white_circle: Cost: data unavailable — run opex-fetch-cloudzero skill first"
+    cost_tldr = "• ⚪ *Cost*: data unavailable — run opex-fetch-cloudzero skill first"
 
 tldr_block = maturity_line + "\n" + cost_tldr
 
@@ -142,14 +141,15 @@ for pr in snap["priority_rules"]:
 
     if is_incident:
         squads_str = ", ".join(sq for sq, _ in failing)
-        incident_lines.append(f":red_circle: *{pr['label']}* — {squads_str} (resolve immediately)")
+        incident_lines.append(f"• 🔴 *{pr['label']}* — {squads_str} (resolve immediately)")
         continue
 
-    icon = ":red_circle:" if worsened else ":large_yellow_circle:"
+    icon = "🔴" if worsened else "🟡"
     top3 = failing[:3]
     top3_str = ", ".join(f"{sq} [{cnt}]" for sq, cnt in top3)
+    more = f" and more" if n > 3 else ""
     worsened_tag = " (worsened)" if worsened else ""
-    standard_lines.append(f"{icon} *{pr['label']}* — {n} squad(s) failing{worsened_tag} — {top3_str}")
+    standard_lines.append(f"• {icon} *{pr['label']}* — {n} squad(s) failing{worsened_tag} — {top3_str}{more}")
 
 std_block = "\n".join(incident_lines + standard_lines)
 
@@ -167,7 +167,7 @@ if cz:
 
     for p in sorted(cz["providers"], key=provider_sort_key):
         icon = cost_icon(p["recent"], p["pct_change"])
-        header = f"{icon} *{p['name']}* {fmt_cost(p['recent'])} {fmt_change(p['abs_change'], p['pct_change'])}"
+        header = f"• {icon} *{p['name']}* {fmt_cost(p['recent'])} {fmt_change(p['abs_change'], p['pct_change'])}"
 
         squads = [
             s for s in p["squads"]
@@ -178,12 +178,10 @@ if cz:
         is_stable = abs(p["pct_change"]) < COST_YELLOW_PCT
 
         if is_negligible:
-            # Just header, no squad breakdown
             cost_block_parts.append(header + " — negligible spend")
             continue
 
         if is_stable:
-            # Show top-3 by abs change only if any squad has a big swing
             big_swings = sorted(
                 [s for s in squads if abs(s["abs_change"]) > SQUAD_SWING_ABS],
                 key=lambda s: -abs(s["abs_change"])
@@ -191,7 +189,7 @@ if cz:
             if big_swings:
                 header += " — stable overall, but notable squad movement:"
                 squad_lines = [
-                    f"  {squad_arrow(s['abs_change'])} {s['name']} {fmt_cost(s['recent'])} "
+                    f"   ◦ {squad_arrow(s['abs_change'])} *{s['name']}* {fmt_cost(s['recent'])} "
                     f"{fmt_change(s['abs_change'], s['pct_change'])}{mention(s['name'])}"
                     for s in big_swings
                 ]
@@ -206,7 +204,7 @@ if cz:
             key=lambda s: -abs(s["abs_change"])
         )[:3]
         squad_lines = [
-            f"  {squad_arrow(s['abs_change'])} {s['name']} {fmt_cost(s['recent'])} "
+            f"   ◦ {squad_arrow(s['abs_change'])} *{s['name']}* {fmt_cost(s['recent'])} "
             f"{fmt_change(s['abs_change'], s['pct_change'])}{mention(s['name'])}"
             for s in top3
         ]
@@ -219,21 +217,25 @@ else:
     cost_header = "*Cost*"
 
 # ── Assemble ──────────────────────────────────────────────────────────────────
-msg = f"""*Inventory Platform Opex — {date}*
-
-*TLDR*
-{tldr_block}
-
-*Production Standards — Action Required*
-{std_block}
-
-{cost_header}
-{cost_block}"""
+msg = "\n".join([
+    f"*Inventory Platform Opex — {date}*",
+    "",
+    "*TLDR*",
+    maturity_line,
+    cost_tldr,
+    "",
+    "*Production Standards — Action Required*",
+    std_block,
+    "",
+    cost_header,
+    cost_block,
+])
 
 print(msg)
 
+# Write as .txt — Slack mrkdwn is NOT markdown; .txt previews correctly in VS Code
 out_dir = REPO / "docs" / "data" / date
 out_dir.mkdir(parents=True, exist_ok=True)
-out_path = out_dir / "slack_summary.md"
+out_path = out_dir / "slack_summary.txt"
 out_path.write_text(msg)
 print(f"\n--- Written to {out_path.relative_to(REPO)}", file=sys.stderr)

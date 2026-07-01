@@ -1,24 +1,21 @@
 ---
 name: opex-slack-summary
 description: >
-  Generates a Slack summary message for the Inventory Platform weekly opex update,
-  combining maturity scorecard alerts and CloudZero cost changes. Writes the draft
-  to docs/data/YYYY-MM-DD/slack_summary.md and prints it for review.
-  Use when the user says "slack summary", "draft slack message", "weekly opex summary",
-  "slack update", or "opex Slack draft".
+  Generates the Inventory Platform weekly opex Slack summary and sends it as a
+  DM to Dawson for review before forwarding to the channel. Combines maturity
+  scorecard alerts and CloudZero cost anomalies. Use when the user says "slack
+  summary", "draft slack message", "weekly opex summary", "slack update", or
+  "opex Slack draft".
 ---
 
-# Opex Slack Summary Generator
+# Opex Slack Summary
 
 ## What this skill does
 
-Reads the latest `maturity.json` and `cloudzero.json` snapshots and produces a
-Slack-ready markdown message covering:
-
-1. **Scorecard alerts** — each scorecard, how many squads are affected, and week-on-week trend
-2. **Cost Changes** — tribe total + per-provider summary with direction
-3. **Squad Alerts Summary** — brief note pointing to Squad Performance detail
-4. **Cost Summary** — per-provider top-3 squads by cost change, with Slack @mentions
+1. Runs `build_slack_summary.py` to generate the message from the latest maturity
+   and CloudZero snapshots
+2. Sends the message as a Slack DM to Dawson (`dawson.dai@skyscanner.net`) via
+   the Slack MCP so he can review it before forwarding to the channel
 
 ## Repo location
 
@@ -26,79 +23,60 @@ Slack-ready markdown message covering:
 
 ## Step-by-step instructions
 
-### Step 1 — Run the script
+### Step 1 — Build the message
 
 ```bash
 python3 scripts/build_slack_summary.py [YYYY-MM-DD]
 ```
 
-If no date is given, the latest snapshot date from `data/index.json` is used.
-
-The script:
+If no date is given, uses the latest snapshot. The script:
 - Reads `data/YYYY-MM-DD/maturity.json` and `data/YYYY-MM-DD/cloudzero.json`
-- Compares against the previous snapshot for scorecard deltas
+- Compares against the previous snapshot for week-on-week deltas
 - Reads squad Slack handles from `config/squad-owners.yaml`
 - Prints the message to stdout
-- Writes it to `docs/data/YYYY-MM-DD/slack_summary.md`
+- Writes it to `docs/data/YYYY-MM-DD/slack_summary.txt`
 
-### Step 2 — Read and present the draft
+Capture stdout as the message text.
 
-Read the generated file and display its contents to the user:
+### Step 2 — Send as DM via Slack MCP
 
-```bash
-cat docs/data/YYYY-MM-DD/slack_summary.md
+Use the Slack MCP to send the message as a direct message to Dawson:
+
+```
+slack_post_message:
+  channel: "@dawson.dai"   (or Dawson's Slack user ID if known)
+  text: {full message text from Step 1}
 ```
 
-Present it as a draft for the user to review and copy into Slack.
+If the Slack MCP requires a channel ID rather than a name, first call:
+```
+slack_lookup_user_by_email:
+  email: dawson.dai@skyscanner.net
+```
+to get Dawson's user ID, then use that as the channel.
 
-### Step 3 — Offer refinements
+### Step 3 — Confirm and prompt
 
-After presenting, ask the user if they want any adjustments:
-- Add/remove squads from highlights
-- Change the threshold for (UP)/(DOWN) trend markers
-- Update squad owners in `config/squad-owners.yaml`
+Tell the user:
+- "DM sent — review it in Slack and forward to the channel when ready."
+- Offer to regenerate with a different date or adjust any thresholds.
 
 ## Configuration
 
-**`config/squad-owners.yaml`** — maps squad display names to Slack handles.
-Edit this file to keep mentions current. Handles are written without `@`; the
-script adds the `@` prefix automatically.
+**`config/squad-owners.yaml`** — squad display name → Slack handles (without `@`).
+Edit to keep mentions current.
 
-## Output format
+**Thresholds in `scripts/build_slack_summary.py`:**
+- `COST_WARNING_PCT = 20` — ⚠️ icon threshold (% change)
+- `COST_YELLOW_PCT = 5` — 🟡 icon threshold (% change)
+- `COST_NEGLIGIBLE = 1000` — providers below $1k treated as negligible
+- `SQUAD_SWING_ABS = 5000` — flag squad under stable provider if |change| > $5k
 
-```
-Scorecard alerts:
-- Target: all components at least meet the Baseline maturity
+## Icon rules
 
-- {scorecard}: {N} squad(s) alerted (avg {X}%, {change})
-...
-
-Cost Changes:
-
-The overall cost is ${X} ({+/-$abs}, {+/-pct}%).
-The {provider} cost is ${X} ({change}).
-...
-
-Squad Alerts Summary ({period})
-
-There are quite a lot, please check the Squad Performance for details
-
-Cost Summary ({period})
-{Provider}: ${X} ({change}) Top 3 squads by cost change:
-  {Squad}: ${X} ({change}) - @handle
-...
-```
-
-Trend markers:
-- `(UP)` — entity count increased more than 0.5% vs previous snapshot
-- `(DOWN)` — entity count decreased more than 0.5% vs previous snapshot
-- No marker — stable
-
-## Notes
-
-- Requires both `maturity.json` and `cloudzero.json` for the full message.
-  If `cloudzero.json` is missing, the cost sections show a placeholder warning.
-- `pyyaml` must be installed (`pip install pyyaml`).
-- The script always uses the two most recent snapshots for the delta comparison.
-  To compare against a specific date, edit `data/index.json` temporarily or pass
-  the target date explicitly.
+| Icon | Meaning |
+|---|---|
+| 🔴 | Incident rule OR worsened vs last week |
+| 🟡 | Stable/improving but still has failures; cost 5–20% change |
+| ⚠️ | Cost >20% change on provider with >$1k spend |
+| ⚪ | Cost <5% change or negligible spend |
